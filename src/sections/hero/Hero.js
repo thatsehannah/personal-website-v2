@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { H1, MediumText } from "../../styles/TextStyles"
 import MainButton from "../../components/buttons/MainButton"
-import WordAnimation from "../../components/animations/WordAnimation"
+import AnimatedRoles from "../../components/animations/AnimatedRoles"
+import { UilArrowDown } from "@iconscout/react-unicons"
 
 const Hero = props => {
   return (
@@ -10,9 +11,9 @@ const Hero = props => {
       <Background />
       <ContentWrapper>
         <TextWrapper>
-          <Title>Elliot C. Hannah</Title>
-          <Description>Full Stack Developer</Description>
-          <MainButton title="Download my resume" />
+          <Title>Elliot C. Hannah III</Title>
+          <AnimatedRoles />
+          <MainButton title="Download my resume" icon={<UilArrowDown />} />
         </TextWrapper>
       </ContentWrapper>
     </Wrapper>
@@ -28,19 +29,19 @@ const Wrapper = styled.div`
 const Background = styled.img`
   position: absolute;
   width: 100%;
-  height: 850px;
-  background: url("/images/backgrounds/hero-background.jpg");
-  background-size: cover;
-  transform: scaleX(-1);
+  height: 1000px;
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+
   z-index: -1;
 `
 
 const ContentWrapper = styled.div`
   max-width: 1234px;
   margin: 0 auto;
-  padding: 200px 30px;
+  padding: 300px 30px;
   display: grid;
-  grid-template-columns: 500px auto;
+  grid-template-columns: 550px auto;
 
   @media (max-width: 450px) {
     grid-template-columns: auto;
@@ -50,22 +51,9 @@ const ContentWrapper = styled.div`
 `
 
 const TextWrapper = styled.div`
-  max-width: 500px;
+  max-width: 550px;
   display: grid;
-  gap: 30px;
+  gap: 50px;
 `
 
 const Title = styled(H1)``
-
-const Description = styled(MediumText)``
-
-const MemojiWrapper = styled.div`
-  display: grid;
-  align-items: center;
-  justify-content: center;
-`
-
-const Memoji = styled.img`
-  height: 500px;
-  width: 500px;
-`

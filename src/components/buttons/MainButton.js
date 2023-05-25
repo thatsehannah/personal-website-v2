@@ -3,12 +3,11 @@ import styled from "styled-components"
 import { Caption2 } from "../../styles/TextStyles"
 
 const MainButton = props => {
-  const { title } = props
-
   return (
     <Wrapper>
       <TextWrapper>
-        <Title>{title}</Title>
+        <Title>{props.title}</Title>
+        <IconWrapper>{props.icon && props.icon}</IconWrapper>
       </TextWrapper>
     </Wrapper>
   )
@@ -45,10 +44,17 @@ const Wrapper = styled.div`
 `
 
 const TextWrapper = styled.div`
+  color: black;
   display: grid;
-  gap: 4px;
+  grid-template-columns: auto auto;
+  justify-items: center;
+  align-items: center;
+  gap: 7px;
 `
 
 const Title = styled(Caption2)`
-  color: black;
+  text-align: center;
+  justify-items: center;
 `
+
+const IconWrapper = styled.div``
