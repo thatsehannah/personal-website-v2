@@ -9,25 +9,20 @@ const Hero = props => {
   return (
     <Wrapper id="bigwrapper">
       <ContentWrapper id="contentwrapper">
-        <IntroWrapper id="introwrapper">
-          <LeftWrapper id="leftwrapper">
-            <TextWrapper id="textwrapper">
-              <Title>Hey, I'm Elliot 👋🏾</Title>
-              <AnimatedRoles />
-              <ButtonWrapper>
-                <MainButton
-                  title="Download my resume"
-                  icon={<UilArrowDown />}
-                />
-              </ButtonWrapper>
-            </TextWrapper>
-          </LeftWrapper>
-          <RightWrapper id="rightwrapper">
-            <MemojiWrapper id="memojiwrapper">
-              <Memoji src="/images/memojis/hero-memoji.png" />
-            </MemojiWrapper>
-          </RightWrapper>
-        </IntroWrapper>
+        <LeftWrapper id="leftwrapper">
+          <TextWrapper id="textwrapper">
+            <Title>Hey, I'm Elliot 👋🏾</Title>
+            <AnimatedRoles />
+            <ButtonWrapper>
+              <MainButton title="Download my resume" icon={<UilArrowDown />} />
+            </ButtonWrapper>
+          </TextWrapper>
+        </LeftWrapper>
+        <RightWrapper id="rightwrapper">
+          <MemojiWrapper id="memojiwrapper">
+            <Memoji src="/images/memojis/hero-memoji.png" />
+          </MemojiWrapper>
+        </RightWrapper>
       </ContentWrapper>
     </Wrapper>
   )
@@ -42,43 +37,45 @@ const Wrapper = styled.div`
 
 const ContentWrapper = styled.div`
   width: 1300px;
+  display: flex;
+  flex-direction: row;
   margin: 0 auto;
   padding: 200px 20px;
 
   @media (max-width: 450px) {
-    grid-template-columns: auto;
-    gap: 60px;
-    padding: 150px 20;
+    width: 100%;
+    flex-direction: column;
+    /* text-align: center; */
+    gap: 10px;
+    padding: 150px 20px;
   }
 `
 
 const LeftWrapper = styled.div`
-  display: grid;
-  align-items: center;
+  display: flex;
 `
 
 const RightWrapper = styled.div`
-  display: grid;
+  display: flex;
   align-items: center;
   justify-items: center;
 `
 
-const IntroWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  height: 450px;
-`
-
 const TextWrapper = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 40px;
 `
 
 const Title = styled(H2)``
 
 const ButtonWrapper = styled.div`
-  display: grid;
+  display: flex;
   justify-items: left;
+
+  @media (max-width: 450px) {
+    justify-content: center;
+  }
 `
 
 const animation = keyframes`
@@ -95,8 +92,13 @@ const animation = keyframes`
 `
 
 const MemojiWrapper = styled.div`
+  display: flex;
   opacity: 0;
   animation: ${animation} 1s forwards;
+
+  @media (max-width: 450px) {
+    justify-content: center;
+  }
 `
 
 const Memoji = styled.img`
@@ -106,5 +108,15 @@ const Memoji = styled.img`
 
   :hover {
     transform: scale(0.5);
+  }
+
+  @media (max-width: 768px) {
+    height: 50%;
+    width: 50%;
+  }
+
+  @media (max-width: 450px) {
+    height: 100%;
+    width: 100%;
   }
 `

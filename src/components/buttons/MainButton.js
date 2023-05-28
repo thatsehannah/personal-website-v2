@@ -16,8 +16,6 @@ const MainButton = props => {
 export default MainButton
 
 const Wrapper = styled.div`
-  width: 280px;
-  height: 77px;
   padding: 12px;
   background: #80d0c7;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
@@ -40,6 +38,10 @@ const Wrapper = styled.div`
       inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
     transform: translateY(-3px);
     cursor: pointer;
+  }
+
+  @media (max-width: 450px) {
+    width: 100%;
   }
 `
 

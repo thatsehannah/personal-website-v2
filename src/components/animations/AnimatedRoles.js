@@ -16,7 +16,6 @@ const FadeInOut = styled.span`
   display: inline-block;
   width: 300px;
   font-weight: 300;
-  text-align: center;
   ${({ fade }) =>
     fade === "fade-in"
       ? css`
@@ -25,6 +24,11 @@ const FadeInOut = styled.span`
       : css`
           animation: ${fadeOut} 1.75s;
         `}
+  @media (max-width: 450px) {
+    width: 200px;
+    text-align: left;
+    line-height: 2;
+  }
 `
 
 const AnimatedRoles = () => {
