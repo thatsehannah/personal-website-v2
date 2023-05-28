@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import styled, { keyframes, css } from "styled-components"
-import { H2 } from "../../styles/TextStyles"
+import { H1, H2 } from "../../styles/TextStyles"
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
@@ -14,9 +14,9 @@ const fadeOut = keyframes`
 
 const FadeInOut = styled.span`
   display: inline-block;
-  width: 200px;
+  width: 300px;
   font-weight: 300;
-  text-align: left;
+  text-align: center;
   ${({ fade }) =>
     fade === "fade-in"
       ? css`
@@ -50,9 +50,9 @@ const AnimatedRoles = () => {
   }, [])
 
   return (
-    <H2>
-      <FadeInOut fade={fade}>{roles[wordOrder]}</FadeInOut> Developer
-    </H2>
+    <H1>
+      I'm a <FadeInOut fade={fade}>{roles[wordOrder]}</FadeInOut> Developer
+    </H1>
   )
 }
 
