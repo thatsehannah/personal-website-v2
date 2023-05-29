@@ -16,11 +16,8 @@ const MainButton = props => {
 export default MainButton
 
 const Wrapper = styled.div`
-  padding: 12px;
+  padding: 16px;
   background: #80d0c7;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
-    0px 20px 40px rgba(0, 147, 233, 0.2),
-    inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
   border-radius: 50px;
   display: grid;
   align-items: center;
@@ -36,7 +33,7 @@ const Wrapper = styled.div`
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
       0px 30px 60px rgba(0, 147, 233, 0.5),
       inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
-    transform: translateY(-3px);
+    transform: translateY(10px);
     cursor: pointer;
   }
 

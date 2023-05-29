@@ -11,6 +11,9 @@ const Hero = props => {
       <ContentWrapper id="contentwrapper">
         <LeftWrapper id="leftwrapper">
           <TextWrapper id="textwrapper">
+            <MobileMemojiWrapper>
+              <Memoji src="/images/memojis/hero-memoji.png" />
+            </MobileMemojiWrapper>
             <Title>Hey, I'm Elliot 👋🏾</Title>
             <AnimatedRoles />
             <ButtonWrapper>
@@ -18,6 +21,7 @@ const Hero = props => {
             </ButtonWrapper>
           </TextWrapper>
         </LeftWrapper>
+        <Underline />
         <RightWrapper id="rightwrapper">
           <MemojiWrapper id="memojiwrapper">
             <Memoji src="/images/memojis/hero-memoji.png" />
@@ -32,7 +36,6 @@ export default Hero
 
 const Wrapper = styled.div`
   position: relative;
-  height: auto;
 `
 
 const ContentWrapper = styled.div`
@@ -40,14 +43,15 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  padding: 200px 20px;
+  gap: 20px;
+  padding: 180px 20px;
 
   @media (max-width: 450px) {
     width: 100%;
     flex-direction: column;
     /* text-align: center; */
-    gap: 10px;
-    padding: 150px 20px;
+    gap: 5px;
+    padding: 100px 20px;
   }
 `
 
@@ -61,9 +65,19 @@ const RightWrapper = styled.div`
   justify-items: center;
 `
 
+const Underline = styled.hr`
+  display: none;
+
+  @media (max-width: 450px) {
+    display: block;
+    border: 1px solid #80d0c7;
+  }
+`
+
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 40px;
 `
 
@@ -97,18 +111,24 @@ const MemojiWrapper = styled.div`
   animation: ${animation} 1s forwards;
 
   @media (max-width: 450px) {
-    justify-content: center;
+    display: none;
+  }
+`
+
+const MobileMemojiWrapper = styled.div`
+  display: none;
+  opacity: 0;
+  animation: ${animation} 1s forwards;
+
+  @media (max-width: 450px) {
+    display: grid;
+    justify-items: center;
   }
 `
 
 const Memoji = styled.img`
   height: 100%;
   width: 100%;
-  transition: 0.5s ease-in;
-
-  :hover {
-    transform: scale(0.5);
-  }
 
   @media (max-width: 768px) {
     height: 50%;
@@ -116,7 +136,7 @@ const Memoji = styled.img`
   }
 
   @media (max-width: 450px) {
-    height: 100%;
-    width: 100%;
+    height: 265px;
+    width: 265px;
   }
 `
