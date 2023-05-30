@@ -8,7 +8,7 @@ import {
 } from "@iconscout/react-unicons"
 
 const SocialMediaBanner = () => {
-  const size = 40
+  const size = 30
   return (
     <Wrapper>
       <a
@@ -47,19 +47,18 @@ export default SocialMediaBanner
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  gap: 40px;
-  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-items: left;
   align-items: center;
   justify-content: space-between;
 
   a {
-    color: #80d0c7;
+    color: #0093e9;
     transition: 0.5s ease-out;
   }
 
   a:hover {
-    color: #0093e9;
     transform: scale(1.2);
   }
 `

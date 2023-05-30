@@ -15,10 +15,6 @@ const Logo = () => {
 export default Logo
 
 const Wrapper = styled.div`
-  background: rgba(255, 255, 255, 0.8);
-  width: 90px;
-  height: 90px;
-  border-radius: 16px;
   display: grid;
   align-items: center;
   transition: 0.5s;
