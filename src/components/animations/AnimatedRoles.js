@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import styled, { keyframes, css } from "styled-components"
-import { H1, H2 } from "../../styles/TextStyles"
+import { H1 } from "../../styles/TextStyles"
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
@@ -51,7 +51,7 @@ const AnimatedRoles = () => {
     }, wordChangeInterval)
 
     return () => clearInterval(intervalId)
-  }, [])
+  }, [roles.length, wordChangeInterval])
 
   return (
     <H1>

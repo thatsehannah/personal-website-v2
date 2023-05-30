@@ -4,6 +4,7 @@ import styled from "styled-components"
 import MenuButton from "../buttons/MenuButton"
 import { UilEnvelope } from "@iconscout/react-unicons"
 import Logo from "../logo/Logo"
+import HamburgerButton from "../buttons/HamburgerButton"
 
 const Header = () => {
   const menuOptions = [
@@ -31,7 +32,7 @@ const Header = () => {
         </LogoWrapper>
         <MenuWrapper count={menuOptions.length}>
           {menuOptions.map((item, i) => (
-            <MenuButton title={item.title} link={item.link} />
+            <MenuButton key={i} title={item.title} link={item.link} />
           ))}
         </MenuWrapper>
         <Email id="lilemail">
@@ -42,6 +43,9 @@ const Header = () => {
             elliotchannah@outlook.com
           </Title>
         </Email>
+        <HamburgerWrapper>
+          <HamburgerButton />
+        </HamburgerWrapper>
       </ContentWrapper>
     </Wrapper>
   )
@@ -61,10 +65,7 @@ const Wrapper = styled.div`
   z-index: 1;
 
   @media (max-width: 768px) {
-    top: 30px;
-  }
-  @media (max-width: 450px) {
-    padding: 0;
+    top: 25px;
   }
 
   a {
@@ -79,6 +80,11 @@ const ContentWrapper = styled.div`
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, auto);
+    width: 100%;
+  }
 `
 
 const LogoWrapper = styled.div`
@@ -94,14 +100,21 @@ const MenuWrapper = styled.div`
   gap: 24px;
   align-items: center;
   justify-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const Email = styled.div`
   display: grid;
   justify-items: right;
   align-items: center;
-
   text-align: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 const Title = styled.a`
   font-weight: normal;
@@ -120,5 +133,14 @@ const Title = styled.a`
   :hover {
     background: rgba(0, 0, 0, 0.1);
     transform: scale(1.2);
+  }
+`
+
+const HamburgerWrapper = styled.div`
+  padding-right: 20px;
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline-block;
   }
 `

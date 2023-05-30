@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { MediumText } from "../../styles/TextStyles"
 
 const MenuButton = props => {
-  const { title, link, icon } = props
+  const { title, link } = props
 
   return (
     <Link to={link}>

@@ -6,7 +6,6 @@ import {
   UilInstagram,
   UilFacebook,
 } from "@iconscout/react-unicons"
-import { Link } from "gatsby"
 
 const SocialMediaBanner = () => {
   const size = 40

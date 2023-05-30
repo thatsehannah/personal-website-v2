@@ -1,8 +1,8 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { H2 } from "../../styles/TextStyles"
-import MainButton from "../../components/buttons/MainButton"
-import AnimatedRoles from "../../components/animations/AnimatedRoles"
+import { H2 } from "../../../styles/TextStyles"
+import MainButton from "../../../components/buttons/MainButton"
+import AnimatedRoles from "../../../components/animations/AnimatedRoles"
 import { UilArrowDown } from "@iconscout/react-unicons"
 
 const Hero = props => {
@@ -11,9 +11,6 @@ const Hero = props => {
       <ContentWrapper id="contentwrapper">
         <LeftWrapper id="leftwrapper">
           <TextWrapper id="textwrapper">
-            <MobileMemojiWrapper>
-              <Memoji src="/images/memojis/hero-memoji.png" />
-            </MobileMemojiWrapper>
             <Title>Hey, I'm Elliot 👋🏾</Title>
             <AnimatedRoles />
             <ButtonWrapper>
@@ -21,7 +18,6 @@ const Hero = props => {
             </ButtonWrapper>
           </TextWrapper>
         </LeftWrapper>
-        <Underline />
         <RightWrapper id="rightwrapper">
           <MemojiWrapper id="memojiwrapper">
             <Memoji src="/images/memojis/hero-memoji.png" />
@@ -36,6 +32,7 @@ export default Hero
 
 const Wrapper = styled.div`
   position: relative;
+  height: 100%;
 `
 
 const ContentWrapper = styled.div`
@@ -46,12 +43,11 @@ const ContentWrapper = styled.div`
   gap: 20px;
   padding: 180px 20px;
 
-  @media (max-width: 450px) {
+  @media (max-width: 768px) {
     width: 100%;
-    flex-direction: column;
-    /* text-align: center; */
+    flex-direction: column-reverse;
     gap: 5px;
-    padding: 100px 20px;
+    padding: 140px 20px;
   }
 `
 
@@ -63,14 +59,9 @@ const RightWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-items: center;
-`
 
-const Underline = styled.hr`
-  display: none;
-
-  @media (max-width: 450px) {
-    display: block;
-    border: 1px solid #80d0c7;
+  @media (max-width: 768px) {
+    justify-content: center;
   }
 `
 
@@ -87,7 +78,7 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-items: left;
 
-  @media (max-width: 450px) {
+  @media (max-width: 768px) {
     justify-content: center;
   }
 `
@@ -109,21 +100,6 @@ const MemojiWrapper = styled.div`
   display: flex;
   opacity: 0;
   animation: ${animation} 1s forwards;
-
-  @media (max-width: 450px) {
-    display: none;
-  }
-`
-
-const MobileMemojiWrapper = styled.div`
-  display: none;
-  opacity: 0;
-  animation: ${animation} 1s forwards;
-
-  @media (max-width: 450px) {
-    display: grid;
-    justify-items: center;
-  }
 `
 
 const Memoji = styled.img`
@@ -131,11 +107,6 @@ const Memoji = styled.img`
   width: 100%;
 
   @media (max-width: 768px) {
-    height: 50%;
-    width: 50%;
-  }
-
-  @media (max-width: 450px) {
     height: 265px;
     width: 265px;
   }
