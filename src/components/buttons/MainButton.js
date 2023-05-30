@@ -6,7 +6,7 @@ const MainButton = props => {
   return (
     <Wrapper>
       <TextWrapper>
-        <Title>{props.title}</Title>
+        <Title>{props.text}</Title>
         <IconWrapper>{props.icon && props.icon}</IconWrapper>
       </TextWrapper>
     </Wrapper>
@@ -16,7 +16,7 @@ const MainButton = props => {
 export default MainButton
 
 const Wrapper = styled.div`
-  padding: 16px;
+  padding: 24px;
   background: #80d0c7;
   border-radius: 50px;
   display: grid;

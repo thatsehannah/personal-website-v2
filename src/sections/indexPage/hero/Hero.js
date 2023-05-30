@@ -14,7 +14,7 @@ const Hero = props => {
             <Title>Hey, I'm Elliot 👋🏾</Title>
             <AnimatedRoles />
             <ButtonWrapper>
-              <MainButton title="Download my resume" icon={<UilArrowDown />} />
+              <MainButton text="Download my resume" icon={<UilArrowDown />} />
             </ButtonWrapper>
           </TextWrapper>
         </LeftWrapper>
@@ -32,7 +32,6 @@ export default Hero
 
 const Wrapper = styled.div`
   position: relative;
-  height: 100%;
 `
 
 const ContentWrapper = styled.div`
@@ -98,13 +97,13 @@ const animation = keyframes`
 
 const MemojiWrapper = styled.div`
   display: flex;
-  opacity: 0;
-  animation: ${animation} 1s forwards;
 `
 
 const Memoji = styled.img`
   height: 100%;
   width: 100%;
+  opacity: 0;
+  animation: ${animation} 1s forwards;
 
   @media (max-width: 768px) {
     height: 265px;
