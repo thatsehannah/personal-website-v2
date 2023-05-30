@@ -26,10 +26,9 @@ const IntroAbout = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <LeftSide ref={ref} id="leftside">
-          <Background id="leftside-background" />
+        <LeftSide ref={ref}>
+          <Background />
           <Memoji
-            id="memoji"
             src="/images/memojis/about-memoji.png"
             inView={isIntersecting}
           ></Memoji>

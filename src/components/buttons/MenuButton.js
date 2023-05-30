@@ -8,7 +8,7 @@ const MenuButton = props => {
 
   return (
     <Link to={link}>
-      <MenuItem id="menuitem" title={title}>
+      <MenuItem title={title}>
         <Title>{title}</Title>
       </MenuItem>
     </Link>

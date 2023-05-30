@@ -10,7 +10,7 @@ import {
 const SocialMediaBanner = () => {
   const size = 40
   return (
-    <Wrapper id="blah">
+    <Wrapper>
       <a
         href="https://github.com/thatsehannah"
         target="_blank"

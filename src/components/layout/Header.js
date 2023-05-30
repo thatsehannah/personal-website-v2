@@ -23,9 +23,9 @@ const Header = () => {
   ]
 
   return (
-    <Wrapper id="header">
-      <ContentWrapper id="contentwrapper">
-        <LogoWrapper id="logowrapper">
+    <Wrapper>
+      <ContentWrapper>
+        <LogoWrapper>
           <Link to="/">
             <Logo />
           </Link>
@@ -35,7 +35,7 @@ const Header = () => {
             <MenuButton key={i} title={item.title} link={item.link} />
           ))}
         </MenuWrapper>
-        <Email id="lilemail">
+        <Email>
           <Title href="mailto:elliotchannah@outlook.com">
             <span>
               <UilEnvelope color="#0093e9" size="20" />

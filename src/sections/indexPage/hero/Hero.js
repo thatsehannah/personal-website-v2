@@ -5,12 +5,12 @@ import MainButton from "../../../components/buttons/MainButton"
 import AnimatedRoles from "../../../components/animations/AnimatedRoles"
 import { UilArrowDown } from "@iconscout/react-unicons"
 
-const Hero = props => {
+const Hero = () => {
   return (
-    <Wrapper id="bigwrapper">
-      <ContentWrapper id="contentwrapper">
-        <LeftWrapper id="leftwrapper">
-          <TextWrapper id="textwrapper">
+    <Wrapper>
+      <ContentWrapper>
+        <LeftWrapper>
+          <TextWrapper>
             <Title>Hey, I'm Elliot 👋🏾</Title>
             <AnimatedRoles />
             <ButtonWrapper>
@@ -18,8 +18,8 @@ const Hero = props => {
             </ButtonWrapper>
           </TextWrapper>
         </LeftWrapper>
-        <RightWrapper id="rightwrapper">
-          <MemojiWrapper id="memojiwrapper">
+        <RightWrapper>
+          <MemojiWrapper>
             <Memoji src="/images/memojis/hero-memoji.png" />
           </MemojiWrapper>
         </RightWrapper>
