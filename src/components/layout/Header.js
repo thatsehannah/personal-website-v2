@@ -18,23 +18,24 @@ const Header = () => {
         </LogoWrapper>
         <MenuWrapper count={menuOptions.length}>
           {menuOptions.map((item, i) => (
-            <MenuButton
-              key={i}
-              title={item.title}
-              link={item.link}
-              color="#0093e9"
-              hoverColor="#80d0c7"
-            />
+            <Link to={item.link} key={i}>
+              <MenuButton
+                title={item.title}
+                color="#0093e9"
+                hoverColor="#80d0c7"
+              />
+            </Link>
           ))}
         </MenuWrapper>
         <EmailWrapper>
-          <MenuButton
-            title="elliotchannah@outlook.com"
-            link="mailto:elliotchannah@outlook.com"
-            icon={<UilEnvelope color="#0093e9" size="22" />}
-            color="#0093e9"
-            hoverColor="#80d0c7"
-          />
+          <a href="mailto:elliotchannah@outlook.com">
+            <MenuButton
+              title="elliotchannah@outlook.com"
+              icon={<UilEnvelope color="#0093e9" size="22" />}
+              color="#0093e9"
+              hoverColor="#80d0c7"
+            />
+          </a>
         </EmailWrapper>
         <HamburgerWrapper>
           <HamburgerButton />

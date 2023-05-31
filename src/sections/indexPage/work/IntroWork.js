@@ -9,7 +9,7 @@ const IntroWork = () => {
   return (
     <div>
       {sliced.map(({ node, index }) => (
-        <p key={index}>{node.title}</p>
+        <p key={node.title}>{node.title}</p>
       ))}
     </div>
   )

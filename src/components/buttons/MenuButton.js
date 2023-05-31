@@ -1,18 +1,15 @@
-import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import { MediumText } from "../../styles/TextStyles"
 
 const MenuButton = props => {
-  const { title, link, icon, color, hoverColor } = props
+  const { title, icon, color, hoverColor } = props
 
   return (
-    <Link to={link}>
-      <MenuItem color={color} hoverColor={hoverColor} icon={icon}>
-        {icon && <span>{icon}</span>}
-        <Title>{title}</Title>
-      </MenuItem>
-    </Link>
+    <MenuItem color={color} hoverColor={hoverColor} icon={icon}>
+      {icon && <span>{icon}</span>}
+      <Title>{title}</Title>
+    </MenuItem>
   )
 }
 

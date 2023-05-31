@@ -28,33 +28,35 @@ const Footer = () => {
           <Title>Pages</Title>
           <MenuWrapper count={menuOptions.length} id="menuwrapper">
             {menuOptions.map((item, i) => (
-              <MenuButton
-                key={i}
-                title={item.title}
-                link={item.link}
-                color="rgba(0,0,0,0.5)"
-                hoverColor="rgb(0,0,0)"
-              />
+              <Link to={item.link} key={i}>
+                <MenuButton
+                  title={item.title}
+                  color="rgba(0,0,0,0.5)"
+                  hoverColor="rgb(0,0,0)"
+                />
+              </Link>
             ))}
           </MenuWrapper>
         </PagesWrapper>
         <ContactWrapper>
           <Title>Contact Me</Title>
           <LinksWrapper>
-            <MenuButton
-              title="elliotchannah@outlook.com"
-              link="mailto:elliotchannah@outlook.com"
-              icon={<UilEnvelope color="rgba(0,0,0,0.5)" size="20" />}
-              color="rgba(0,0,0,0.5)"
-              hoverColor="rgb(0,0,0)"
-            />
-            <MenuButton
-              title="(706) 631 - 7005"
-              link="tel:(706)631-7005"
-              icon={<UilMobileVibrate color="rgba(0,0,0,0.5)" size="20" />}
-              color="rgba(0,0,0,0.5)"
-              hoverColor="rgb(0,0,0)"
-            />
+            <a href="mailto:elliotchannah@outlook.com">
+              <MenuButton
+                title="elliotchannah@outlook.com"
+                icon={<UilEnvelope color="rgba(0,0,0,0.5)" size="20" />}
+                color="rgba(0,0,0,0.5)"
+                hoverColor="rgb(0,0,0)"
+              />
+            </a>
+            <a href="tel:(706)631-7005">
+              <MenuButton
+                title="(706) 631 - 7005"
+                icon={<UilMobileVibrate color="rgba(0,0,0,0.5)" size="20" />}
+                color="rgba(0,0,0,0.5)"
+                hoverColor="rgb(0,0,0)"
+              />
+            </a>
           </LinksWrapper>
         </ContactWrapper>
       </ContentWrapper>
