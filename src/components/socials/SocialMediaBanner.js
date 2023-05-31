@@ -7,10 +7,10 @@ import {
   UilFacebook,
 } from "@iconscout/react-unicons"
 
-const SocialMediaBanner = () => {
+const SocialMediaBanner = props => {
   const size = 30
   return (
-    <Wrapper>
+    <Wrapper color={props.color}>
       <a
         href="https://github.com/thatsehannah"
         target="_blank"
@@ -26,7 +26,7 @@ const SocialMediaBanner = () => {
         <UilLinkedin size={size} />
       </a>
       <a
-        href="https://instagram.com/in/thatsehannah"
+        href="https://instagram.com/thatsehannah"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
 
   a {
-    color: #0093e9;
+    color: ${props => props.color};
     transition: 0.5s ease-out;
   }
 

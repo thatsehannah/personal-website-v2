@@ -24,8 +24,6 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 450px) {
-    width: 50px;
-    height: 50px;
     border-radius: 5px;
   }
 `

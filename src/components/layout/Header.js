@@ -5,23 +5,9 @@ import MenuButton from "../buttons/MenuButton"
 import { UilEnvelope } from "@iconscout/react-unicons"
 import Logo from "../logo/Logo"
 import HamburgerButton from "../buttons/HamburgerButton"
+import { menuOptions } from "../../data/menuOptions"
 
 const Header = () => {
-  const menuOptions = [
-    {
-      title: "About",
-      link: "/about",
-    },
-    {
-      title: "Portfolio",
-      link: "/portfolio",
-    },
-    {
-      title: "Contact",
-      link: "/contact",
-    },
-  ]
-
   return (
     <Wrapper>
       <ContentWrapper>
@@ -32,17 +18,24 @@ const Header = () => {
         </LogoWrapper>
         <MenuWrapper count={menuOptions.length}>
           {menuOptions.map((item, i) => (
-            <MenuButton key={i} title={item.title} link={item.link} />
+            <MenuButton
+              key={i}
+              title={item.title}
+              link={item.link}
+              color="#0093e9"
+              hoverColor="#80d0c7"
+            />
           ))}
         </MenuWrapper>
-        <Email>
-          <Title href="mailto:elliotchannah@outlook.com">
-            <span>
-              <UilEnvelope color="#0093e9" size="20" />
-            </span>{" "}
-            elliotchannah@outlook.com
-          </Title>
-        </Email>
+        <EmailWrapper>
+          <MenuButton
+            title="elliotchannah@outlook.com"
+            link="mailto:elliotchannah@outlook.com"
+            icon={<UilEnvelope color="#0093e9" size="22" />}
+            color="#0093e9"
+            hoverColor="#80d0c7"
+          />
+        </EmailWrapper>
         <HamburgerWrapper>
           <HamburgerButton />
         </HamburgerWrapper>
@@ -66,11 +59,6 @@ const Wrapper = styled.div`
 
   @media (max-width: 768px) {
     top: 25px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #0093e9;
   }
 `
 
@@ -106,7 +94,7 @@ const MenuWrapper = styled.div`
   }
 `
 
-const Email = styled.div`
+const EmailWrapper = styled.div`
   display: grid;
   justify-items: right;
   align-items: center;
@@ -123,6 +111,7 @@ const Title = styled.a`
   padding: 10px;
   transition: 0.5s ease-out;
   border-radius: 10px;
+  color: #0093e9;
 
   span {
     display: inline-block;
