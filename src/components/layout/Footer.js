@@ -25,7 +25,7 @@ const Footer = () => {
           <SocialMediaBanner color="rgb(0,0,0)" />
         </Main>
         <PagesWrapper>
-          <Title>PAGES</Title>
+          <Title>Pages</Title>
           <MenuWrapper count={menuOptions.length} id="menuwrapper">
             {menuOptions.map((item, i) => (
               <MenuButton
@@ -39,7 +39,7 @@ const Footer = () => {
           </MenuWrapper>
         </PagesWrapper>
         <ContactWrapper>
-          <Title>CONTACT ME</Title>
+          <Title>Contact Me</Title>
           <LinksWrapper>
             <MenuButton
               title="elliotchannah@outlook.com"
