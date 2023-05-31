@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 const IntroWork = () => {
+  //for future reference: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
   const workData = useStaticQuery(graphql`
     query MyQuery {
       allWork {
