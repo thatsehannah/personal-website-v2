@@ -32,21 +32,26 @@ export default Hero
 
 const Wrapper = styled.div`
   position: relative;
+  width: 100%;
+  padding: 80px 20px 160px;
+
+  @media (max-width: 768px) {
+    padding: 0px 20px 140px;
+  }
 `
 
 const ContentWrapper = styled.div`
   width: 1300px;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
-  margin: 0 auto;
+  justify-content: space-between;
   gap: 20px;
-  padding: 180px 20px;
 
   @media (max-width: 768px) {
     width: 100%;
     flex-direction: column-reverse;
     gap: 5px;
-    padding: 140px 20px;
   }
 `
 

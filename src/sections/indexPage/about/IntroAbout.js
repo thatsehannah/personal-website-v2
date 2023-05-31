@@ -58,17 +58,18 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  width: 1300px;
   padding: 60px 20px;
 
   @media (max-width: 768px) {
-    width: 100%;
+    padding: 0px 20px 100px;
   }
 `
 
 const ContentWrapper = styled.div`
   display: flex;
+  width: 1300px;
+  margin: 0 auto;
+
   gap: 60px;
 
   @media (max-width: 768px) {

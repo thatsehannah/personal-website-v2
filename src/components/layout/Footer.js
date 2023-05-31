@@ -40,7 +40,7 @@ const Footer = () => {
         </PagesWrapper>
         <ContactWrapper>
           <Title>CONTACT ME</Title>
-          <AnchorWrapper id="anchorwrapper">
+          <LinksWrapper>
             <MenuButton
               title="elliotchannah@outlook.com"
               link="mailto:elliotchannah@outlook.com"
@@ -55,7 +55,7 @@ const Footer = () => {
               color="rgba(0,0,0,0.5)"
               hoverColor="rgb(0,0,0)"
             />
-          </AnchorWrapper>
+          </LinksWrapper>
         </ContactWrapper>
       </ContentWrapper>
     </Wrapper>
@@ -66,11 +66,10 @@ export default Footer
 
 const Wrapper = styled.div`
   display: grid;
-
   justify-items: center;
   align-items: center;
   width: 100%;
-  padding: 0 30px;
+  padding: 30px;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 `
 
@@ -79,7 +78,7 @@ const ContentWrapper = styled.div`
   grid-template-columns: repeat(3, 350px);
   justify-content: space-between;
   width: 1300px;
-  padding: 100px 0;
+  /* padding: 100px 0; */
 
   @media (max-width: 768px) {
     padding: 50px 0;
@@ -91,7 +90,6 @@ const ContentWrapper = styled.div`
 
 const Column = styled.div`
   display: grid;
-  padding-left: 20px;
   gap: 20px;
 
   @media (max-width: 768px) {
@@ -142,30 +140,10 @@ const ContactWrapper = styled(Column)`
   }
 `
 
-const AnchorWrapper = styled.div`
+const LinksWrapper = styled.div`
   display: grid;
   align-items: start;
   justify-items: start;
   align-content: start;
   gap: 20px;
-`
-
-const Anchor = styled.a`
-  display: inline-block;
-  font-weight: normal;
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 1rem;
-  transition: 0.5s ease-out;
-  border-radius: 10px;
-
-  span {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
-
-  :hover {
-    background: rgba(0, 0, 0, 0.1);
-    transform: scale(1.2);
-  }
 `

@@ -47,18 +47,15 @@ const Header = () => {
 export default Header
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 30px;
   margin: 0 auto;
   display: grid;
   width: 100%;
-  padding: 0 30px;
+  padding: 30px;
   justify-items: center;
   align-items: center;
-  z-index: 1;
 
   @media (max-width: 768px) {
-    top: 25px;
+    padding: 20px;
   }
 `
 
@@ -76,7 +73,6 @@ const ContentWrapper = styled.div`
 `
 
 const LogoWrapper = styled.div`
-  padding-left: 20px;
   display: grid;
   justify-items: left;
   justify-content: left;
@@ -104,29 +100,8 @@ const EmailWrapper = styled.div`
     display: none;
   }
 `
-const Title = styled.a`
-  font-weight: normal;
-  font-size: 1rem;
-  text-align: center;
-  padding: 10px;
-  transition: 0.5s ease-out;
-  border-radius: 10px;
-  color: #0093e9;
-
-  span {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 5px;
-  }
-
-  :hover {
-    background: rgba(0, 0, 0, 0.1);
-    transform: scale(1.2);
-  }
-`
 
 const HamburgerWrapper = styled.div`
-  padding-right: 20px;
   display: none;
 
   @media (max-width: 768px) {
