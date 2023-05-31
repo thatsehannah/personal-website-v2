@@ -3,6 +3,7 @@ import Layout from "../components/layout/layout"
 import Seo from "../components/layout/seo"
 import Hero from "../sections/indexPage/hero/Hero"
 import IntroAbout from "../sections/indexPage/about/IntroAbout"
+import IntroWork from "../sections/indexPage/work/IntroWork"
 
 function IndexPage() {
   return (
@@ -10,6 +11,7 @@ function IndexPage() {
       <Seo title="Home" />
       <Hero />
       <IntroAbout />
+      <IntroWork />
     </Layout>
   )
 }

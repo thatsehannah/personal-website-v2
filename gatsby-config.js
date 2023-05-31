@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `E. Hannah`,
@@ -15,6 +17,19 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-firestore-easy`,
+      options: {
+        adminCredential: {
+          credential: require(process.env.FIREBASE_KEY_URL),
+          databaseURL: process.env.FIREBASE_DATABASE_URL,
+        },
+        collections: [
+          { collection: "work", orderBy: [["end", "desc"]] },
+          { collection: "education", orderBy: [["end", "desc"]] },
+        ],
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
