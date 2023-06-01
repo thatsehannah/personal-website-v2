@@ -12,11 +12,7 @@ const IntroWork = () => {
   return (
     <Wrapper>
       <ContentWrapper id="contentwrapper">
-        <TitleWrapper>
-          <H3Wrapper>
-            <H3>Here's my recent experience</H3>
-          </H3Wrapper>
-        </TitleWrapper>
+        <Title>Here's my recent experience</Title>
         <WorkWrapper>
           {sliced.map(({ node }) => (
             <Card
@@ -61,20 +57,10 @@ const ContentWrapper = styled.div`
   }
 `
 
-const TitleWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto;
-  justify-content: space-between;
-
+const Title = styled(H3)`
   @media (max-width: 768px) {
-    gap: 20px;
-    justify-content: center;
+    text-align: center;
   }
-`
-
-const H3Wrapper = styled.div`
-  display: grid;
-  align-items: center;
 `
 
 const SeeMoreWrapper = styled.div`

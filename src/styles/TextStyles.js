@@ -30,20 +30,20 @@ export const H3 = styled.h3`
 
 export const BodyIntro = styled.p`
   font-weight: 500;
-  font-size: 1.9rem;
+  font-size: 1.75rem;
   line-height: 140%;
 `
 
 export const BodyMain = styled.p`
   font-weight: normal;
   font-size: 1.25rem;
-  line-height: 140%;
+  line-height: 1.8;
 `
 
 export const MediumText = styled.p`
   font-weight: normal;
   font-size: 1.1rem;
-  line-height: 130%;
+  line-height: 1.8;
 `
 
 export const Caption = styled.p`

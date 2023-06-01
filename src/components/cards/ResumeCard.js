@@ -101,5 +101,6 @@ const SecondaryTextWrapper = styled.div`
 
 const SecondaryText = styled(MediumText)`
   font-size: 1rem;
+  line-height: 1.3;
   color: rgba(0, 0, 0, 0.6);
 `

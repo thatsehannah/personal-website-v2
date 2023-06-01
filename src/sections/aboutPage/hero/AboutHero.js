@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { H1, MediumText } from "../../../styles/TextStyles"
+import { H1, BodyMain } from "../../../styles/TextStyles"
 
 const AboutHero = () => {
   return (
@@ -15,12 +15,12 @@ const AboutHero = () => {
               The name's Elliot Hannah III, but you can call me{" "}
               <SpecialLetter>E</SpecialLetter>
             </H1>
-            <MediumText>
+            <BodyMain>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
               mattis nunc aliquam tincidunt est non. Viverra nec eu, in
               ridiculus egestas mi. Vulputate tristique porttitor enim aliquam
               ullamcorper. Velit dui laoreet in et mus.
-            </MediumText>
+            </BodyMain>
           </TextWrapper>
         </RightSide>
       </ContentWrapper>
@@ -43,24 +43,36 @@ const ContentWrapper = styled.div`
   width: 1300px;
   margin: 0 auto;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    grid-template-columns: auto;
+  }
 `
 
-const LeftSide = styled.div``
+const LeftSide = styled.div`
+  display: grid;
+  justify-content: center;
+`
 
 const RightSide = styled.div`
   display: flex;
   width: 550px;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 const Memoji = styled.img`
   height: 500px;
   position: relative;
-  top: -45px;
+  top: -55px;
 
   @media (max-width: 768px) {
-    height: 250px;
-    width: 250px;
+    height: 350px;
+    top: -60px;
   }
 `
 
