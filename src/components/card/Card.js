@@ -12,7 +12,6 @@ const Card = props => {
         <PositionWrapper>
           <Position>{props.position}</Position>
         </PositionWrapper>
-
         <Duration>
           {props.start} - {props.end}
         </Duration>
@@ -74,13 +73,14 @@ const Position = styled(H3)`
 const Duration = styled(Caption)`
   color: rgba(0, 0, 0, 0.6);
 `
-
+//for future reference: https://css-tricks.com/line-clampin/
 const DutyWrapper = styled.div`
   overflow: ${props => props.overflow && `hidden`};
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   transition: 0.5s ease-out;
+  backdrop-filter: blur(22px);
 
   :hover {
     display: grid;
@@ -90,7 +90,6 @@ const DutyWrapper = styled.div`
     transform: scale(1.2) translate(-50px, -10px);
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(22px);
     border-radius: 10px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.6);
   }
