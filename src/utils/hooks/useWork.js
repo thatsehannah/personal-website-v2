@@ -8,9 +8,11 @@ export const useWork = () => {
         edges {
           node {
             title
-            start(formatString: "MM/YYYY")
+            start(formatString: "MMM YYYY")
             position
-            end(formatString: "MM/YYYY")
+            end(formatString: "MMM YYYY")
+            logo
+            duties
           }
         }
       }
