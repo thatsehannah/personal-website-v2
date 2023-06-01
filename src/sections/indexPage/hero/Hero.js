@@ -30,7 +30,7 @@ const Hero = () => {
 
 export default Hero
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   position: relative;
   width: 100%;
   padding: 80px 20px 160px;

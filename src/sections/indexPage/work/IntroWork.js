@@ -42,7 +42,7 @@ const IntroWork = () => {
 
 export default IntroWork
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
