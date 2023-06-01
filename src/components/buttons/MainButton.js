@@ -37,7 +37,7 @@ const Wrapper = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 `

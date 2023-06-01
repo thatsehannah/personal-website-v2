@@ -17,7 +17,7 @@ const Card = props => {
           {props.start} - {props.end}
         </Duration>
       </EmphasisWrapper>
-      <DutyWrapper>
+      <DutyWrapper overflow={props.overflow}>
         <Duty>{props.duties}</Duty>
       </DutyWrapper>
     </Wrapper>
@@ -35,6 +35,11 @@ const Wrapper = styled.div`
   background-color: rgb(239, 239, 240);
   border-radius: 20px;
   padding: 25px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `
 
 const LogoWrapper = styled.div`
@@ -51,6 +56,11 @@ const EmphasisWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
+
+  @media (max-width: 450px) {
+    grid-template-columns: auto;
+    gap: 10px;
+  }
 `
 
 const PositionWrapper = styled.div`
@@ -66,10 +76,28 @@ const Duration = styled(Caption)`
 `
 
 const DutyWrapper = styled.div`
-  overflow: hidden;
+  overflow: ${props => props.overflow && `hidden`};
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  transition: 0.5s ease-out;
+
+  :hover {
+    display: grid;
+    overflow: visible;
+    height: auto;
+    padding: 10px;
+    transform: scale(1.2) translate(-50px, -10px);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(22px);
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    pointer-events: none;
+  }
 `
 
 const Duty = styled(MediumText)`

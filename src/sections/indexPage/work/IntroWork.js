@@ -20,6 +20,7 @@ const IntroWork = () => {
         <WorkWrapper>
           {sliced.map(({ node }) => (
             <Card
+              overflow={true}
               key={node.id}
               logo={node.logo}
               position={node.position}
