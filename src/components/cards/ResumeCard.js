@@ -9,16 +9,16 @@ const Card = props => {
         <WorkLogo src={props.logo} />
       </LogoWrapper>
       <EmphasisWrapper>
-        <PositionWrapper>
-          <Position>{props.position}</Position>
-        </PositionWrapper>
+        <TitleWrapper>
+          <Title>{props.title}</Title>
+        </TitleWrapper>
         <Duration>
           {props.start} - {props.end}
         </Duration>
       </EmphasisWrapper>
-      <DutyWrapper overflow={props.overflow}>
-        <Duty>{props.duties}</Duty>
-      </DutyWrapper>
+      <SecondaryTextWrapper overflow={props.overflow}>
+        <SecondaryText>{props.secondaryText}</SecondaryText>
+      </SecondaryTextWrapper>
     </Wrapper>
   )
 }
@@ -62,11 +62,11 @@ const EmphasisWrapper = styled.div`
   }
 `
 
-const PositionWrapper = styled.div`
+const TitleWrapper = styled.div`
   width: 270px;
 `
 
-const Position = styled(H3)`
+const Title = styled(H3)`
   font-size: 1.2rem;
 `
 
@@ -74,12 +74,12 @@ const Duration = styled(Caption)`
   color: rgba(0, 0, 0, 0.6);
 `
 //for future reference: https://css-tricks.com/line-clampin/
-const DutyWrapper = styled.div`
+const SecondaryTextWrapper = styled.div`
   overflow: ${props => props.overflow && `hidden`};
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  transition: 0.5s ease-out;
+  transition: 0.2s ease-out;
   backdrop-filter: blur(22px);
 
   :hover {
@@ -91,7 +91,7 @@ const DutyWrapper = styled.div`
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 768px) {
@@ -99,8 +99,7 @@ const DutyWrapper = styled.div`
   }
 `
 
-const Duty = styled(MediumText)`
+const SecondaryText = styled(MediumText)`
   font-size: 1rem;
   color: rgba(0, 0, 0, 0.6);
-  /* text-overflow: ellipsis; */
 `

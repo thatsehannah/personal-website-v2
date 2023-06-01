@@ -7,7 +7,7 @@ export const useWork = () => {
       allWork {
         edges {
           node {
-            title
+            uid
             start(formatString: "MMM YYYY")
             position
             end(formatString: "MMM YYYY")

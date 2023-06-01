@@ -1,7 +1,7 @@
 import React from "react"
 import { useWork } from "../../../utils/hooks/useWork"
 import styled from "styled-components"
-import Card from "../../../components/card/Card"
+import Card from "../../../components/cards/ResumeCard"
 import { H3 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 
@@ -20,11 +20,11 @@ const IntroWork = () => {
         <WorkWrapper>
           {sliced.map(({ node }) => (
             <Card
-              overflow={true}
-              key={node.id}
+              overflow={"true"}
+              key={node.uid}
               logo={node.logo}
-              position={node.position}
-              duties={node.duties}
+              title={node.position}
+              secondaryText={node.duties}
               start={node.start}
               end={node.end}
             />
