@@ -35,13 +35,13 @@ const IntroAbout = () => {
         </LeftSide>
         <RightSide>
           <TextWrapper id="textwrapper">
-            <Title>About Me</Title>
-            <BodyText>
+            <H3>About Me</H3>
+            <BodyMain>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
               mattis nunc aliquam tincidunt est non. Viverra nec eu, in
               ridiculus egestas mi. Vulputate tristique porttitor enim aliquam
               ullamcorper. Velit dui laoreet in et mus.
-            </BodyText>
+            </BodyMain>
             <ButtonWrapper>
               <MainButton text="Learn More About Me" />
             </ButtonWrapper>
@@ -156,10 +156,6 @@ const TextWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
 `
-
-const Title = styled(H3)``
-
-const BodyText = styled(BodyMain)``
 
 const ButtonWrapper = styled.div`
   display: flex;

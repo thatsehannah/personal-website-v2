@@ -3,9 +3,10 @@ import styled from "styled-components"
 export const H1 = styled.h1`
   font-weight: bold;
   font-size: 3.75rem;
+  line-height: 1;
 
   @media (max-width: 450px) {
-    font-size: 34px;
+    font-size: 3.25rem;
   }
 `
 
@@ -14,7 +15,7 @@ export const H2 = styled.h2`
   font-size: 2.5rem;
 
   @media (max-width: 450px) {
-    font-size: 28px;
+    font-size: 2rem;
   }
 `
 
