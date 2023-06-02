@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { BodyIntro, BodyMain, H3, MediumText } from "../../../styles/TextStyles"
+import { BodyIntro, BodyMain, H3 } from "../../../styles/TextStyles"
 
 const Story = () => {
   return (
@@ -54,7 +54,6 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   width: 1300px;
   margin: 0 auto;
-  overflow: hidden;
 
   @media (max-width: 768px) {
     width: 100%;

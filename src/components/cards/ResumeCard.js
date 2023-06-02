@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { H3, Caption, MediumText } from "../../styles/TextStyles"
 
-const Card = props => {
+const ResumeCard = props => {
   return (
     <Wrapper>
       <LogoWrapper>
@@ -23,7 +23,7 @@ const Card = props => {
   )
 }
 
-export default Card
+export default ResumeCard
 
 const Wrapper = styled.div`
   display: flex;
