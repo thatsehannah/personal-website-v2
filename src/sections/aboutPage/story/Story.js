@@ -27,9 +27,9 @@ const Story = () => {
           </TextWrapper>
         </LeftSide>
         <RightSide>
-          <MemojiWrapper>
+          {/* <MemojiWrapper>
             <Memoji src="/images/memojis/story-1.png" />
-          </MemojiWrapper>
+          </MemojiWrapper> */}
           <MemojiWrapper>
             <Memoji src="/images/memojis/story-2.png" />
           </MemojiWrapper>
