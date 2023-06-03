@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import { BodyIntro, BodyMain, H3 } from "../../../styles/TextStyles"
+import { BodyIntro, BodyMain, H2 } from "../../../styles/TextStyles"
+import Letter from "../../../components/special/Letter"
 
 const Story = () => {
   return (
@@ -8,7 +9,9 @@ const Story = () => {
       <ContentWrapper>
         <LeftSide>
           <TextWrapper>
-            <H3>A Little About Me</H3>
+            <H2>
+              A Little About <Letter />{" "}
+            </H2>
             <BodyWrapper>
               <BodyMain>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus

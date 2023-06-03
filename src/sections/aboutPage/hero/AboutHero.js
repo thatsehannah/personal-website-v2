@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { H1, BodyMain } from "../../../styles/TextStyles"
+import Letter from "../../../components/special/Letter"
 
 const AboutHero = () => {
   return (
@@ -13,7 +14,7 @@ const AboutHero = () => {
           <TextWrapper>
             <H1>
               The name's Elliot Hannah III, but you can call me{" "}
-              <SpecialLetter>E</SpecialLetter>
+              <Letter size={5.6} />
             </H1>
             <BodyMain>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
@@ -79,13 +80,4 @@ const Memoji = styled.img`
 const TextWrapper = styled.div`
   display: grid;
   gap: 20px;
-`
-
-const SpecialLetter = styled.span`
-  vertical-align: middle;
-  font-size: 5.6rem;
-  background: linear-gradient(180deg, #0093e9 0%, #80d0c7 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
 `

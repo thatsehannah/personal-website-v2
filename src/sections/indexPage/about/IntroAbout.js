@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import styled, { css, keyframes } from "styled-components"
-import { BodyMain, H3 } from "../../../styles/TextStyles"
+import { BodyMain, H2, H3 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 
 const IntroAbout = () => {
@@ -35,7 +35,7 @@ const IntroAbout = () => {
         </LeftSide>
         <RightSide>
           <TextWrapper id="textwrapper">
-            <H3>About Me</H3>
+            <H2>About Me</H2>
             <BodyMain>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
               mattis nunc aliquam tincidunt est non. Viverra nec eu, in

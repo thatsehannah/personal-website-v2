@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import MenuButton from "../buttons/MenuButton"
 import { UilEnvelope } from "@iconscout/react-unicons"
-import Logo from "../logo/Logo"
+import Logo from "../special/Logo"
 import HamburgerButton from "../buttons/HamburgerButton"
 import { menuOptions } from "../../data/menuOptions"
 

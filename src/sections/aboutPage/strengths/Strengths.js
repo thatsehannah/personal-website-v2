@@ -1,12 +1,13 @@
 import React, { useRef } from "react"
 import styled from "styled-components"
-import { H3 } from "../../../styles/TextStyles"
+import { H2, H3 } from "../../../styles/TextStyles"
 import { useStrength } from "../../../utils/hooks/useStrengths"
 import StrengthCard from "../../../components/cards/StrengthCard"
 import {
   UilAngleRightB as RightAngle,
   UilAngleLeftB as LeftAngle,
 } from "@iconscout/react-unicons"
+import Letter from "../../../components/special/Letter"
 
 const Strengths = () => {
   const strengthData = useStrength()
@@ -33,7 +34,7 @@ const Strengths = () => {
       <ContentWrapper>
         <TopWrapper>
           <TitleWrapper>
-            <Title>My Top 5 Strengths</Title>
+            <Title>Top 5 Strengths</Title>
           </TitleWrapper>
           <ButtonGroup>
             <Button onClick={handleScrollLeft}>
@@ -102,7 +103,7 @@ const TitleWrapper = styled.div`
   }
 `
 
-const Title = styled(H3)`
+const Title = styled(H2)`
   text-align: center;
 `
 

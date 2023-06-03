@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Logo from "../logo/Logo"
+import Logo from "../special/Logo"
 import { Link } from "gatsby"
 import { BodyMain, H3 } from "../../styles/TextStyles"
 import SocialMediaBanner from "../socials/SocialMediaBanner"

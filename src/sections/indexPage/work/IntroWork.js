@@ -2,7 +2,7 @@ import React from "react"
 import { useWork } from "../../../utils/hooks/useWork"
 import styled from "styled-components"
 import ResumeCard from "../../../components/cards/ResumeCard"
-import { H3 } from "../../../styles/TextStyles"
+import { H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 
 const IntroWork = () => {
@@ -57,7 +57,7 @@ const ContentWrapper = styled.div`
   }
 `
 
-const Title = styled(H3)`
+const Title = styled(H2)`
   @media (max-width: 768px) {
     text-align: center;
   }
