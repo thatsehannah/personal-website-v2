@@ -145,6 +145,10 @@ const StickyWrapper = styled.div`
   overflow-x: scroll;
   left: 0;
   scroll-behavior: smooth;
+  scrollbar-width: none; //for firefox
+  &::-webkit-scrollbar {
+    display: none;
+  }
   transition: scroll-left 0.3s ease-in-out;
 `
 
