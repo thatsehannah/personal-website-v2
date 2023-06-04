@@ -74,7 +74,7 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 `
 
@@ -129,19 +129,21 @@ const Background = styled.div`
   width: 90%;
   border-radius: 20px;
   background-color: rgba(128, 208, 199, 0.2);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const Memoji = styled.img`
   display: inline-block;
   height: 500px;
-  width: 500px;
   opacity: 0;
   transition: opacity 1s ease-in;
   ${props => (props.inView ? fadeInAnimation : fadeOutAnimation)}
 
   @media (max-width: 768px) {
-    height: 250px;
-    width: 250px;
+    height: 350px;
   }
 `
 

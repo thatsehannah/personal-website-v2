@@ -3,13 +3,18 @@ import styled from "styled-components"
 import { useWork } from "../../../utils/hooks/useWork"
 import { H2 } from "../../../styles/TextStyles"
 import ResumeCard from "../../../components/cards/ResumeCard"
+import Letter from "../../../components/special/Letter"
 
 const Work = () => {
   const workData = useWork()
   return (
     <Wrapper id="about-work">
+      <BackgroundSquare />
       <ContentWrapper>
-        <Title>Relevant experience</Title>
+        <Title>
+          Relevant <Letter />
+          xperience
+        </Title>
         <WorkWrapper>
           {workData.map(({ node }) => (
             <ResumeCard
@@ -34,7 +39,21 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   padding: 60px 20px;
+`
+
+const BackgroundSquare = styled.div`
+  position: absolute;
+  background-color: rgba(0, 147, 233, 0.05);
+  height: 50%;
+  width: 50%;
+  border-radius: 20px;
+  z-index: -1;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -70,5 +89,12 @@ const WorkWrapper = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     grid-template-columns: auto;
+
+    > :last-child {
+      margin-left: initial;
+      margin-right: initial;
+      grid-column-start: initial;
+      grid-column-end: initial;
+    }
   }
 `
