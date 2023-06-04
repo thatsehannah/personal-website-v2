@@ -10,7 +10,7 @@ const Story = () => {
         <LeftSide>
           <TextWrapper>
             <H2>
-              A Little About <Letter />{" "}
+              A Little About M<Letter />
             </H2>
             <BodyWrapper>
               <BodyMain>
@@ -30,12 +30,12 @@ const Story = () => {
           </TextWrapper>
         </LeftSide>
         <RightSide>
-          {/* <MemojiWrapper>
-            <Memoji src="/images/memojis/story-1.png" />
-          </MemojiWrapper> */}
           <MemojiWrapper>
-            <Memoji src="/images/memojis/story-2.png" />
+            <Memoji src="/images/memojis/story-1.png" />
           </MemojiWrapper>
+          {/* <MemojiWrapper>
+            <Memoji src="/images/memojis/story-2.png" />
+          </MemojiWrapper> */}
         </RightSide>
       </ContentWrapper>
     </Wrapper>

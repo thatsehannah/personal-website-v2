@@ -27,10 +27,6 @@ const Wrapper = styled.div`
   width: 500px;
   padding: 25px;
   border-radius: 24px;
-  background-color: ${props =>
-    props.rank % 2 === 0
-      ? "rgba(0, 147, 233, 0.2)"
-      : "rgba(128, 208, 199, 0.2)"};
 
   @media (max-width: 768px) {
     width: 400px;

@@ -4,6 +4,7 @@ import styled from "styled-components"
 import ResumeCard from "../../../components/cards/ResumeCard"
 import { H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
+import { Link } from "gatsby"
 
 const IntroWork = () => {
   const workData = useWork()
@@ -11,7 +12,7 @@ const IntroWork = () => {
 
   return (
     <Wrapper>
-      <ContentWrapper id="contentwrapper">
+      <ContentWrapper>
         <Title>Here's my recent experience</Title>
         <WorkWrapper>
           {sliced.map(({ node }) => (
@@ -28,7 +29,9 @@ const IntroWork = () => {
         </WorkWrapper>
         <SeeMoreWrapper>
           <ButtonWrapper>
-            <MainButton text="See More" />
+            <Link to="/about#about-work">
+              <MainButton text="See More" />
+            </Link>
           </ButtonWrapper>
         </SeeMoreWrapper>
       </ContentWrapper>

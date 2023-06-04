@@ -34,7 +34,11 @@ const Strengths = () => {
       <ContentWrapper>
         <TopWrapper>
           <TitleWrapper>
-            <Title>Top 5 Strengths</Title>
+            <Title>
+              My Top 5 Str
+              <Letter />
+              ngths
+            </Title>
           </TitleWrapper>
           <ButtonGroup>
             <Button onClick={handleScrollLeft}>
@@ -149,6 +153,14 @@ const ListWrapper = styled.div`
   gap: 60px;
   grid-template-columns: repeat(5, auto);
   height: 100%;
+
+  > :nth-child(even) {
+    background-color: rgba(0, 147, 233, 0.2);
+  }
+
+  > :nth-child(odd) {
+    background-color: rgba(128, 208, 199, 0.2);
+  }
 
   @media (max-width: 768px) {
     gap: 40px;

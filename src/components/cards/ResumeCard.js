@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   gap: 16px;
   background-color: rgb(239, 239, 240);
   border-radius: 20px;
-  padding: 25px;
+  padding: 20px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -76,6 +76,7 @@ const Duration = styled(Caption)`
 //for future reference: https://css-tricks.com/line-clampin/
 const SecondaryTextWrapper = styled.div`
   overflow: ${props => props.overflow && `hidden`};
+  /* height: 62px; */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -101,6 +102,6 @@ const SecondaryTextWrapper = styled.div`
 
 const SecondaryText = styled(MediumText)`
   font-size: 1rem;
-  line-height: 1.3;
+  line-height: 1.4;
   color: rgba(0, 0, 0, 0.6);
 `
