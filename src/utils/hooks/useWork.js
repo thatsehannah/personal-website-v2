@@ -2,9 +2,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 export const useWork = () => {
   //for future reference: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
-  const { allWork } = useStaticQuery(graphql`
+  const { allWorkData } = useStaticQuery(graphql`
     query WorkQuery {
-      allWork {
+      allWorkData {
         edges {
           node {
             uid
@@ -19,5 +19,5 @@ export const useWork = () => {
     }
   `)
 
-  return allWork.edges
+  return allWorkData.edges
 }

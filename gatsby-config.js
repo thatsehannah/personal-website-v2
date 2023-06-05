@@ -25,9 +25,16 @@ module.exports = {
           databaseURL: process.env.FIREBASE_DATABASE_URL,
         },
         collections: [
-          { collection: "work", orderBy: [["end", "desc"]] },
-          { collection: "strengths", orderBy: [["rank", "asc"]] },
-          { collection: "about-me" },
+          {
+            collection: "aboutMe",
+            type: "AboutMe",
+          },
+          { collection: "work", type: "WorkData", orderBy: [["end", "desc"]] },
+          {
+            collection: "strengths",
+            type: "StrengthData",
+            orderBy: [["rank", "asc"]],
+          },
         ],
       },
     },

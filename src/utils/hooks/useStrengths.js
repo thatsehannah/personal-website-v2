@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 export const useStrength = () => {
-  const { allStrengths } = useStaticQuery(graphql`
+  const { allStrengthData } = useStaticQuery(graphql`
     query StrengthQuery {
-      allStrengths {
+      allStrengthData {
         edges {
           node {
             description
@@ -16,5 +16,5 @@ export const useStrength = () => {
     }
   `)
 
-  return allStrengths.edges
+  return allStrengthData.edges
 }

@@ -2,8 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import { H1, BodyMain } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
+import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
 
 const AboutHero = () => {
+  const aboutHeroText = useAboutMeData("aboutHeroSection")
+  console.log(aboutHeroText)
   return (
     <Wrapper>
       <ContentWrapper>
