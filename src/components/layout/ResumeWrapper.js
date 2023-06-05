@@ -29,7 +29,7 @@ const WorkWrapper = styled.div`
   justify-content: space-evenly;
 
   ${props =>
-    props.count % 2 != 0 &&
+    props.count % 2 !== 0 &&
     `
     > :last-child {
     margin-left: auto;
@@ -44,7 +44,7 @@ const WorkWrapper = styled.div`
     grid-template-columns: auto;
 
     ${props =>
-      props.count % 2 != 0 &&
+      props.count % 2 !== 0 &&
       `
       > :last-child {
       margin-left: initial;

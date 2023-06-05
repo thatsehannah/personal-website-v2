@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { useWork } from "../../../utils/hooks/useWork"
 import { H2 } from "../../../styles/TextStyles"
-import ResumeCard from "../../../components/cards/ResumeCard"
 import Letter from "../../../components/special/Letter"
 import ResumeWrapper from "../../../components/layout/ResumeWrapper"
 

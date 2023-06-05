@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import styled from "styled-components"
-import { H2, H3 } from "../../../styles/TextStyles"
+import { H2 } from "../../../styles/TextStyles"
 import { useStrength } from "../../../utils/hooks/useStrengths"
 import StrengthCard from "../../../components/cards/StrengthCard"
 import {

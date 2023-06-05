@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import styled, { css, keyframes } from "styled-components"
-import { BodyMain, H2, H3 } from "../../../styles/TextStyles"
+import { BodyMain, H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 
 const IntroAbout = () => {
