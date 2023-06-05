@@ -12,7 +12,7 @@ const Work = () => {
       <BackgroundSquare />
       <ContentWrapper>
         <Title>
-          Work <Letter />
+          Professional <Letter />
           xperience 👨🏾‍💻
         </Title>
         <ResumeWrapper workData={workData} />

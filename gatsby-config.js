@@ -27,6 +27,7 @@ module.exports = {
         collections: [
           { collection: "work", orderBy: [["end", "desc"]] },
           { collection: "strengths", orderBy: [["rank", "asc"]] },
+          { collection: "about-me" },
         ],
       },
     },
