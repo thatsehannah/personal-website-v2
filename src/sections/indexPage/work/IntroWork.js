@@ -5,6 +5,7 @@ import ResumeCard from "../../../components/cards/ResumeCard"
 import { H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 import { Link } from "gatsby"
+import ResumeWrapper from "../../../components/layout/ResumeWrapper"
 
 const IntroWork = () => {
   const workData = useWork()
@@ -14,19 +15,7 @@ const IntroWork = () => {
     <Wrapper>
       <ContentWrapper>
         <Title>Here's my recent experience</Title>
-        <WorkWrapper>
-          {sliced.map(({ node }) => (
-            <ResumeCard
-              overflow={"true"}
-              key={node.uid}
-              logo={node.logo}
-              title={node.position}
-              secondaryText={node.duties}
-              start={node.start}
-              end={node.end}
-            />
-          ))}
-        </WorkWrapper>
+        <ResumeWrapper workData={sliced} />
         <SeeMoreWrapper>
           <ButtonWrapper>
             <Link to="/about#about-work">
@@ -73,16 +62,4 @@ const SeeMoreWrapper = styled.div`
 
 const ButtonWrapper = styled.div`
   width: 150px;
-`
-
-const WorkWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 40px;
-  justify-content: space-evenly;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    grid-template-columns: auto;
-  }
 `

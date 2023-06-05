@@ -4,6 +4,7 @@ import { useWork } from "../../../utils/hooks/useWork"
 import { H2 } from "../../../styles/TextStyles"
 import ResumeCard from "../../../components/cards/ResumeCard"
 import Letter from "../../../components/special/Letter"
+import ResumeWrapper from "../../../components/layout/ResumeWrapper"
 
 const Work = () => {
   const workData = useWork()
@@ -12,22 +13,10 @@ const Work = () => {
       <BackgroundSquare />
       <ContentWrapper>
         <Title>
-          Relevant <Letter />
-          xperience
+          Work <Letter />
+          xperience 👨🏾‍💻
         </Title>
-        <WorkWrapper>
-          {workData.map(({ node }) => (
-            <ResumeCard
-              overflow={"true"}
-              key={node.uid}
-              logo={node.logo}
-              title={node.position}
-              secondaryText={node.duties}
-              start={node.start}
-              end={node.end}
-            />
-          ))}
-        </WorkWrapper>
+        <ResumeWrapper workData={workData} />
       </ContentWrapper>
     </Wrapper>
   )
@@ -70,31 +59,4 @@ const ContentWrapper = styled.div`
 
 const Title = styled(H2)`
   text-align: center;
-`
-
-const WorkWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-
-  > :last-child {
-    margin-left: auto;
-    margin-right: auto;
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    grid-template-columns: auto;
-
-    > :last-child {
-      margin-left: initial;
-      margin-right: initial;
-      grid-column-start: initial;
-      grid-column-end: initial;
-    }
-  }
 `

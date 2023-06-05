@@ -37,7 +37,7 @@ const Strengths = () => {
             <Title>
               My Top 5 Str
               <Letter />
-              ngths
+              ngths 💪🏾
             </Title>
           </TitleWrapper>
           <ButtonGroup>
