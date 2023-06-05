@@ -26,7 +26,6 @@ module.exports = {
         },
         collections: [
           { collection: "work", orderBy: [["end", "desc"]] },
-          { collection: "education", orderBy: [["end", "desc"]] },
           { collection: "strengths", orderBy: [["rank", "asc"]] },
         ],
       },
