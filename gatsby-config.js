@@ -29,6 +29,10 @@ module.exports = {
             collection: "aboutMe",
             type: "AboutMe",
           },
+          {
+            collection: "stats",
+            type: "Stats",
+          },
           { collection: "work", type: "WorkData", orderBy: [["end", "desc"]] },
           {
             collection: "strengths",

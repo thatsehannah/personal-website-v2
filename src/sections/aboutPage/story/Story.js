@@ -1,16 +1,19 @@
 import React from "react"
 import styled from "styled-components"
-import { BodyIntro, BodyMain, H2 } from "../../../styles/TextStyles"
+import { BodyIntro, BodyMain, H2, H3 } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
 import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
+import { useStats } from "../../../utils/hooks/useStats"
 
 const Story = () => {
   let text =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus vivamus risus posuere vitae vivamus. Enim dui nibh magna hac id lacus euismod mi diam. Consequat elementum tincidunt egestas egestas orci. At facilisi ultrices tortor, volutpat varius sit vitae rhoncus. Ut nisi, feugiat leo aenean massa enim."
 
-  const data = useAboutMeData().find(edge => edge.node.for === "storySection")
-  if (data) {
-    text = data.node.text
+  const storyData = useAboutMeData().find(
+    edge => edge.node.for === "storySection"
+  )
+  if (storyData) {
+    text = storyData.node.text
   }
 
   let sentences = text.match(/[^.!?]+[.!?]+/g)
@@ -20,7 +23,7 @@ const Story = () => {
     paragraphs.push(paragraph)
   }
 
-  console.log(paragraphs)
+  const statsData = useStats()[0].node
 
   return (
     <Wrapper id="story">
@@ -31,15 +34,44 @@ const Story = () => {
               A Little About M<Letter />
             </H2>
             <BodyWrapper>
-              {paragraphs.map(paragraph => (
-                <BodyMain>{paragraph}</BodyMain>
+              {paragraphs.map((paragraph, index) => (
+                <BodyMain key={index}>{paragraph}</BodyMain>
               ))}
-              <BodyIntro>Stats</BodyIntro>
-              <BodyMain>
-                At facilisi ultrices tortor, volutpat varius sit vitae rhoncus.
-                Ut nisi, feugiat leo aenean massa enim. Sed accumsan, ac dictum
-                tempus luctus id in porttitor dictum.
-              </BodyMain>
+
+              <StatsWrapper>
+                <H3>Stats</H3>
+                <DataWrapper>
+                  <BodyMain>
+                    👨🏾 Full name is <StatText>{statsData.fullName}</StatText>{" "}
+                  </BodyMain>
+                  <BodyMain>
+                    📍 Lives in <StatText>{statsData.location}</StatText>{" "}
+                  </BodyMain>
+                  <BodyMain>
+                    🍜 Favorite food is <StatText>{statsData.favFood}</StatText>{" "}
+                  </BodyMain>
+                  <BodyMain>
+                    🎬 Favorite movie is{" "}
+                    <StatText>{statsData.favMovie}</StatText>{" "}
+                  </BodyMain>
+                  <BodyMain>
+                    🏀 Favorite NBA team is the{" "}
+                    <StatText>{statsData.favNba}</StatText>{" "}
+                  </BodyMain>
+                  <BodyMain>
+                    🏈 Favorite NFL team is the{" "}
+                    <StatText>{statsData.favNfl}</StatText>{" "}
+                  </BodyMain>
+                  <BodyMain>
+                    🎤 Favorite musician is{" "}
+                    <StatText>{statsData.favMusician}</StatText>{" "}
+                  </BodyMain>
+                  <BodyMain>
+                    ♑️ Fun fact:{" "}
+                    <LongStatText>{statsData.funFact}</LongStatText>{" "}
+                  </BodyMain>
+                </DataWrapper>
+              </StatsWrapper>
             </BodyWrapper>
           </TextWrapper>
         </LeftSide>
@@ -48,7 +80,10 @@ const Story = () => {
             <Memoji src="/images/memojis/story-1.png" />
           </MemojiWrapper>
           <MemojiWrapper>
-            <Memoji src="/images/memojis/story-2.png" />
+            <SpeciamMemoji src="/images/memojis/story-2.png" />
+          </MemojiWrapper>
+          <MemojiWrapper>
+            <Memoji src="/images/memojis/wink-memoji.png" />
           </MemojiWrapper>
         </RightSide>
       </ContentWrapper>
@@ -90,11 +125,44 @@ const BodyWrapper = styled.div`
   gap: 30px;
 `
 
-const RightSide = styled.div``
+const StatsWrapper = styled.div`
+  display: grid;
+  gap: 24px;
+  border: 0.5px solid black;
+  border-radius: 25px;
+  padding: 20px;
+`
+
+const DataWrapper = styled.div`
+  display: grid;
+  gap: 7px;
+`
+
+const StatText = styled.span`
+  font-weight: 600;
+  display: inline-block;
+  text-align: justify;
+  width: auto;
+  vertical-align: top;
+`
+
+const LongStatText = styled(StatText)`
+  width: 380px;
+
+  @media (max-width: 768px) {
+    width: 280px;
+  }
+`
+
+const RightSide = styled.div`
+  display: grid;
+  gap: 10px;
+`
 
 const MemojiWrapper = styled.div`
   display: grid;
   justify-content: center;
+  overflow: hidden;
 `
 
 const Memoji = styled.img`
@@ -104,4 +172,8 @@ const Memoji = styled.img`
   @media (max-width: 768px) {
     height: 350px;
   }
+`
+
+const SpeciamMemoji = styled(Memoji)`
+  top: -45px;
 `
