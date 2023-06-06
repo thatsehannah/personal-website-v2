@@ -2,8 +2,26 @@ import React from "react"
 import styled from "styled-components"
 import { BodyIntro, BodyMain, H2 } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
+import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
 
 const Story = () => {
+  let text =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus vivamus risus posuere vitae vivamus. Enim dui nibh magna hac id lacus euismod mi diam. Consequat elementum tincidunt egestas egestas orci. At facilisi ultrices tortor, volutpat varius sit vitae rhoncus. Ut nisi, feugiat leo aenean massa enim."
+
+  const data = useAboutMeData().find(edge => edge.node.for === "storySection")
+  if (data) {
+    text = data.node.text
+  }
+
+  let sentences = text.match(/[^.!?]+[.!?]+/g)
+  let paragraphs = []
+  for (let i = 0; i < sentences.length; i += 5) {
+    let paragraph = sentences.slice(i, i + 5).join(" ")
+    paragraphs.push(paragraph)
+  }
+
+  console.log(paragraphs)
+
   return (
     <Wrapper id="story">
       <ContentWrapper>
@@ -13,13 +31,9 @@ const Story = () => {
               A Little About M<Letter />
             </H2>
             <BodyWrapper>
-              <BodyMain>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus
-                vivamus risus posuere vitae vivamus. Enim dui nibh magna hac id
-                lacus euismod mi diam. Consequat elementum tincidunt egestas
-                egestas orci. At facilisi ultrices tortor, volutpat varius sit
-                vitae rhoncus. Ut nisi, feugiat leo aenean massa enim.
-              </BodyMain>
+              {paragraphs.map(paragraph => (
+                <BodyMain>{paragraph}</BodyMain>
+              ))}
               <BodyIntro>Stats</BodyIntro>
               <BodyMain>
                 At facilisi ultrices tortor, volutpat varius sit vitae rhoncus.
@@ -33,9 +47,9 @@ const Story = () => {
           <MemojiWrapper>
             <Memoji src="/images/memojis/story-1.png" />
           </MemojiWrapper>
-          {/* <MemojiWrapper>
+          <MemojiWrapper>
             <Memoji src="/images/memojis/story-2.png" />
-          </MemojiWrapper> */}
+          </MemojiWrapper>
         </RightSide>
       </ContentWrapper>
     </Wrapper>
