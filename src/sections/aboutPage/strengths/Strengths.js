@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import styled from "styled-components"
-import { H2 } from "../../../styles/TextStyles"
+import { Caption, H2 } from "../../../styles/TextStyles"
 import { useStrength } from "../../../utils/hooks/useStrengths"
 import StrengthCard from "../../../components/cards/StrengthCard"
 import {
@@ -60,6 +60,16 @@ const Strengths = () => {
             ))}
           </ListWrapper>
         </StickyWrapper>
+        <Source>
+          Source:{" "}
+          <a
+            href="https://test.high5test.com/test/02772b0e-2a15-4632-8c6a-47bf94180f1e"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            HIGH 5 TEST
+          </a>
+        </Source>
       </ContentWrapper>
     </Wrapper>
   )
@@ -169,4 +179,8 @@ const ListWrapper = styled.div`
     gap: 40px;
     padding: 20px;
   }
+`
+
+const Source = styled(Caption)`
+  text-align: right;
 `
