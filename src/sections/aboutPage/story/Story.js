@@ -67,8 +67,7 @@ const Story = () => {
                     <StatText>{statsData.favMusician}</StatText>{" "}
                   </BodyMain>
                   <BodyMain>
-                    ♑️ Fun fact:{" "}
-                    <LongStatText>{statsData.funFact}</LongStatText>{" "}
+                    ♑️ Fun fact: <StatText>{statsData.funFact}</StatText>{" "}
                   </BodyMain>
                 </DataWrapper>
               </StatsWrapper>
@@ -143,14 +142,11 @@ const StatText = styled.span`
   display: inline-block;
   text-align: justify;
   width: auto;
+  max-width: 380px;
   vertical-align: top;
-`
-
-const LongStatText = styled(StatText)`
-  width: 380px;
 
   @media (max-width: 768px) {
-    width: 280px;
+    max-width: 280px;
   }
 `
 
