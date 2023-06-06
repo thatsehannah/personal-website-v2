@@ -19,7 +19,7 @@ const AboutHero = () => {
         <RightSide>
           <TextWrapper>
             <H1>
-              The name's Elliot, but you can call me <Letter size={5.6} />
+              The name's Elliot, but you can call me <Letter />
             </H1>
             <BodyIntro>{text && text}</BodyIntro>
           </TextWrapper>
