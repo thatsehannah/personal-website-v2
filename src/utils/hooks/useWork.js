@@ -13,6 +13,7 @@ export const useWork = () => {
             end(formatString: "MMM YYYY")
             logo
             duties
+            url
           }
         }
       }

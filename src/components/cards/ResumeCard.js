@@ -6,7 +6,9 @@ const ResumeCard = props => {
   return (
     <Wrapper>
       <LogoWrapper>
-        <WorkLogo src={props.logo} />
+        <a href={props.url} target="_blank" rel="noreferrer">
+          <WorkLogo src={props.logo} />
+        </a>
       </LogoWrapper>
       <EmphasisWrapper>
         <TitleWrapper>
@@ -28,7 +30,7 @@ export default ResumeCard
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 480px;
+  width: 575px;
   height: 250px;
   gap: 16px;
   background-color: rgb(239, 239, 240);

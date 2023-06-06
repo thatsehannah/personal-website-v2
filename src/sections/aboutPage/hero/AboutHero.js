@@ -52,7 +52,6 @@ const ContentWrapper = styled.div`
 
 const LeftSide = styled.div`
   display: grid;
-  justify-content: center;
 `
 
 const RightSide = styled.div`

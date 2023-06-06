@@ -14,6 +14,7 @@ const ResumeWrapper = ({ workData }) => {
           secondaryText={node.duties}
           start={node.start}
           end={node.end}
+          url={node.url}
         />
       ))}
     </WorkWrapper>
@@ -26,7 +27,7 @@ const WorkWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   gap: 40px;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   ${props =>
     props.count % 2 !== 0 &&
