@@ -1,20 +1,18 @@
 import React from "react"
 import styled from "styled-components"
-import { BodyIntro, BodyMain, H2, H3 } from "../../../styles/TextStyles"
+import { BodyMain, H2, H3 } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
 import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
 import { useStats } from "../../../utils/hooks/useStats"
 
 const Story = () => {
-  let text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus vivamus risus posuere vitae vivamus. Enim dui nibh magna hac id lacus euismod mi diam. Consequat elementum tincidunt egestas egestas orci. At facilisi ultrices tortor, volutpat varius sit vitae rhoncus. Ut nisi, feugiat leo aenean massa enim."
-
   const storyData = useAboutMeData().find(
     edge => edge.node.for === "storySection"
   )
-  if (storyData) {
-    text = storyData.node.text
-  }
+
+  const text = storyData
+    ? storyData.node.text
+    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus vivamus risus posuere vitae vivamus. Enim dui nibh magna hac id lacus euismod mi diam."
 
   let sentences = text.match(/[^.!?]+[.!?]+/g)
   let paragraphs = []
@@ -23,7 +21,7 @@ const Story = () => {
     paragraphs.push(paragraph)
   }
 
-  const statsData = useStats()[0].node
+  const statsData = useStats()
 
   return (
     <Wrapper id="story">
@@ -41,34 +39,16 @@ const Story = () => {
               <StatsWrapper>
                 <H3>Stats</H3>
                 <DataWrapper>
-                  <BodyMain>
-                    👨🏾 Full name is <StatText>{statsData.fullName}</StatText>{" "}
-                  </BodyMain>
-                  <BodyMain>
-                    📍 Lives in <StatText>{statsData.location}</StatText>{" "}
-                  </BodyMain>
-                  <BodyMain>
-                    🍜 Favorite food is <StatText>{statsData.favFood}</StatText>{" "}
-                  </BodyMain>
-                  <BodyMain>
-                    🎬 Favorite movie is{" "}
-                    <StatText>{statsData.favMovie}</StatText>{" "}
-                  </BodyMain>
-                  <BodyMain>
-                    🏀 Favorite NBA team is the{" "}
-                    <StatText>{statsData.favNba}</StatText>{" "}
-                  </BodyMain>
-                  <BodyMain>
-                    🏈 Favorite NFL team is the{" "}
-                    <StatText>{statsData.favNfl}</StatText>{" "}
-                  </BodyMain>
-                  <BodyMain>
-                    🎤 Favorite musician is{" "}
-                    <StatText>{statsData.favMusician}</StatText>{" "}
-                  </BodyMain>
-                  <BodyMain>
-                    ♑️ Fun fact: <StatText>{statsData.funFact}</StatText>{" "}
-                  </BodyMain>
+                  {statsData.map(({ node }) => (
+                    <StatContentWrapper key={node.order}>
+                      <EmojiWrapper>{node.emoji}</EmojiWrapper>
+                      <StatContent>
+                        <Text length={node.value.length}>
+                          {node.key} <Strong>{node.value}</Strong>
+                        </Text>
+                      </StatContent>
+                    </StatContentWrapper>
+                  ))}
                 </DataWrapper>
               </StatsWrapper>
             </BodyWrapper>
@@ -137,17 +117,40 @@ const DataWrapper = styled.div`
   gap: 7px;
 `
 
-const StatText = styled.span`
-  font-weight: 600;
-  display: inline-block;
-  text-align: justify;
-  width: auto;
-  max-width: 380px;
-  vertical-align: top;
+const StatContentWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+`
 
-  @media (max-width: 768px) {
-    max-width: 280px;
-  }
+const StatContent = styled.div`
+  display: grid;
+  text-align: left;
+  align-items: center;
+`
+
+const EmojiWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+`
+
+const Text = styled(BodyMain)`
+  ${props =>
+    props.length > 100 &&
+    `
+      text-indent: -94px;
+      padding-left: 94px;
+
+      @media (max-width: 768px) {
+        text-indent: -83px;
+        padding-left: 83px;
+      }
+    `};
+`
+
+const Strong = styled.strong`
+  font-weight: 600;
 `
 
 const RightSide = styled.div`

@@ -6,14 +6,10 @@ export const useStats = () => {
       allStats {
         edges {
           node {
-            fullName
-            location
-            favFood
-            favMovie
-            favNba
-            favNfl
-            favMusician
-            funFact
+            key
+            value
+            emoji
+            order
           }
         }
       }

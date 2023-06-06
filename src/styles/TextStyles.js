@@ -37,7 +37,7 @@ export const BodyIntro = styled.p`
 export const BodyMain = styled.p`
   font-weight: normal;
   font-size: 1.25rem;
-  line-height: 1.8;
+  line-height: 1.6;
 
   @media (max-width: 768px) {
     font-size: 1.1rem;

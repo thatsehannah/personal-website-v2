@@ -32,6 +32,7 @@ module.exports = {
           {
             collection: "stats",
             type: "Stats",
+            orderBy: [["order", "asc"]],
           },
           { collection: "work", type: "WorkData", orderBy: [["end", "desc"]] },
           {
