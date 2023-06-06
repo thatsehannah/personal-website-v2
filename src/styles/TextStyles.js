@@ -29,8 +29,8 @@ export const H3 = styled.h3`
 `
 
 export const BodyIntro = styled.p`
-  font-weight: 500;
-  font-size: 1.75rem;
+  /* font-weight: 500; */
+  font-size: 1.8rem;
   line-height: 140%;
 `
 

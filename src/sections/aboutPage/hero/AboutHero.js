@@ -3,10 +3,13 @@ import styled from "styled-components"
 import { H1, BodyMain } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
 import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
+import { BodyIntro } from "../../../styles/TextStyles"
 
 const AboutHero = () => {
-  const aboutHeroText = useAboutMeData("aboutHeroSection")
-  console.log(aboutHeroText)
+  const text = useAboutMeData().find(
+    edge => edge.node.for === "aboutHeroSection"
+  ).node.text
+
   return (
     <Wrapper>
       <ContentWrapper>
@@ -16,15 +19,9 @@ const AboutHero = () => {
         <RightSide>
           <TextWrapper>
             <H1>
-              The name's Elliot Hannah III, but you can call me{" "}
-              <Letter size={5.6} />
+              The name's Elliot, but you can call me <Letter size={5.6} />
             </H1>
-            <BodyMain>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
-              mattis nunc aliquam tincidunt est non. Viverra nec eu, in
-              ridiculus egestas mi. Vulputate tristique porttitor enim aliquam
-              ullamcorper. Velit dui laoreet in et mus.
-            </BodyMain>
+            <BodyIntro>{text && text}</BodyIntro>
           </TextWrapper>
         </RightSide>
       </ContentWrapper>

@@ -1,5 +1,9 @@
 export const menuOptions = [
   {
+    title: "Home",
+    link: "/",
+  },
+  {
     title: "About",
     link: "/about",
   },

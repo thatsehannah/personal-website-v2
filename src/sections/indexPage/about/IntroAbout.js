@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react"
 import styled, { css, keyframes } from "styled-components"
 import { BodyMain, H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
+import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
+import { Link } from "gatsby"
 
 const IntroAbout = () => {
   const ref = useRef(null)
@@ -23,6 +25,9 @@ const IntroAbout = () => {
     return () => observer.disconnect()
   }, [isIntersecting])
 
+  const text = useAboutMeData().find(edge => edge.node.for === "homePage").node
+    .text
+
   return (
     <Wrapper>
       <ContentWrapper>
@@ -36,14 +41,11 @@ const IntroAbout = () => {
         <RightSide>
           <TextWrapper id="textwrapper">
             <H2>About Me</H2>
-            <BodyMain>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
-              mattis nunc aliquam tincidunt est non. Viverra nec eu, in
-              ridiculus egestas mi. Vulputate tristique porttitor enim aliquam
-              ullamcorper. Velit dui laoreet in et mus.
-            </BodyMain>
+            <BodyMain>{text && text}</BodyMain>
             <ButtonWrapper>
-              <MainButton text="Learn More About Me" />
+              <Link to="/about#story">
+                <MainButton text="Learn More About Me" />
+              </Link>
             </ButtonWrapper>
           </TextWrapper>
         </RightSide>

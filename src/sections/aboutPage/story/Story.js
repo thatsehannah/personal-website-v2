@@ -5,7 +5,7 @@ import Letter from "../../../components/special/Letter"
 
 const Story = () => {
   return (
-    <Wrapper>
+    <Wrapper id="story">
       <ContentWrapper>
         <LeftSide>
           <TextWrapper>

@@ -1,17 +1,10 @@
 import { useStaticQuery, graphql } from "gatsby"
 
-export const useAboutMeData = forField => {
-  let filter
-  if (forField) {
-    filter = { for: { eq: forField } }
-  } else {
-    filter = {}
-  }
-
+export const useAboutMeData = () => {
   const { allAboutMe } = useStaticQuery(
     graphql`
-      query AboutMeQuery($filter: AboutMeFilterInput) {
-        allAboutMe(filter: $filter) {
+      query AboutMeQuery {
+        allAboutMe {
           edges {
             node {
               for
@@ -20,8 +13,7 @@ export const useAboutMeData = forField => {
           }
         }
       }
-    `,
-    { filter: filter }
+    `
   )
 
   return allAboutMe.edges

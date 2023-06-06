@@ -41,12 +41,11 @@ const AnimatedRoles = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setFade("fade-out")
-      // Set another timeout to change the word after the fade-out transition has completed
+      // Setting a timeout to change the word after the fade-out transition has completed
       const timeoutId = setTimeout(() => {
         setFade("fade-in")
         setWordOrder(prevWordOrder => (prevWordOrder + 1) % roles.length)
       }, fadeInterval)
-      // Return a cleanup function to clear the timeout if the interval is cleared
       return () => clearTimeout(timeoutId)
     }, wordChangeInterval)
 
@@ -55,7 +54,7 @@ const AnimatedRoles = () => {
 
   return (
     <H1>
-      I'm a <FadeInOut fade={fade}>{roles[wordOrder]}</FadeInOut> Developer
+      I'm a <FadeInOut fade={fade}>{roles[wordOrder]}</FadeInOut> Engineer
     </H1>
   )
 }
