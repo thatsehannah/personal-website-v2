@@ -27,6 +27,7 @@ const Wrapper = styled.div`
   width: 500px;
   padding: 25px;
   border-radius: 24px;
+  border: 0.5px solid black;
 
   @media (max-width: 768px) {
     width: 400px;
@@ -39,6 +40,7 @@ const ImageWrapper = styled.div`
   background-size: cover;
   background-position: 30% 100%;
   border-radius: 24px;
+  border: 0.5px solid black;
 
   @media (max-width: 768px) {
     height: 270px;

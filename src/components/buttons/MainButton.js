@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-items: center;
   gap: 20px;
+  border: 0.5px solid black;
 
   *,
   & {

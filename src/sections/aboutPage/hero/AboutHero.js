@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { H1, BodyMain } from "../../../styles/TextStyles"
+import { H1, BodyIntro } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
 import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
-import { BodyIntro } from "../../../styles/TextStyles"
 
 const AboutHero = () => {
   const text = useAboutMeData().find(

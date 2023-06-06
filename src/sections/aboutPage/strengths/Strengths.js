@@ -126,6 +126,7 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   transition: transform 0.4s;
+  border: 0.5px solid black;
 
   :hover {
     transform: scale(1.18);

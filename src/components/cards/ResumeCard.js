@@ -33,6 +33,7 @@ const Wrapper = styled.div`
   gap: 16px;
   background-color: rgb(239, 239, 240);
   border-radius: 20px;
+  border: 0.5px solid black;
   padding: 20px;
 
   @media (max-width: 768px) {
