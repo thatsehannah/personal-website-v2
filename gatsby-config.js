@@ -30,16 +30,20 @@ module.exports = {
             type: "AboutMe",
           },
           {
+            collection: "skills",
+            type: "Skills",
+          },
+          {
             collection: "stats",
             type: "Stats",
             orderBy: [["order", "asc"]],
           },
-          { collection: "work", type: "WorkData", orderBy: [["end", "desc"]] },
           {
             collection: "strengths",
             type: "StrengthData",
             orderBy: [["rank", "asc"]],
           },
+          { collection: "work", type: "WorkData", orderBy: [["end", "desc"]] },
         ],
       },
     },
