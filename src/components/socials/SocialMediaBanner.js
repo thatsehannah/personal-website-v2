@@ -8,9 +8,10 @@ import {
 } from "@iconscout/react-unicons"
 
 const SocialMediaBanner = props => {
-  const size = 30
+  const { size } = props
+
   return (
-    <Wrapper color={props.color}>
+    <Wrapper color1={props.color1} color2={props.color2}>
       <a
         href="https://github.com/thatsehannah"
         target="_blank"
@@ -46,16 +47,24 @@ const SocialMediaBanner = props => {
 export default SocialMediaBanner
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  display: flex;
   justify-items: left;
   align-items: center;
-  justify-content: space-between;
 
   a {
-    color: ${props => props.color};
+    color: ${props => props.color1};
+    ${props =>
+      props.color1 &&
+      props.color2 &&
+      `
+      background: linear-gradient(180deg, ${props.color1} 0%, ${props.color2} 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+    `}
     transition: 0.5s ease-out;
+    margin-right: 24px;
   }
 
   a:hover {

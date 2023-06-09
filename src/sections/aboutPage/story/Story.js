@@ -133,6 +133,7 @@ const EmojiWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 36px;
+  font-size: 1.4rem;
 `
 
 const Text = styled(BodyMain)`

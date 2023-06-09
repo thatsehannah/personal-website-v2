@@ -22,7 +22,7 @@ const Footer = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
             mattis nunc aliquam tincidunt est non.
           </Text>
-          <SocialMediaBanner color="rgb(0,0,0)" />
+          <SocialMediaBanner size={30} color1="rgb(0,0,0)" />
         </Main>
         <PagesWrapper>
           <Title>Pages</Title>
