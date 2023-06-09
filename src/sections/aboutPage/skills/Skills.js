@@ -64,7 +64,7 @@ const ContentWrapper = styled.div`
   display: grid;
   width: 1300px;
   margin: 0 auto;
-  gap: 50px;
+  gap: 20px;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -79,28 +79,46 @@ const Title = styled(H2)`
 const TableWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, auto);
+
+  @media (max-width: 768px) {
+    grid-template-columns: auto;
+    gap: 20px;
+  }
 `
 
 const Column = styled.div`
   display: grid;
   gap: 30px;
+  padding: 25px;
 `
 
 const CenterColumn = styled(Column)`
   border-left: 0.5px solid rgba(0, 0, 0, 0.2);
   border-right: 0.5px solid rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    border-left: none;
+    border-right: none;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+  }
 `
 
 const ColumnTitle = styled(H3)`
   text-align: center;
+  font-weight: 500;
 `
 
 const SkillsWrapper = styled.div`
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 0.5fr);
   gap: 15px;
   grid-auto-flow: column;
   text-align: center;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
 `
 
 const SkillText = styled(BodyMain)`

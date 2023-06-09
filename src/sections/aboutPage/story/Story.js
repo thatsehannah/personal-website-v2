@@ -163,6 +163,10 @@ const MemojiWrapper = styled.div`
   display: grid;
   justify-content: center;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const Memoji = styled.img`
