@@ -1,11 +1,11 @@
 import React, { useRef } from "react"
 import styled from "styled-components"
-import { BodyMain, H2, H3 } from "../../../styles/TextStyles"
+import { BodyMain, H2 } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
 import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
-import { useStats } from "../../../utils/hooks/useStats"
 import { useIntersection } from "../../../utils/hooks/useIntersection"
 import { fadeInAnimation } from "../../../styles/FadeInAnimation"
+import Stats from "./Stats"
 
 const Story = () => {
   const ref1 = useRef(null)
@@ -29,8 +29,6 @@ const Story = () => {
     paragraphs.push(paragraph)
   }
 
-  const statsData = useStats()
-
   return (
     <Wrapper id="story">
       <ContentWrapper>
@@ -43,22 +41,7 @@ const Story = () => {
               {paragraphs.map((paragraph, index) => (
                 <BodyMain key={index}>{paragraph}</BodyMain>
               ))}
-
-              <StatsWrapper>
-                <H3>Stats</H3>
-                <DataWrapper>
-                  {statsData.map(({ node }) => (
-                    <StatContentWrapper key={node.order}>
-                      <EmojiWrapper>{node.emoji}</EmojiWrapper>
-                      <StatContent>
-                        <Text length={node.value.length}>
-                          {node.key} <Strong>{node.value}</Strong>
-                        </Text>
-                      </StatContent>
-                    </StatContentWrapper>
-                  ))}
-                </DataWrapper>
-              </StatsWrapper>
+              <Stats />
             </BodyWrapper>
           </TextWrapper>
         </LeftSide>
@@ -110,56 +93,6 @@ const TextWrapper = styled.div`
 const BodyWrapper = styled.div`
   display: grid;
   gap: 30px;
-`
-
-const StatsWrapper = styled.div`
-  display: grid;
-  gap: 24px;
-  border: 0.5px solid black;
-  border-radius: 25px;
-  padding: 20px;
-`
-
-const DataWrapper = styled.div`
-  display: grid;
-  gap: 7px;
-`
-
-const StatContentWrapper = styled.div`
-  display: flex;
-  gap: 8px;
-`
-
-const StatContent = styled.div`
-  display: grid;
-  text-align: left;
-  align-items: center;
-`
-
-const EmojiWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 36px;
-  font-size: 1.4rem;
-`
-
-const Text = styled(BodyMain)`
-  ${props =>
-    props.length > 100 &&
-    `
-      text-indent: -94px;
-      padding-left: 94px;
-
-      @media (max-width: 768px) {
-        text-indent: -83px;
-        padding-left: 83px;
-      }
-    `};
-`
-
-const Strong = styled.strong`
-  font-weight: 600;
 `
 
 const RightSide = styled.div`
