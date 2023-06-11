@@ -10,6 +10,7 @@ const Skills = () => {
   const ref = useRef(null)
   const inView = useIntersection(ref, { threshold: 0.4 })
   const skillData = useSkills()
+
   const languages = skillData.filter(edge => edge.node.category === "language")
   const frameworks = skillData.filter(
     edge => edge.node.category === "framework"

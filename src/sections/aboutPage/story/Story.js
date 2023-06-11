@@ -70,7 +70,7 @@ const Story = () => {
             <SpeciamMemoji src="/images/memojis/story-2.png" />
           </MemojiWrapper>
           <MemojiWrapper ref={ref3} inView={ref3inView}>
-            <Memoji src="/images/memojis/wink-memoji.png" />
+            <Memoji src="/images/memojis/story-3.png" />
           </MemojiWrapper>
         </RightSide>
       </ContentWrapper>
