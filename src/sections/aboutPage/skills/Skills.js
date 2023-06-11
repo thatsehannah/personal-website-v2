@@ -28,24 +28,24 @@ const Skills = () => {
           <Column>
             <ColumnTitle>Software</ColumnTitle>
             <SkillsWrapper>
-              {software.map(({ node }) => (
-                <SkillText>{node.name}</SkillText>
+              {software.map(({ node }, index) => (
+                <SkillText key={index}>{node.name}</SkillText>
               ))}
             </SkillsWrapper>
           </Column>
           <CenterColumn>
             <ColumnTitle>Languages</ColumnTitle>
             <SkillsWrapper>
-              {languages.map(({ node }) => (
-                <SkillText>{node.name}</SkillText>
+              {languages.map(({ node }, index) => (
+                <SkillText key={index}>{node.name}</SkillText>
               ))}
             </SkillsWrapper>
           </CenterColumn>
           <Column>
             <ColumnTitle>Frameworks</ColumnTitle>
             <SkillsWrapper>
-              {frameworks.map(({ node }) => (
-                <SkillText>{node.name}</SkillText>
+              {frameworks.map(({ node }, index) => (
+                <SkillText key={index}>{node.name}</SkillText>
               ))}
             </SkillsWrapper>
           </Column>
