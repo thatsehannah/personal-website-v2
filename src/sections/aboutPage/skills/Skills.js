@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useRef } from "react"
 import styled from "styled-components"
 import Letter from "../../../components/special/Letter"
 import { useSkills } from "../../../utils/hooks/useSkills"
 import { BodyMain, H2, H3 } from "../../../styles/TextStyles"
+import { useIntersection } from "../../../utils/hooks/useIntersection"
+import { fadeInAnimation } from "../../../styles/FadeInAnimation"
 
 const Skills = () => {
+  const ref = useRef(null)
+  const inView = useIntersection(ref, { threshold: 0.4 })
   const skillData = useSkills()
   const languages = skillData.filter(edge => edge.node.category === "language")
   const frameworks = skillData.filter(
@@ -14,7 +18,7 @@ const Skills = () => {
 
   return (
     <Wrapper>
-      <ContentWrapper>
+      <ContentWrapper ref={ref} inView={inView}>
         <Title>
           Rel
           <Letter />
@@ -65,6 +69,9 @@ const ContentWrapper = styled.div`
   width: 1300px;
   margin: 0 auto;
   gap: 20px;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  ${props => props.inView && fadeInAnimation}
 
   @media (max-width: 768px) {
     width: 100%;

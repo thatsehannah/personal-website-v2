@@ -1,11 +1,19 @@
-import React from "react"
+import React, { useRef } from "react"
 import styled from "styled-components"
 import { BodyMain, H2, H3 } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
 import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
 import { useStats } from "../../../utils/hooks/useStats"
+import { useIntersection } from "../../../utils/hooks/useIntersection"
+import { fadeInAnimation } from "../../../styles/FadeInAnimation"
 
 const Story = () => {
+  const ref1 = useRef(null)
+  const ref1inView = useIntersection(ref1, { threshold: 0.4 })
+  const ref2 = useRef(null)
+  const ref2inView = useIntersection(ref2, { threshold: 0.5 })
+  const ref3 = useRef(null)
+  const ref3inView = useIntersection(ref3, { threshold: 0.6 })
   const storyData = useAboutMeData().find(
     edge => edge.node.for === "storySection"
   )
@@ -55,13 +63,13 @@ const Story = () => {
           </TextWrapper>
         </LeftSide>
         <RightSide>
-          <MemojiWrapper>
+          <MemojiWrapper ref={ref1} inView={ref1inView}>
             <Memoji src="/images/memojis/story-1.png" />
           </MemojiWrapper>
-          <MemojiWrapper>
+          <MemojiWrapper ref={ref2} inView={ref2inView}>
             <SpeciamMemoji src="/images/memojis/story-2.png" />
           </MemojiWrapper>
-          <MemojiWrapper>
+          <MemojiWrapper ref={ref3} inView={ref3inView}>
             <Memoji src="/images/memojis/wink-memoji.png" />
           </MemojiWrapper>
         </RightSide>
@@ -163,6 +171,9 @@ const MemojiWrapper = styled.div`
   display: grid;
   justify-content: center;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  ${props => props.inView && fadeInAnimation}
 
   @media (max-width: 768px) {
     display: none;

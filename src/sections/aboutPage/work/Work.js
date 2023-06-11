@@ -1,14 +1,18 @@
-import React from "react"
+import React, { useRef } from "react"
 import styled from "styled-components"
 import { useWork } from "../../../utils/hooks/useWork"
 import { H2 } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
 import ResumeWrapper from "../../../components/layout/ResumeWrapper"
+import { useIntersection } from "../../../utils/hooks/useIntersection"
+import { fadeInAnimation } from "../../../styles/FadeInAnimation"
 
 const Work = () => {
+  const ref = useRef(null)
+  const inView = useIntersection(ref, { threshold: 0.2 })
   const workData = useWork()
   return (
-    <Wrapper id="about-work">
+    <Wrapper id="about-work" ref={ref} inView={inView}>
       <BackgroundSquare />
       <ContentWrapper>
         <Title>
@@ -29,6 +33,9 @@ const Wrapper = styled.section`
   align-items: center;
   position: relative;
   padding: 60px 20px;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  ${props => props.inView && fadeInAnimation}
 `
 
 const BackgroundSquare = styled.div`

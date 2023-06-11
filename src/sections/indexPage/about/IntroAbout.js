@@ -1,29 +1,15 @@
-import React, { useEffect, useRef, useState } from "react"
-import styled, { css, keyframes } from "styled-components"
+import React, { useRef } from "react"
+import styled from "styled-components"
 import { BodyMain, H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
 import { Link } from "gatsby"
+import { useIntersection } from "../../../utils/hooks/useIntersection"
+import { fadeInAnimation } from "../../../styles/FadeInAnimation"
 
 const IntroAbout = () => {
   const ref = useRef(null)
-  const [isIntersecting, setIsIntersecting] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsIntersecting(entry.isIntersecting)
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.4,
-      }
-    )
-    console.log(isIntersecting)
-    observer.observe(ref.current)
-    return () => observer.disconnect()
-  }, [isIntersecting])
+  const inView = useIntersection(ref, { threshold: 0.4 })
 
   const text = useAboutMeData().find(edge => edge.node.for === "homePage").node
     .text
@@ -35,7 +21,7 @@ const IntroAbout = () => {
           <Background />
           <Memoji
             src="/images/memojis/about-memoji.png"
-            inView={isIntersecting}
+            inView={inView}
           ></Memoji>
         </LeftSide>
         <RightSide>
@@ -89,40 +75,6 @@ const LeftSide = styled.div`
   }
 `
 
-const fadeInKeyFrame = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-    filter: blur(0px);
-  }
-`
-
-const fadeOutKeyFrame = keyframes`
-  from {
-    opacity: 1;
-    transform: translateY(0px);
-    filter: blur(0px);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-40px);
-    filter: blur(10px);
-  }
-`
-
-const fadeInAnimation = css`
-  animation: ${fadeInKeyFrame} 1s forwards;
-`
-
-const fadeOutAnimation = css`
-  animation: ${fadeOutKeyFrame} 1s forwards;
-`
-
 const Background = styled.div`
   position: absolute;
   right: 0;
@@ -142,7 +94,7 @@ const Memoji = styled.img`
   height: 500px;
   opacity: 0;
   transition: opacity 1s ease-in;
-  ${props => (props.inView ? fadeInAnimation : fadeOutAnimation)}
+  ${props => props.inView && fadeInAnimation}
 
   @media (max-width: 768px) {
     height: 350px;
