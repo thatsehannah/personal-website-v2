@@ -20,7 +20,7 @@ const MenuItem = styled.div`
   grid-template-columns: auto auto;
   color: ${props => props.color};
   transition: 0.5s ease-out;
-  text-align: center;
+  /* text-align: center; */
   gap: ${props => props.icon && "8px"};
 
   span {
@@ -39,6 +39,10 @@ const MenuItem = styled.div`
     svg {
       fill: ${props => props.hoverColor};
     }
+
+    /* @media (max-width: 768px) {
+      transform: scale(1);
+    } */
   }
 `
 
