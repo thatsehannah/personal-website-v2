@@ -52,6 +52,11 @@ const ContentWrapper = styled.div`
 
 const LeftSide = styled.div`
   display: grid;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    width: 100%;
+  }
 `
 
 const RightSide = styled.div`

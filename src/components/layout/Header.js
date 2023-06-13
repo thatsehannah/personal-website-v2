@@ -4,8 +4,8 @@ import styled from "styled-components"
 import MenuButton from "../buttons/MenuButton"
 import { UilEnvelope } from "@iconscout/react-unicons"
 import Logo from "../special/Logo"
-import HamburgerButton from "../buttons/HamburgerButton"
 import { menuOptions } from "../../data/menuOptions"
+import HamburgerIcon from "../buttons/HamburgerIcon"
 
 const Header = () => {
   return (
@@ -38,7 +38,7 @@ const Header = () => {
           </a>
         </EmailWrapper>
         <HamburgerWrapper>
-          <HamburgerButton />
+          <HamburgerIcon />
         </HamburgerWrapper>
       </ContentWrapper>
     </Wrapper>
