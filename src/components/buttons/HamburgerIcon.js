@@ -8,17 +8,17 @@ const HamburgerIcon = () => {
     setIsClicked(!isClicked)
   }
   return (
-    <HamburgerIconContainer isActive={isClicked} onClick={handleClick}>
+    <HamburgerWrapper isActive={isClicked} onClick={handleClick}>
       <Line isActive={isClicked} />
       <Line isActive={isClicked} />
       <Line isActive={isClicked} />
-    </HamburgerIconContainer>
+    </HamburgerWrapper>
   )
 }
 
 export default HamburgerIcon
 
-const HamburgerIconContainer = styled.div`
+const HamburgerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
