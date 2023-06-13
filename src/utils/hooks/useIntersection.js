@@ -16,7 +16,9 @@ export const useIntersection = (ref, options = {}) => {
       { threshold, root, rootMargin }
     )
 
-    observer.observe(ref.current)
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
 
     return () => {
       observer.disconnect()
