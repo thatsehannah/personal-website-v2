@@ -40,9 +40,9 @@ const MenuItem = styled.div`
       fill: ${props => props.hoverColor};
     }
 
-    /* @media (max-width: 768px) {
+    @media (max-width: 768px) {
       transform: scale(1);
-    } */
+    }
   }
 `
 
