@@ -16,8 +16,7 @@ const MenuButton = props => {
 export default MenuButton
 
 const MenuItem = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
   color: ${props => props.color};
   transition: 0.5s ease-out;
   /* text-align: center; */

@@ -79,6 +79,7 @@ const ContentWrapper = styled.div`
   width: 1300px;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
+  margin: 0 auto;
   justify-content: space-between;
 
   @media (max-width: 768px) {
@@ -126,6 +127,11 @@ const HamburgerWrapper = styled.div`
 
 const MobileMenuWrapper = styled.div`
   position: relative;
+  visibility: hidden;
+
+  @media (max-width: 768px) {
+    visibility: visible;
+  }
 `
 
 const MobileMenu = styled.div`
