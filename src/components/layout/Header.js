@@ -140,7 +140,6 @@ const MobileMenu = styled.div`
   @media (max-width: 768px) {
     display: grid;
     border-bottom: ${props => (props.isOpen ? "0.5px solid black;" : "none")};
-    background-color: #fff;
     width: 100%;
     z-index: 8;
     position: absolute;
