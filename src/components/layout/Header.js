@@ -6,7 +6,7 @@ import { UilEnvelope } from "@iconscout/react-unicons"
 import Logo from "../special/Logo"
 import { menuOptions } from "../../data/menuOptions"
 import HamburgerIcon from "../buttons/HamburgerIcon"
-import MobileMenu from "../menus/MobileMenu"
+import MobileMenuItems from "../menus/MobileMenuItems"
 
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -48,9 +48,10 @@ const Header = () => {
           <HamburgerIcon />
         </HamburgerWrapper>
       </ContentWrapper>
-
-      <MobileMenuWrapper isActive={toggleMenu}>
-        <MobileMenu />
+      <MobileMenuWrapper>
+        <MobileMenu isOpen={toggleMenu}>
+          <MobileMenuItems />
+        </MobileMenu>
       </MobileMenuWrapper>
     </Wrapper>
   )
@@ -64,8 +65,9 @@ const Wrapper = styled.div`
   display: grid;
   width: 100%;
   padding: 30px;
-  justify-items: center;
-  align-items: center;
+  /* justify-items: center;
+  align-items: center; */
+  gap: 20px;
 
   @media (max-width: 768px) {
     padding: 20px;
@@ -122,43 +124,28 @@ const HamburgerWrapper = styled.div`
   }
 `
 
-const slideDownAnimation = keyframes`
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-`
-
-const slideUpAnimation = keyframes`
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-`
-
 const MobileMenuWrapper = styled.div`
+  position: relative;
+`
+
+const MobileMenu = styled.div`
   display: none;
-  animation: ${props =>
-      props.isActive ? slideDownAnimation : slideUpAnimation}
-    0.3s ease-in-out;
-  background-color: #fff;
-  padding: 20px;
 
   @media (max-width: 768px) {
-    ${props =>
-      props.isActive &&
-      `
-        border-bottom: 0.5px solid black;
-        position: absolute;
-        top: 55px;
-        width: 100%;
-        display: inline-block;
-        z-index: 4;
-        
-    `}
+    display: grid;
+    border-bottom: ${props => (props.isOpen ? "0.5px solid black;" : "none")};
+    background-color: #fff;
+    width: 100%;
+    z-index: 8;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    gap: 10px;
+    max-height: ${props => (props.isOpen ? "220px" : "0")};
+    transition: max-height ${props => (props.isOpen ? "0.5s" : "0.3s")}
+      ease-in-out;
+
+    background-color: rgb(255, 255, 255);
   }
 `
