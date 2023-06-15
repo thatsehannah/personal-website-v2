@@ -57,7 +57,7 @@ const Title = styled(H1)`
 const TabWrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 100px;
 
   @media (max-width: 768px) {
     display: grid;
@@ -68,19 +68,31 @@ const TabWrapper = styled.div`
 `
 
 const Tab = styled.div`
-  padding: 10px 60px;
+  padding: 10px 0;
   cursor: pointer;
-  border: 0;
-  outline: 0;
+  position: relative;
 
   @media (max-width: 768px) {
     padding: 0;
   }
 
-  ${props =>
-    props.active &&
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #80d0c7;
+    transition: width 1s;
+  }
+
+  ${({ active }) =>
+    active &&
     `
-    border-bottom: 2px solid black;
+    &::after {
+      width: 100%;
+    }
   `}
 `
 
