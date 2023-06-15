@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import MenuButton from "../buttons/MenuButton"
 import { UilEnvelope } from "@iconscout/react-unicons"
 import Logo from "../special/Logo"

@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 import { UilEnvelope } from "@iconscout/react-unicons"
 import { menuOptions } from "../../data/menuOptions"
 import { Link } from "gatsby"
@@ -26,10 +25,3 @@ const MobileMenuItems = () => {
 }
 
 export default MobileMenuItems
-
-const EmailWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  /* align-items: center;
-  text-align: center; */
-`
