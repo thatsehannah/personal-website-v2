@@ -7,7 +7,7 @@ export const useCertficates = () => {
         allCertificateData {
           edges {
             node {
-              issueDate
+              issueDate(formatString: "MM-DD-YYYY")
               title
               url
               from

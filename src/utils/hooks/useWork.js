@@ -8,9 +8,9 @@ export const useWork = () => {
         edges {
           node {
             uid
-            start(formatString: "MMM YYYY")
+            start(formatString: "MMM. YYYY")
             position
-            end(formatString: "MMM YYYY")
+            end(formatString: "MMM. YYYY")
             logo
             duties
             url
