@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { H1, H3 } from "../../styles/TextStyles"
+import Certifications from "./Certifications"
 
 const Content = () => {
   const tabs = ["Certifications", "Projects"]
@@ -21,7 +22,7 @@ const Content = () => {
           ))}
         </TabWrapper>
         <TabContent>
-          {active === "Certifications" && <div>Certs</div>}
+          {active === "Certifications" && <Certifications />}
           {active == "Projects" && <div>Projects</div>}
         </TabContent>
       </ContentWrapper>
