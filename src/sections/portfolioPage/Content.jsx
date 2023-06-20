@@ -2,28 +2,25 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { H1, H3 } from "../../styles/TextStyles"
 import Certifications from "./Certifications"
+import Projects from "./Projects"
 
 const Content = () => {
-  const tabs = ["Certifications", "Projects"]
-  const [active, setActive] = useState(tabs[0])
+  const [active, setActive] = useState("cert")
   return (
     <Wrapper>
       <ContentWrapper>
         <Title>Portfolio</Title>
         <TabWrapper>
-          {tabs.map(tab => (
-            <Tab
-              key={tab}
-              active={active === tab}
-              onClick={() => setActive(tab)}
-            >
-              <TabTitle>{tab}</TabTitle>
-            </Tab>
-          ))}
+          <Tab active={active == "cert"} onClick={() => setActive("cert")}>
+            <TabTitle>Certification</TabTitle>
+          </Tab>
+          <Tab active={active == "proj"} onClick={() => setActive("proj")}>
+            <TabTitle>Projects</TabTitle>
+          </Tab>
         </TabWrapper>
         <TabContent>
-          {active === "Certifications" && <Certifications />}
-          {active === "Projects" && <div>Projects</div>}
+          {active === "cert" && <Certifications />}
+          {active === "proj" && <Projects />}
         </TabContent>
       </ContentWrapper>
     </Wrapper>
