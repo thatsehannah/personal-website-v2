@@ -11,6 +11,7 @@ export const useCertficates = () => {
               title
               url
               from
+              description
             }
           }
         }

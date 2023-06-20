@@ -1,11 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { useCertficates } from "../../utils/hooks/useCertificates"
-import { BodyIntro, BodyMain } from "../../styles/TextStyles"
+import { BodyIntro, MediumText } from "../../styles/TextStyles"
 
 const Certifications = () => {
   const certData = useCertficates()
-  console.log(certData.map(({ node }) => node.title))
 
   return (
     <Wrapper>
@@ -18,20 +17,8 @@ const Certifications = () => {
             <Title>
               {node.title} from {node.from}
             </Title>
-            <BodyMain>Received on {node.issueDate}</BodyMain>
-            <List>
-              <ListItem>
-                Ornare lectus sit amet est placerat in egestas erat imperdiet.
-              </ListItem>
-              <ListItem>
-                Cras tincidunt lobortis feugiat vivamus at augue eget arcu
-                dictum.
-              </ListItem>
-              <ListItem>Posuere mori leo urna molestie at.</ListItem>
-              <ListItem>
-                Aliquet bibendu enfacilisis gravida neque convallis a.
-              </ListItem>
-            </List>
+            <Date>Issued on {node.issueDate}</Date>
+            <Description>{node.description}</Description>
           </TextWrapper>
         </ContentWrapper>
       ))}
@@ -63,7 +50,7 @@ const CertWrapper = styled.div`
   align-items: center;
   background-color: rgba(0, 147, 233, 0.2);
 
-  border: 0.5px solid black;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
   border-radius: 24px;
   width: 550px;
   height: 440px;
@@ -82,20 +69,18 @@ const Cert = styled.img`
 `
 
 const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   flex: 1;
 `
 
 const Title = styled(BodyIntro)`
-  margin-bottom: 25px;
   font-weight: 500;
 `
 
-const List = styled.ul`
-  list-style-type: disc;
-  padding: 12px;
+const Date = styled(MediumText)`
+  color: rgba(0, 0, 0, 0.5);
 `
 
-const ListItem = styled.li`
-  font: ${BodyMain};
-  padding: 10px;
-`
+const Description = styled(MediumText)``

@@ -23,7 +23,7 @@ const Content = () => {
         </TabWrapper>
         <TabContent>
           {active === "Certifications" && <Certifications />}
-          {active == "Projects" && <div>Projects</div>}
+          {active === "Projects" && <div>Projects</div>}
         </TabContent>
       </ContentWrapper>
     </Wrapper>
