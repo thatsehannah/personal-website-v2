@@ -18,14 +18,17 @@ const Certifications = () => {
       {certData.slice(0, itemsToShow).map(({ node }, index) => (
         <ContentWrapper key={index}>
           <CertWrapper>
-            <Cert src={node.url} />
+            <Cert
+              src={node.url}
+              onClick={() => window.open(node.url, "_blank")}
+            />
           </CertWrapper>
           <TextWrapper>
             <Title>
               {node.title} from {node.from}
             </Title>
             <Date>Issued on {node.issueDate}</Date>
-            <Description>{node.description}</Description>
+            <MediumText>{node.description}</MediumText>
           </TextWrapper>
         </ContentWrapper>
       ))}
@@ -118,8 +121,6 @@ const Title = styled(BodyIntro)`
 const Date = styled(MediumText)`
   color: rgba(0, 0, 0, 0.5);
 `
-
-const Description = styled(MediumText)``
 
 const ButtonWrapper = styled.div`
   display: grid;
