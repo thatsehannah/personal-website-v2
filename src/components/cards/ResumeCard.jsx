@@ -79,12 +79,10 @@ const Duration = styled(Caption)`
 //for future reference: https://css-tricks.com/line-clampin/
 const SecondaryTextWrapper = styled.div`
   overflow: ${props => props.overflow && `hidden`};
-  /* height: 62px; */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   transition: 0.2s ease-out;
-  backdrop-filter: blur(22px);
 
   :hover {
     display: grid;
@@ -93,13 +91,16 @@ const SecondaryTextWrapper = styled.div`
     padding: 10px;
     transform: scale(1.2) translate(-50px, -10px);
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: white;
     border-radius: 10px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 768px) {
     pointer-events: none;
+    display: -webkit-box;
+    -webkit-line-clamp: initial;
+    -webkit-box-orient: initial;
   }
 `
 
