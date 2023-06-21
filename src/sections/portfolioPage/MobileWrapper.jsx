@@ -10,7 +10,7 @@ const MobileWrapper = props => {
         <Toolbar>
           <LeftSide>
             <Caption>Carrier</Caption>
-            <UilWifi size={16} />
+            <UilWifi size={12} style={{ marginTop: "-1.5px" }} />
           </LeftSide>
           <Center>
             <Caption2>9:41</Caption2>
@@ -42,6 +42,13 @@ const PhoneWrapper = styled.div`
   height: 720px;
   width: 380px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 480px;
+    width: 250px;
+    border-width: 6px;
+    border-radius: 30px;
+  }
 `
 
 const ImageWrapper = styled.div`
@@ -57,6 +64,10 @@ const Toolbar = styled.div`
   align-items: center;
   height: 45px;
   margin: 0px 20px;
+
+  @media (max-width: 768px) {
+    height: 35px;
+  }
 `
 
 const LeftSide = styled.div`

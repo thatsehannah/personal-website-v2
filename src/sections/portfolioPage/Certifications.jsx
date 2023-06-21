@@ -47,7 +47,7 @@ export default Certifications
 
 const Wrapper = styled.div`
   display: grid;
-  gap: 80px;
+  gap: 120px;
 `
 
 const ContentWrapper = styled.div`

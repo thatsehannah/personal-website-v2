@@ -14,7 +14,7 @@ export const H2 = styled.h2`
   font-weight: bold;
   font-size: 2.5rem;
 
-  @media (max-width: 450px) {
+  @media (max-width: 768px) {
     font-size: 2rem;
   }
 `
@@ -23,8 +23,8 @@ export const H3 = styled.h3`
   font-weight: bold;
   font-size: 1.9rem;
 
-  @media (max-width: 450px) {
-    font-size: 24px;
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
   }
 `
 
@@ -54,6 +54,10 @@ export const Caption = styled.p`
   font-weight: 500;
   font-size: 0.9rem;
   line-height: 1.1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
 `
 
 export const Caption2 = styled.p`
@@ -61,6 +65,10 @@ export const Caption2 = styled.p`
   font-size: 0.9rem;
   line-height: 1.1rem;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
 `
 
 export const SmallText = styled.p`

@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { H1, H3 } from "../../styles/TextStyles"
 import Certifications from "./Certifications"
 import Projects from "./Projects"
-import Projects2 from "./Projects2"
 
 const Content = () => {
   const [active, setActive] = useState("cert")
@@ -13,7 +12,7 @@ const Content = () => {
         <Title>Portfolio</Title>
         <TabWrapper>
           <Tab active={active === "cert"} onClick={() => setActive("cert")}>
-            <TabTitle>Certification</TabTitle>
+            <TabTitle>Certifications</TabTitle>
           </Tab>
           <Tab active={active === "proj"} onClick={() => setActive("proj")}>
             <TabTitle>Projects</TabTitle>
@@ -21,7 +20,7 @@ const Content = () => {
         </TabWrapper>
         <TabContent>
           {active === "cert" && <Certifications />}
-          {active === "proj" && <Projects2 />}
+          {active === "proj" && <Projects />}
         </TabContent>
       </ContentWrapper>
     </Wrapper>
@@ -78,7 +77,7 @@ const Tab = styled.div`
   &::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 0;
     height: 3px;

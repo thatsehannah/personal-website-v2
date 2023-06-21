@@ -1,8 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import { useProjects } from "../../utils/hooks/useProjects"
-import { BodyMain, H2, H3, MediumText } from "../../styles/TextStyles"
+import WebpageWrapper from "./WebpageWrapper"
+import { H3, MediumText } from "../../styles/TextStyles"
+import MobileWrapper from "./MobileWrapper"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
+import MainButton from "../../components/buttons/MainButton"
 
 const Projects = () => {
   const projectData = useProjects()
@@ -11,32 +14,32 @@ const Projects = () => {
     <Wrapper>
       {projectData.map(({ node }, index) => (
         <ContentWrapper key={index}>
-          <ImageWrapper>
-            <BackgroundWrapper i={index}>
-              <Image src={node.imageUrl} alt={node.name} />
-            </BackgroundWrapper>
-          </ImageWrapper>
-          <TitleWrapper>
-            <H2>{node.name}</H2>
-          </TitleWrapper>
-          <DescriptionWrapper>
-            <BodyMain>{node.description}</BodyMain>
-          </DescriptionWrapper>
+          {node.platform === "Web" && <WebpageWrapper image={node.imageUrl} />}
+          {node.platform === "iOS" && <MobileWrapper image={node.imageUrl} />}
           <TextWrapper>
-            <InfoWrapper>
-              <InfoTitle>Domain</InfoTitle>
-              <MediumText>{node.domain}</MediumText>
-            </InfoWrapper>
-            <InfoWrapper>
-              <InfoTitle>Platform</InfoTitle>
-              <MediumText>{node.platform}</MediumText>
-            </InfoWrapper>
-            <InfoWrapper>
-              <InfoTitle>Code</InfoTitle>
-              <a href={node.code} target="_blank" rel="noreferrer">
-                <MediumText>GitHub</MediumText>
-              </a>
-            </InfoWrapper>
+            <TopWrapper>
+              <Name>{node.name}</Name>
+              <TechStackWrapper>
+                <SmallCard platform={node.platform}>{node.platform}</SmallCard>
+                <PlatformCard>{node.domain}</PlatformCard>
+              </TechStackWrapper>
+              <MediumText>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
+                mattis nunc aliquam tincidunt est non. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit. Lectus mattis nunc aliquam
+                tincidunt est non. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Lectus mattis nunc aliquam tincidunt est non.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
+                mattis nunc aliquam tincidunt est non. Lorem ipsum dolor sit
+                amet, consectetur adipiscing elit. Lectus mattis nunc aliquam
+                tincidunt est non.
+              </MediumText>
+              <ButtonWrapper>
+                <a href={node.code} target="_blank" rel="noreferrer">
+                  <MainButton text="See Code" />
+                </a>
+              </ButtonWrapper>
+            </TopWrapper>
           </TextWrapper>
         </ContentWrapper>
       ))}
@@ -48,84 +51,81 @@ export default Projects
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
   gap: 120px;
+`
+
+const ContentWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  ${fadeInAnimation}
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `
 
-const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 30px;
-  ${fadeInAnimation}
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`
-
-const ImageWrapper = styled.div`
-  margin: 0px;
-`
-
-const BackgroundWrapper = styled.div`
-  display: flex;
-  flex: 1;
-  width: 550px;
-  border-radius: 30px;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  background-color: ${props =>
-    props.i % 2 === 0 ? "rgba(0, 147, 233, 0.4)" : "rgba(128, 208, 199, 0.4)"};
-
-  @media (max-width: 768px) {
-    height: 300px;
-    padding: 10px;
-    width: 100%;
-  }
-`
-
-const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-`
-
-const TitleWrapper = styled.div`
-  text-align: center;
-`
-
-const DescriptionWrapper = styled.div`
-  display: grid;
-  /* align-items: center; */
-  text-align: center;
-  width: 100%;
-  height: 100px;
-  vertical-align: top;
-
-  @media (max-width: 768px) {
-    height: auto;
-  }
-`
-
 const TextWrapper = styled.div`
   display: grid;
-  justify-content: space-between;
-  gap: 60px;
-  grid-template-columns: repeat(3, 1fr);
 `
 
-const InfoWrapper = styled.div`
+const TopWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`
+
+const Name = styled(H3)`
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`
+
+const TechStackWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+  }
+`
+
+const SmallCard = styled.div`
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: ${props => (props.platform === "Web" ? "#0093e9" : "#80d0c7")};
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    background-color: ${props =>
+      props.platform === "Web" ? "#0093e9" : "#80d0c7"};
+    width: 12px;
+    height: 100%;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    width: 160px;
+  }
+`
+
+const PlatformCard = styled(SmallCard)`
+  color: black;
+
+  &::before {
+    background-color: black;
+  }
+`
+
+const ButtonWrapper = styled.div`
   display: grid;
-  text-align: center;
-  gap: 10px;
-`
-
-const InfoTitle = styled(H3)`
-  font-weight: 500;
+  justify-content: center;
 `
