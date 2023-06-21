@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { H1, H3 } from "../../styles/TextStyles"
 import Certifications from "./Certifications"
 import Projects from "./Projects"
+import Projects2 from "./Projects2"
 
 const Content = () => {
   const [active, setActive] = useState("cert")
@@ -20,7 +21,7 @@ const Content = () => {
         </TabWrapper>
         <TabContent>
           {active === "cert" && <Certifications />}
-          {active === "proj" && <Projects />}
+          {active === "proj" && <Projects2 />}
         </TabContent>
       </ContentWrapper>
     </Wrapper>
