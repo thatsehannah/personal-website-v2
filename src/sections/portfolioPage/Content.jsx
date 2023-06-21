@@ -11,10 +11,10 @@ const Content = () => {
       <ContentWrapper>
         <Title>Portfolio</Title>
         <TabWrapper>
-          <Tab active={active == "cert"} onClick={() => setActive("cert")}>
+          <Tab active={active === "cert"} onClick={() => setActive("cert")}>
             <TabTitle>Certification</TabTitle>
           </Tab>
-          <Tab active={active == "proj"} onClick={() => setActive("proj")}>
+          <Tab active={active === "proj"} onClick={() => setActive("proj")}>
             <TabTitle>Projects</TabTitle>
           </Tab>
         </TabWrapper>
