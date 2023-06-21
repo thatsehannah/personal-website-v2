@@ -49,6 +49,10 @@ module.exports = {
             type: "CertificateData",
             orderBy: [["issueDate", "desc"]],
           },
+          {
+            collection: "projects",
+            type: "ProjectData",
+          },
         ],
       },
     },
