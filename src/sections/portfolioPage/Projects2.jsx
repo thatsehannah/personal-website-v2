@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { useProjects } from "../../utils/hooks/useProjects"
 import WebpageWrapper from "./WebpageWrapper"
 import { H3, MediumText } from "../../styles/TextStyles"
+import MobileWrapper from "./MobileWrapper"
 
 const Projects2 = () => {
   const projectData = useProjects()
@@ -12,6 +13,7 @@ const Projects2 = () => {
       {projectData.map(({ node }, index) => (
         <ContentWrapper key={index}>
           {node.platform === "Web" && <WebpageWrapper image={node.imageUrl} />}
+          {node.platform === "iOS" && <MobileWrapper image={node.imageUrl} />}
           <TextWrapper>
             <TopWrapper>
               <H3>{node.name}</H3>
