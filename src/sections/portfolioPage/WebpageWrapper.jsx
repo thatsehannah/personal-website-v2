@@ -4,44 +4,55 @@ import { H3, MediumText } from "../../styles/TextStyles"
 
 const WebpageWrapper = props => {
   const [scrolling, setScrolling] = useState(false)
-  const { imageUrl, name, description, platform, domain, code } = props.data
 
   return (
-    <Wrapper>
-      <ImageWrapper
-        onMouseEnter={() => setScrolling(true)}
-        onMouseLeave={() => setScrolling(false)}
-      >
-        <Image src={imageUrl} scrolling={scrolling} />
-      </ImageWrapper>
-      <TextWrapper>
-        <TopWrapper>
-          <H3>{name}</H3>
-          <MediumText>{description}</MediumText>
-        </TopWrapper>
-        <BottomWrapper>
-          <SmallCard>{platform}</SmallCard>
-          <SmallCard>{domain}</SmallCard>
-        </BottomWrapper>
-      </TextWrapper>
-    </Wrapper>
+    <>
+      <BrowserWrapper>
+        <Toolbar>
+          <ToolbarButton color="#f65f58" />
+          <ToolbarButton color="#f9bc23" />
+          <ToolbarButton color="#3cc83f" />
+        </Toolbar>
+        <ImageWrapper
+          onMouseEnter={() => setScrolling(true)}
+          onMouseLeave={() => setScrolling(false)}
+        >
+          <Image src={props.image} scrolling={scrolling} />
+        </ImageWrapper>
+      </BrowserWrapper>
+    </>
   )
 }
 
 export default WebpageWrapper
 
-const Wrapper = styled.div`
-  display: grid;
-  gap: 50px;
-  grid-template-columns: 2fr 1fr;
+const BrowserWrapper = styled.div`
+  border: 0.5px solid black;
+  border-radius: 20px;
+  overflow: hidden;
 `
 
 const ImageWrapper = styled.div`
   width: 100%;
   height: 600px;
   overflow: hidden;
-  border: 0.5px solid black;
-  border-radius: 20px;
+`
+
+const Toolbar = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 34px;
+  padding-left: 20px;
+  background-color: lightgray;
+`
+
+const ToolbarButton = styled.div`
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  background-color: ${props => props.color};
 `
 
 const Image = styled.img`
@@ -54,14 +65,3 @@ const Image = styled.img`
     transform: translateY(calc(-100% + 300px));
   `}
 `
-
-const TextWrapper = styled.div`
-  display: grid;
-  justify-content: space-between;
-`
-
-const TopWrapper = styled.div``
-
-const BottomWrapper = styled.div``
-
-const SmallCard = styled.div``
