@@ -86,7 +86,7 @@ const Wrapper = styled.section`
 
 const ContentWrapper = styled.div`
   display: grid;
-  width: 1300px;
+  width: 1400px;
   margin: 0 auto;
   gap: 35px;
 

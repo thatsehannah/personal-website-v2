@@ -76,7 +76,7 @@ const Wrapper = styled.div`
 
 const ContentWrapper = styled.div`
   display: grid;
-  width: 1300px;
+  width: 1400px;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   margin: 0 auto;

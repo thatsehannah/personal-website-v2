@@ -79,7 +79,7 @@ const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 350px);
   justify-content: space-between;
-  width: 1300px;
+  width: 1400px;
   /* padding: 100px 0; */
 
   @media (max-width: 768px) {

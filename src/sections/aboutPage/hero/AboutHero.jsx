@@ -40,7 +40,7 @@ const Wrapper = styled.section`
 const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
-  width: 1300px;
+  width: 1400px;
   margin: 0 auto;
   overflow: hidden;
 

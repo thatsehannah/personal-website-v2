@@ -39,7 +39,7 @@ const Wrapper = styled.section`
 const ContentWrapper = styled.div`
   display: grid;
   gap: 50px;
-  width: 1300px;
+  width: 1400px;
   margin: 0 auto;
 
   @media (max-width: 768px) {
