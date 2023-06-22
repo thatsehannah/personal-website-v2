@@ -11,8 +11,23 @@ const ContactForm = () => {
   }
 
   const handleSubmit = event => {
+    console.log(details)
     event.preventDefault()
-    // API call to server
+
+    fetch("https://us-central1-thatsehannah.cloudfunctions.net/sendMail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(details),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log("Success:", data)
+      })
+      .catch(err => {
+        console.error("Error:", err)
+      })
   }
 
   return (
@@ -20,21 +35,21 @@ const ContactForm = () => {
       <ContentWrapper>
         <H1>Let's Connect!</H1>
         <Form onSubmit={handleSubmit}>
-          <Label for="name">Name</Label>
+          <Label htmlFor="name">Name</Label>
           <Input
             id="name"
             type="text"
             name="name"
             onChange={handleInputChange}
           />
-          <Label for="email">Email</Label>
+          <Label htmlFor="email">Email</Label>
           <Input
             id="email"
             type="email"
             name="email"
             onChange={handleInputChange}
           />
-          <Label for="message">Message</Label>
+          <Label htmlFor="message">Message</Label>
           <MessageInput
             id="message"
             type="text"
@@ -42,7 +57,7 @@ const ContactForm = () => {
             onChange={handleInputChange}
           />
           <ButtonWrapper>
-            <MainButton type="submit" text="Submit" />
+            <button type="submit">Submit</button>
           </ButtonWrapper>
         </Form>
       </ContentWrapper>
