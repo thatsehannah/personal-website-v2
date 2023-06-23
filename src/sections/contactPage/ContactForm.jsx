@@ -224,6 +224,10 @@ const TopWrapper = styled.div`
   align-items: center;
   gap: 48px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `
 
 const TitleWrapper = styled.div`
@@ -236,16 +240,28 @@ const Memoji = styled.img`
   position: relative;
   left: -38px;
   height: 240px;
+
+  @media (max-width: 768px) {
+    height: 180px;
+  }
 `
 
 const EmojiSpan = styled.span`
   font-size: 5rem;
   position: relative;
   left: -76px;
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+  }
 `
 
 const Title = styled(H1)`
   font-size: 3.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
 `
 
 const Form = styled.div`
