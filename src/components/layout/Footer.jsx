@@ -22,8 +22,10 @@ const Footer = props => {
             </Link>
           </LogoWrapper>
           <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
-            mattis nunc aliquam tincidunt est non.
+            "Success is being able to do what you love to do and support
+            yourself off of it."
+            <br />
+            -Nipsey Hussle
           </Text>
           <SocialMediaBanner size={30} color1="rgb(0,0,0)" />
         </Main>
