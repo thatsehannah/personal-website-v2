@@ -5,10 +5,11 @@ import ResumeCard from "../cards/ResumeCard"
 const ResumeWrapper = ({ workData }) => {
   return (
     <WorkWrapper count={workData.length}>
-      {workData.map(({ node }) => (
+      {workData.map(({ node }, index) => (
         <ResumeCard
           overflow={"true"}
-          key={node.uid}
+          key={node.index}
+          isOdd={index % 2 !== 0}
           logo={node.logo}
           title={node.position}
           secondaryText={node.duties}

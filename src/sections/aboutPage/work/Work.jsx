@@ -9,7 +9,7 @@ import { fadeInAnimation } from "../../../styles/FadeInAnimation"
 
 const Work = () => {
   const ref = useRef(null)
-  const inView = useIntersection(ref, { threshold: 0.2 })
+  const inView = useIntersection(ref)
   const workData = useWork()
   return (
     <Wrapper id="about-work" ref={ref} inView={inView}>

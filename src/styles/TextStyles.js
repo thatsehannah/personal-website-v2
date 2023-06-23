@@ -52,23 +52,15 @@ export const MediumText = styled.p`
 
 export const Caption = styled.p`
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.1rem;
-
-  @media (max-width: 768px) {
-    font-size: 0.7rem;
-  }
 `
 
 export const Caption2 = styled.p`
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.1rem;
   text-transform: uppercase;
-
-  @media (max-width: 768px) {
-    font-size: 0.7rem;
-  }
 `
 
 export const SmallText = styled.p`

@@ -8,7 +8,7 @@ import { fadeInAnimation } from "../../../styles/FadeInAnimation"
 
 const Skills = () => {
   const ref = useRef(null)
-  const inView = useIntersection(ref, { threshold: 0.4 })
+  const inView = useIntersection(ref)
   const skillData = useSkills()
 
   const languages = skillData.filter(edge => edge.node.category === "language")

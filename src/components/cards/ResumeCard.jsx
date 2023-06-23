@@ -18,7 +18,7 @@ const ResumeCard = props => {
           {props.start} - {props.end}
         </Duration>
       </EmphasisWrapper>
-      <SecondaryTextWrapper overflow={props.overflow}>
+      <SecondaryTextWrapper overflow={props.overflow} isOdd={props.isOdd}>
         <SecondaryText>{props.secondaryText}</SecondaryText>
       </SecondaryTextWrapper>
     </Wrapper>
@@ -84,12 +84,14 @@ const SecondaryTextWrapper = styled.div`
   -webkit-box-orient: vertical;
   transition: 0.2s ease-out;
 
-  :hover {
+  &:hover {
     display: grid;
     overflow: visible;
     height: auto;
     padding: 10px;
-    transform: scale(1.2) translate(-50px, -10px);
+    transform: scale(1.2)
+      ${props =>
+        props.isOdd ? "translate(-50px, -10px)" : "translate(50px, -10px)"};
     cursor: pointer;
     background-color: white;
     border-radius: 10px;
