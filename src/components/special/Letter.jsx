@@ -9,7 +9,8 @@ export default Letter
 
 const Span = styled.span`
   vertical-align: baseline;
-  background: linear-gradient(180deg, #0093e9 0%, #80d0c7 100%);
+  background: ${props =>
+    `linear-gradient(180deg, ${props.theme.secondaryColor} 0%, ${props.theme.primaryColor} 100%)`};
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

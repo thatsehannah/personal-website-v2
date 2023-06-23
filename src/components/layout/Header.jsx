@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
-import styled from "styled-components"
+import styled, { useTheme } from "styled-components"
 import MenuButton from "../buttons/MenuButton"
 import { UilEnvelope } from "@iconscout/react-unicons"
 import Logo from "../special/Logo"
@@ -10,6 +10,7 @@ import MobileMenuItems from "../menus/MobileMenuItems"
 
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
+  const theme = useTheme()
 
   const handleToggle = () => {
     setToggleMenu(!toggleMenu)
@@ -28,8 +29,8 @@ const Header = () => {
             <Link to={item.link} key={i}>
               <MenuButton
                 title={item.title}
-                color="#0093e9"
-                hoverColor="#80d0c7"
+                color={theme.secondaryColor}
+                hoverColor={theme.primaryColor}
               />
             </Link>
           ))}
@@ -38,9 +39,9 @@ const Header = () => {
           <a href="mailto:elliotchannah@outlook.com">
             <MenuButton
               title="elliotchannah@outlook.com"
-              icon={<UilEnvelope color="#0093e9" size="22" />}
-              color="#0093e9"
-              hoverColor="#80d0c7"
+              icon={<UilEnvelope color={theme.secondaryColor} size="22" />}
+              color={theme.secondaryColor}
+              hoverColor={theme.primaryColor}
             />
           </a>
         </EmailWrapper>
@@ -65,8 +66,6 @@ const Wrapper = styled.div`
   display: grid;
   width: 100%;
   padding: 30px;
-  /* justify-items: center;
-  align-items: center; */
   gap: 20px;
 
   @media (max-width: 768px) {
@@ -139,7 +138,8 @@ const MobileMenu = styled.div`
 
   @media (max-width: 768px) {
     display: grid;
-    border-bottom: ${props => (props.isOpen ? "0.5px solid black;" : "none")};
+    border-bottom: ${props =>
+      props.isOpen ? `${props.theme.border};` : "none"};
     width: 100%;
     z-index: 8;
     position: absolute;
@@ -151,6 +151,6 @@ const MobileMenu = styled.div`
     transition: max-height ${props => (props.isOpen ? "0.5s" : "0.3s")}
       ease-in-out;
 
-    background-color: rgb(255, 255, 255);
+    background-color: ${props => props.theme.backgroundColor};
   }
 `

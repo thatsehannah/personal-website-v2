@@ -4,6 +4,7 @@ import { H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 import AnimatedRoles from "../../../components/animations/AnimatedRoles"
 import { UilArrowDown } from "@iconscout/react-unicons"
+import Letter from "../../../components/special/Letter"
 
 const Hero = () => {
   return (
@@ -11,7 +12,10 @@ const Hero = () => {
       <ContentWrapper>
         <LeftWrapper>
           <TextWrapper>
-            <Title>Hey, I'm Elliot 👋🏾</Title>
+            <Title>
+              Hey, I'm <Letter />
+              lliot 👋🏾
+            </Title>
             <AnimatedRoles />
             <ButtonWrapper>
               <a

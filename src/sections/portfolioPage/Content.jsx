@@ -81,7 +81,7 @@ const Tab = styled.div`
     left: 0;
     width: 0;
     height: 3px;
-    background-color: #80d0c7;
+    background-color: ${props => props.theme.primaryColor};
     transition: width 1s;
   }
 

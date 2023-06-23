@@ -17,9 +17,9 @@ export default MenuButton
 
 const MenuItem = styled.div`
   display: flex;
-  color: ${props => props.color};
+  color: ${props =>
+    props.color ? props.color : props.theme.menuButton.textColor};
   transition: 0.5s ease-out;
-  /* text-align: center; */
   gap: ${props => props.icon && "8px"};
 
   span {
@@ -33,10 +33,14 @@ const MenuItem = styled.div`
 
   :hover {
     transform: scale(1.2);
-    color: ${props => props.hoverColor};
+    color: ${props =>
+      props.hoverColor ? props.hoverColor : props.theme.menuButton.hoverColor};
 
     svg {
-      fill: ${props => props.hoverColor};
+      fill: ${props =>
+        props.hoverColor
+          ? props.hoverColor
+          : props.theme.menuButton.hoverColor};
     }
 
     @media (max-width: 768px) {

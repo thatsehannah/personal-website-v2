@@ -26,7 +26,7 @@ const IntroAbout = () => {
         </LeftSide>
         <RightSide>
           <TextWrapper id="textwrapper">
-            <H2>About Me</H2>
+            <H2>Who Am I?</H2>
             <BodyMain>{text && text}</BodyMain>
             <ButtonWrapper>
               <Link to="/about#story">
@@ -82,7 +82,7 @@ const Background = styled.div`
   height: 90%;
   width: 90%;
   border-radius: 20px;
-  background-color: rgba(128, 208, 199, 0.2);
+  background-color: ${props => props.theme.lightPrimaryColor};
 
   @media (max-width: 768px) {
     display: none;

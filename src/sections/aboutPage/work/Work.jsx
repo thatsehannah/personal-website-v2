@@ -40,7 +40,7 @@ const Wrapper = styled.section`
 
 const BackgroundSquare = styled.div`
   position: absolute;
-  background-color: rgba(0, 147, 233, 0.2);
+  background-color: ${props => props.theme.lightSecondaryColor};
   height: 50%;
   width: 50%;
   border-radius: 20px;

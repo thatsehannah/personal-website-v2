@@ -1,8 +1,9 @@
 import React, { useState } from "react"
-import styled from "styled-components"
+import styled, { useTheme } from "styled-components"
 
 const WebpageWrapper = props => {
   const [scrolling, setScrolling] = useState(false)
+  const theme = useTheme()
 
   return (
     <>
@@ -26,7 +27,7 @@ const WebpageWrapper = props => {
 export default WebpageWrapper
 
 const BrowserWrapper = styled.div`
-  border: 0.5px solid black;
+  border: ${props => props.theme.border};
   border-radius: 20px;
   overflow: hidden;
 
@@ -48,7 +49,7 @@ const Toolbar = styled.div`
   gap: 10px;
   height: 34px;
   padding-left: 20px;
-  background-color: lightgray;
+  background-color: ${props => props.theme.webpageToolbarColor};
 
   @media (max-width: 768px) {
     height: 25px;

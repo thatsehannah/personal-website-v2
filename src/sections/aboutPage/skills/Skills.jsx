@@ -101,14 +101,14 @@ const Column = styled.div`
 `
 
 const CenterColumn = styled(Column)`
-  border-left: 0.5px solid rgba(0, 0, 0, 0.2);
-  border-right: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-left: 0.5px solid ${props => props.theme.ruleColor};
+  border-right: 0.5px solid ${props => props.theme.ruleColor};
 
   @media (max-width: 768px) {
     border-left: none;
     border-right: none;
-    border-top: 0.5px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-top: 0.5px solid ${props => props.theme.ruleColor};
+    border-bottom: 0.5px solid ${props => props.theme.ruleColor};
   }
 `
 
@@ -130,5 +130,5 @@ const SkillsWrapper = styled.div`
 `
 
 const SkillText = styled(BodyMain)`
-  color: rgba(0, 0, 0, 0.5);
+  color: ${props => props.theme.secondaryTextColor};
 `

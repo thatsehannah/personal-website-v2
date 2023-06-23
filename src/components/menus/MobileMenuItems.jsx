@@ -3,21 +3,28 @@ import { UilEnvelope } from "@iconscout/react-unicons"
 import { menuOptions } from "../../data/menuOptions"
 import { Link } from "gatsby"
 import MenuButton from "../buttons/MenuButton"
+import { useTheme } from "styled-components"
 
 const MobileMenuItems = () => {
+  const theme = useTheme()
+
   return (
     <>
       {menuOptions.map((item, i) => (
         <Link to={item.link} key={i}>
-          <MenuButton title={item.title} color="#0093e9" hoverColor="#80d0c7" />
+          <MenuButton
+            title={item.title}
+            color={theme.secondaryColor}
+            hoverColor={theme.primaryColor}
+          />
         </Link>
       ))}
       <a href="mailto:elliotchannah@outlook.com">
         <MenuButton
           title="elliotchannah@outlook.com"
-          icon={<UilEnvelope color="#0093e9" size="22" />}
-          color="#0093e9"
-          hoverColor="#80d0c7"
+          icon={<UilEnvelope color={theme.secondaryColor} size="22" />}
+          color={theme.secondaryColor}
+          hoverColor={theme.primaryColor}
         />
       </a>
     </>

@@ -5,6 +5,7 @@ import { H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 import { Link } from "gatsby"
 import ResumeWrapper from "../../../components/layout/ResumeWrapper"
+import Letter from "../../../components/special/Letter"
 
 const IntroWork = () => {
   const workData = useWork()
@@ -13,7 +14,10 @@ const IntroWork = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <Title>Here's my recent experience</Title>
+        <Title>
+          Here's my recent <Letter />
+          xperience
+        </Title>
         <ResumeWrapper workData={sliced} />
         <SeeMoreWrapper>
           <ButtonWrapper>

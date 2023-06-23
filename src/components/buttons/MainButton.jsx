@@ -17,13 +17,13 @@ export default MainButton
 
 const Button = styled.button`
   padding: 24px;
-  background: #80d0c7;
+  background: ${props => props.theme.primaryColor};
   border-radius: 50px;
   display: grid;
   align-items: center;
   justify-items: center;
   gap: 20px;
-  border: 0.5px solid black;
+  border: ${props => props.theme.border};
 
   *,
   & {

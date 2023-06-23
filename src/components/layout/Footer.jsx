@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { useTheme } from "styled-components"
 import Logo from "../special/Logo"
 import { Link } from "gatsby"
 import { BodyMain, H3 } from "../../styles/TextStyles"
@@ -8,7 +8,10 @@ import { menuOptions } from "../../data/menuOptions"
 import MenuButton from "../buttons/MenuButton"
 import { UilEnvelope, UilMobileVibrate } from "@iconscout/react-unicons"
 
-const Footer = () => {
+const Footer = props => {
+  const theme = useTheme()
+
+  console.log("Theme:", theme)
   return (
     <Wrapper>
       <ContentWrapper>
@@ -29,11 +32,7 @@ const Footer = () => {
           <MenuWrapper count={menuOptions.length} id="menuwrapper">
             {menuOptions.map((item, i) => (
               <Link to={item.link} key={i}>
-                <MenuButton
-                  title={item.title}
-                  color="rgba(0,0,0,0.5)"
-                  hoverColor="rgb(0,0,0)"
-                />
+                <MenuButton title={item.title} />
               </Link>
             ))}
           </MenuWrapper>
@@ -44,17 +43,20 @@ const Footer = () => {
             <a href="mailto:elliotchannah@outlook.com">
               <MenuButton
                 title="elliotchannah@outlook.com"
-                icon={<UilEnvelope color="rgba(0,0,0,0.5)" size="20" />}
-                color="rgba(0,0,0,0.5)"
-                hoverColor="rgb(0,0,0)"
+                icon={
+                  <UilEnvelope color={theme.menuButton.textColor} size="20" />
+                }
               />
             </a>
             <a href="tel:(706)631-7005">
               <MenuButton
                 title="(706) 631 - 7005"
-                icon={<UilMobileVibrate color="rgba(0,0,0,0.5)" size="20" />}
-                color="rgba(0,0,0,0.5)"
-                hoverColor="rgb(0,0,0)"
+                icon={
+                  <UilMobileVibrate
+                    color={theme.menuButton.textColor}
+                    size="20"
+                  />
+                }
               />
             </a>
           </LinksWrapper>
@@ -72,7 +74,7 @@ const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   padding: 30px;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid ${props => props.theme.ruleColor};
 `
 
 const ContentWrapper = styled.div`
@@ -107,7 +109,7 @@ const LogoWrapper = styled.div`
 `
 
 const Text = styled(BodyMain)`
-  color: rgba(0, 0, 0, 0.5);
+  color: ${props => props.theme.secondaryTextColor};
 `
 
 const PagesWrapper = styled(Column)`

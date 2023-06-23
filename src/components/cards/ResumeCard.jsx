@@ -33,9 +33,9 @@ const Wrapper = styled.div`
   width: 575px;
   height: 250px;
   gap: 16px;
-  background-color: rgb(239, 239, 240);
+  background-color: ${props => props.theme.resumeCard.backgroundColor};
   border-radius: 20px;
-  border: 0.5px solid black;
+  border: ${props => props.theme.border};
   padding: 20px;
 
   @media (max-width: 768px) {
@@ -74,7 +74,7 @@ const Title = styled(H3)`
 `
 
 const Duration = styled(Caption)`
-  color: rgba(0, 0, 0, 0.6);
+  color: ${props => props.theme.resumeCard.secondaryTextColor};
 `
 //for future reference: https://css-tricks.com/line-clampin/
 const SecondaryTextWrapper = styled.div`
@@ -93,7 +93,7 @@ const SecondaryTextWrapper = styled.div`
       ${props =>
         props.isOdd ? "translate(-50px, -10px)" : "translate(50px, -10px)"};
     cursor: pointer;
-    background-color: white;
+    background-color: ${props => props.theme.resumeCard.hoverBackgroundColor};
     border-radius: 10px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
   }
@@ -109,5 +109,5 @@ const SecondaryTextWrapper = styled.div`
 const SecondaryText = styled(MediumText)`
   font-size: 1rem;
   line-height: 1.4;
-  color: rgba(0, 0, 0, 0.6);
+  color: ${props => props.theme.resumeCard.secondaryTextColor};
 `

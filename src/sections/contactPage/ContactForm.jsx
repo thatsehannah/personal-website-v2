@@ -289,29 +289,33 @@ const Label = styled.label`
 `
 
 const Input = styled.input`
+  background-color: ${props => props.theme.inputBackgroundColor};
+  color: ${props => props.theme.textColor};
   font-size: 1.2rem;
   width: 90%;
   padding: 10px;
   height: 30px;
-  border: 1.5px solid rgb(0, 147, 233);
+  border: ${props => props.theme.border};
   border-radius: 8px;
 
   &:focus {
-    outline: 5px solid #80d0c7;
+    outline: 3.5px solid ${props => props.theme.primaryColor};
     border: none;
   }
 `
 
 const MessageInput = styled.textarea`
+  background-color: ${props => props.theme.inputBackgroundColor};
+  color: ${props => props.theme.textColor};
   font-size: 1.2rem;
   width: 90%;
   padding: 10px;
   height: 150px;
-  border: 1.5px solid rgb(0, 147, 233);
+  border: ${props => props.theme.border};
   border-radius: 8px;
 
   &:focus {
-    outline: 5px solid #80d0c7;
+    outline: 3.5px solid ${props => props.theme.primaryColor};
     border: none;
   }
 `

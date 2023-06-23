@@ -125,7 +125,7 @@ const ButtonGroup = styled.div`
 `
 
 const Button = styled.div`
-  background-color: rgba(128, 208, 199, 0.4);
+  background-color: ${props => props.theme.mediumPrimaryColor};
   width: 75px;
   padding: 24px;
   border-radius: 50%;
@@ -136,11 +136,11 @@ const Button = styled.div`
   justify-content: center;
   align-items: center;
   transition: transform 0.4s;
-  border: 0.5px solid black;
+  border: ${props => props.theme.border};
 
   :hover {
     transform: scale(1.18);
-    background-color: rgba(0, 147, 233, 0.4);
+    background-color: ${props => props.theme.mediumSecondaryColor};
   }
 
   :active {
@@ -168,11 +168,11 @@ const ListWrapper = styled.div`
   height: 100%;
 
   > :nth-child(even) {
-    background-color: rgba(0, 147, 233, 0.2);
+    background-color: ${props => props.theme.lightSecondaryColor};
   }
 
   > :nth-child(odd) {
-    background-color: rgba(128, 208, 199, 0.2);
+    background-color: ${props => props.theme.lightPrimaryColor};
   }
 
   @media (max-width: 768px) {

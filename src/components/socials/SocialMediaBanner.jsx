@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   align-items: center;
 
   a {
-    color: ${props => props.color1};
+    color: ${props => props.theme.secondaryColor};
     ${props =>
       props.color1 &&
       props.color2 &&

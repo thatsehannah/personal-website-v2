@@ -30,7 +30,7 @@ export default Stats
 const StatsWrapper = styled.div`
   display: grid;
   gap: 24px;
-  border: 0.5px solid black;
+  border: ${props => props.theme.border};
   border-radius: 25px;
   padding: 20px;
 `

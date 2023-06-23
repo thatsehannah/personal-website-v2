@@ -39,7 +39,7 @@ const HamburgerWrapper = styled.div`
 const Line = styled.span`
   width: 100%;
   height: 4px;
-  background-color: #80d0c7;
+  background-color: ${props => props.theme.primaryColor};
   transition: transform 0.3s;
 
   ${({ isActive }) =>

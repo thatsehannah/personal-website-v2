@@ -95,14 +95,19 @@ const SmallCard = styled.div`
   border-radius: 8px;
   font-weight: bold;
   font-size: 1.1rem;
-  background-color: rgba(0, 0, 0, 0.1);
-  color: ${props => (props.platform === "Web" ? "#0093e9" : "#80d0c7")};
+  background-color: ${props => props.theme.projectCard.backgroundColor};
+  color: ${props =>
+    props.platform === "Web"
+      ? `${props.theme.secondaryColor}`
+      : `${props.theme.primaryColor}`};
   overflow: hidden;
 
   &::before {
     content: "";
     background-color: ${props =>
-      props.platform === "Web" ? "#0093e9" : "#80d0c7"};
+      props.platform === "Web"
+        ? `${props.theme.secondaryColor}`
+        : `${props.theme.primaryColor}`};
     width: 12px;
     height: 100%;
     margin-right: 10px;
@@ -114,10 +119,10 @@ const SmallCard = styled.div`
 `
 
 const PlatformCard = styled(SmallCard)`
-  color: black;
+  color: ${props => props.theme.projectCard.platformColor};
 
   &::before {
-    background-color: black;
+    background-color: ${props => props.theme.projectCard.platformColor};
   }
 `
 

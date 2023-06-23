@@ -74,7 +74,7 @@ const CertWrapper = styled.div`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 147, 233, 0.2);
+  background-color: ${props => props.theme.lightSecondaryColor};
   border: 0.5px solid rgba(0, 0, 0, 0.3);
   border-radius: 24px;
   width: 550px;
