@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
+    "axios": "^1.4.0",
     "dotenv": "^16.1.2",
     "firebase-tools": "^12.4.0",
     "gatsby": "^5.3.3",
