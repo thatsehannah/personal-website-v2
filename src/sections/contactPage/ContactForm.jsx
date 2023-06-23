@@ -70,7 +70,7 @@ const ContactForm = () => {
     )
   }
 
-  const handleSubmit = async event => {
+  const handleSubmit = async () => {
     setSending(true)
 
     try {
