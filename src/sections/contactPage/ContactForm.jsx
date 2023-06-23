@@ -73,7 +73,10 @@ const ContactForm = () => {
     event.preventDefault()
 
     try {
-      const res = await axios.post(process.env.GATSBY_FIREBASE_FUNCTION_URL)
+      const res = await axios.post(
+        process.env.GATSBY_FIREBASE_FUNCTION_URL,
+        formData
+      )
 
       if (res.data.isEmailSend) {
         setToast({
