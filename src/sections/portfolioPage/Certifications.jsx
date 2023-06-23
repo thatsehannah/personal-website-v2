@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { useCertficates } from "../../utils/hooks/useCertificates"
-import { BodyIntro, MediumText } from "../../styles/TextStyles"
+import { BodyIntro, BodyMain, MediumText } from "../../styles/TextStyles"
 import MainButton from "../../components/buttons/MainButton"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
 
@@ -28,7 +28,7 @@ const Certifications = () => {
               {node.title} from {node.from}
             </Title>
             <Date>Issued on {node.issueDate}</Date>
-            <MediumText>{node.description}</MediumText>
+            <BodyMain>{node.description}</BodyMain>
           </TextWrapper>
         </ContentWrapper>
       ))}

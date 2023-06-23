@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useProjects } from "../../utils/hooks/useProjects"
 import WebpageWrapper from "./WebpageWrapper"
-import { H3, MediumText } from "../../styles/TextStyles"
+import { BodyMain, H3 } from "../../styles/TextStyles"
 import MobileWrapper from "./MobileWrapper"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
 import MainButton from "../../components/buttons/MainButton"
@@ -23,17 +23,13 @@ const Projects = () => {
                 <SmallCard platform={node.platform}>{node.platform}</SmallCard>
                 <PlatformCard>{node.domain}</PlatformCard>
               </TechStackWrapper>
-              <MediumText>
+              <BodyMain>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
                 mattis nunc aliquam tincidunt est non. Lorem ipsum dolor sit
                 amet, consectetur adipiscing elit. Lectus mattis nunc aliquam
                 tincidunt est non. Lorem ipsum dolor sit amet, consectetur
                 adipiscing elit. Lectus mattis nunc aliquam tincidunt est non.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
-                mattis nunc aliquam tincidunt est non. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Lectus mattis nunc aliquam
-                tincidunt est non.
-              </MediumText>
+              </BodyMain>
               <ButtonWrapper>
                 <a href={node.code} target="_blank" rel="noreferrer">
                   <MainButton text="See Code" />
