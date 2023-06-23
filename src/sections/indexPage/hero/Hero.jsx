@@ -14,7 +14,13 @@ const Hero = () => {
             <Title>Hey, I'm Elliot 👋🏾</Title>
             <AnimatedRoles />
             <ButtonWrapper>
-              <MainButton text="Download my resume" icon={<UilArrowDown />} />
+              <a
+                href="https://drive.google.com/file/d/1DuWfX38E44ZJvLNhpw2ieaUW6o16_QNa/view"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <MainButton text="Download my resume" icon={<UilArrowDown />} />
+              </a>
             </ButtonWrapper>
           </TextWrapper>
         </LeftWrapper>
