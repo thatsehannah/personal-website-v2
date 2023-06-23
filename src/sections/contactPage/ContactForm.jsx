@@ -9,6 +9,7 @@ import { fadeInAnimation } from "../../styles/FadeInAnimation"
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [errors, setErrors] = useState({ name: "", email: "", message: "" })
+  const [sending, setSending] = useState(false)
   const [toast, setToast] = useState({
     show: false,
     message: "",
@@ -70,7 +71,7 @@ const ContactForm = () => {
   }
 
   const handleSubmit = async event => {
-    event.preventDefault()
+    setSending(true)
 
     try {
       const res = await axios.post(
@@ -79,12 +80,14 @@ const ContactForm = () => {
       )
 
       if (res.data.isEmailSend) {
+        setSending(false)
         setToast({
           show: true,
           message: `Thanks! A response was sent to ${formData.email}`,
           backgroundColor: "rgba(80, 200, 120, 0.8)",
         })
       } else {
+        setSending(false)
         setToast({
           show: true,
           message: "An error occurred sending your message.",
@@ -92,6 +95,7 @@ const ContactForm = () => {
         })
       }
     } catch (error) {
+      setSending(false)
       setToast({
         show: true,
         message: `There was an error sending the message: ${error}`,
@@ -170,8 +174,8 @@ const ContactForm = () => {
             <MainButton
               onClick={handleSubmit}
               type="submit"
-              text="Send message"
-              disabled={checkIsFormValid()}
+              text={sending ? "Sending..." : "Send message"}
+              disabled={sending || checkIsFormValid()}
             />
           </ButtonWrapper>
         </Form>
