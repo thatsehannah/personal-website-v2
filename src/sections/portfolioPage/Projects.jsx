@@ -23,13 +23,7 @@ const Projects = () => {
                 <SmallCard platform={node.platform}>{node.platform}</SmallCard>
                 <PlatformCard>{node.domain}</PlatformCard>
               </TechStackWrapper>
-              <BodyMain>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus
-                mattis nunc aliquam tincidunt est non. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit. Lectus mattis nunc aliquam
-                tincidunt est non. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Lectus mattis nunc aliquam tincidunt est non.
-              </BodyMain>
+              <BodyMain>{node.description}</BodyMain>
               <ButtonWrapper>
                 <a href={node.code} target="_blank" rel="noreferrer">
                   <MainButton text="See Code" />
