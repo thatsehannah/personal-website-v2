@@ -13,6 +13,7 @@ export const useProjects = () => {
               domain
               description
               platform
+              live
             }
           }
         }

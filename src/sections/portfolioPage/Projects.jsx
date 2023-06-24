@@ -6,6 +6,7 @@ import { BodyMain, H3 } from "../../styles/TextStyles"
 import MobileWrapper from "./MobileWrapper"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
 import MainButton from "../../components/buttons/MainButton"
+import { UilExternalLinkAlt as ExternalLink } from "@iconscout/react-unicons"
 
 const Projects = () => {
   const projectData = useProjects()
@@ -18,7 +19,17 @@ const Projects = () => {
           {node.platform === "iOS" && <MobileWrapper image={node.imageUrl} />}
           <TextWrapper>
             <TopWrapper>
-              <Name>{node.name}</Name>
+              <TitleWrapper>
+                <Name>{node.name}</Name>
+                {node.live && (
+                  <a href={node.live} target="_blank" rel="noreferrer">
+                    {" "}
+                    <IconSpan>
+                      <ExternalLink />{" "}
+                    </IconSpan>
+                  </a>
+                )}
+              </TitleWrapper>
               <TechStackWrapper>
                 <SmallCard platform={node.platform}>{node.platform}</SmallCard>
                 <PlatformCard>{node.domain}</PlatformCard>
@@ -58,12 +69,31 @@ const ContentWrapper = styled.div`
 
 const TextWrapper = styled.div`
   display: grid;
+  margin-top: 30px;
 `
 
 const TopWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+`
+
+const TitleWrapper = styled.div`
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+`
+
+const IconSpan = styled.span`
+  color: ${props => props.theme.secondaryColor};
+
+  svg {
+    transition: 0.5s ease-out;
+    :hover {
+      transform: scale(1.3);
+    }
+  }
 `
 
 const Name = styled(H3)`
