@@ -119,7 +119,7 @@ const Title = styled(BodyIntro)`
 `
 
 const Date = styled(MediumText)`
-  color: rgba(0, 0, 0, 0.5);
+  color: ${props => props.theme.secondaryTextColor};
 `
 
 const ButtonWrapper = styled.div`
