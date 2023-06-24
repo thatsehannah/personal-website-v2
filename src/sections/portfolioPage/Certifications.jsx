@@ -54,6 +54,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 41px;
+  opacity: 0;
   ${fadeInAnimation}
 
   &:nth-child(even) {

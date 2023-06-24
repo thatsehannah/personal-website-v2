@@ -48,6 +48,7 @@ const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 50px;
+  opacity: 0;
   ${fadeInAnimation}
 
   @media (max-width: 768px) {
