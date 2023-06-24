@@ -8,8 +8,12 @@ import {
   UilAngleLeftB as LeftAngle,
 } from "@iconscout/react-unicons"
 import Letter from "../../../components/special/Letter"
+import { fadeInAnimation } from "../../../styles/FadeInAnimation"
+import { useIntersection } from "../../../utils/hooks/useIntersection"
 
 const Strengths = () => {
+  const ref = useRef(null)
+  const inView = useIntersection(ref)
   const strengthData = useStrength()
   const stickyWrapperRef = useRef(null)
 
@@ -29,7 +33,7 @@ const Strengths = () => {
 
   return (
     <Wrapper>
-      <ContentWrapper>
+      <ContentWrapper ref={ref} inView={inView}>
         <TopWrapper>
           <TitleWrapper>
             <Title>
@@ -89,6 +93,9 @@ const ContentWrapper = styled.div`
   width: 1400px;
   margin: 0 auto;
   gap: 35px;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  ${props => props.inView && fadeInAnimation};
 
   @media (max-width: 768px) {
     width: 100%;
