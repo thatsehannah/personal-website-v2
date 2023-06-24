@@ -1,9 +1,8 @@
 import React, { useState } from "react"
-import styled, { useTheme } from "styled-components"
+import styled from "styled-components"
 
 const WebpageWrapper = props => {
   const [scrolling, setScrolling] = useState(false)
-  const theme = useTheme()
 
   return (
     <>
