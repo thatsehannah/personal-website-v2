@@ -17,7 +17,11 @@ const Strengths = () => {
   const strengthData = useStrength()
   const stickyWrapperRef = useRef(null)
 
-  const factor = window.innerWidth <= 768 ? 1.0575 : 1.5
+  let factor = 1.5
+
+  if (typeof window !== "undefined") {
+    factor = window.innerWidth <= 768 && 1.0575
+  }
 
   const handleScrollLeft = () => {
     const wrapper = stickyWrapperRef.current

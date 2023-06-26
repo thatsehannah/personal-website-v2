@@ -13,15 +13,18 @@ const Certifications = () => {
     setItemsToShow(prevItemsToShow => prevItemsToShow + 3)
   }
 
+  const openCertUrl = url => {
+    if (typeof window !== "undefined") {
+      window.open(url, "_blank")
+    }
+  }
+
   return (
     <Wrapper>
       {certData.slice(0, itemsToShow).map(({ node }, index) => (
         <ContentWrapper key={index}>
           <CertWrapper>
-            <Cert
-              src={node.url}
-              onClick={() => window.open(node.url, "_blank")}
-            />
+            <Cert src={node.url} onClick={() => openCertUrl(node.url)} />
           </CertWrapper>
           <TextWrapper>
             <Title>
