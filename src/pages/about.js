@@ -10,7 +10,7 @@ import Skills from "../sections/aboutPage/skills/Skills"
 const About = () => {
   return (
     <Layout>
-      <Seo title={"About"} />
+      <Seo title="About" />
       <AboutHero />
       <Story />
       <Strengths />

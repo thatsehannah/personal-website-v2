@@ -6,7 +6,7 @@ import ContactForm from "../sections/contactPage/ContactForm"
 const Contact = () => {
   return (
     <Layout>
-      <Seo title={"About"} />
+      <Seo title="Contact" />
       <ContactForm />
     </Layout>
   )

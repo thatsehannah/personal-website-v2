@@ -57,7 +57,6 @@ const ContentWrapper = styled.div`
   display: flex;
   width: 1400px;
   margin: 0 auto;
-
   gap: 60px;
 
   @media (max-width: 768px) {
