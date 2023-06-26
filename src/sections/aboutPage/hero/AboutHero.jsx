@@ -72,7 +72,7 @@ const RightSide = styled.div`
 `
 
 const Memoji = styled.img`
-  height: 500px;
+  height: 450px;
   position: relative;
   top: -55px;
 

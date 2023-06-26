@@ -105,13 +105,11 @@ const MemojiWrapper = styled.div`
 `
 
 const Memoji = styled.img`
-  height: 100%;
-  width: 100%;
+  height: 450px;
   opacity: 0;
   ${fadeInAnimation}
 
   @media (max-width: 768px) {
-    height: 265px;
-    width: 265px;
+    height: 350px;
   }
 `
