@@ -60,7 +60,7 @@ const Wrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 41px;
+  gap: 40px;
   opacity: 0;
   ${fadeInAnimation}
 
