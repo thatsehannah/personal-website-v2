@@ -9,7 +9,9 @@ const NotFound = () => {
       <ContentWrapper>
         <Memoji src="/images/memojis/notfound.png" />
         <H1>404: Route Not Found</H1>
-        <MediumText>You just hit a route that doesn't exist...</MediumText>
+        <MediumText>
+          You tried to visit a route that doesn't exist...
+        </MediumText>
         <Link to="/">
           <MediumText>{"<< Go home"}</MediumText>
         </Link>
