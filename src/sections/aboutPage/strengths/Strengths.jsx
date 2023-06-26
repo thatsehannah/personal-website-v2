@@ -15,7 +15,7 @@ const Strengths = () => {
   const ref = useRef(null)
   const inView = useIntersection(ref)
   const strengthData = useStrength()
-  const stickyWrapperRef = useRef(null)
+  const carouselRef = useRef(null)
 
   let factor
 
@@ -24,13 +24,13 @@ const Strengths = () => {
   }
 
   const handleScrollLeft = () => {
-    const wrapper = stickyWrapperRef.current
+    const wrapper = carouselRef.current
     const scrollAmount = wrapper.clientWidth / factor
     wrapper.scrollLeft -= scrollAmount
   }
 
   const handleScrollRight = () => {
-    const wrapper = stickyWrapperRef.current
+    const wrapper = carouselRef.current
     const scrollAmount = wrapper.clientWidth / factor
     wrapper.scrollLeft += scrollAmount
   }
@@ -45,6 +45,7 @@ const Strengths = () => {
               <Letter />
               ngths 💪🏾
             </Title>
+            <p>Scroll left or right, or use the arrow buttons!</p>
           </TitleWrapper>
           <ButtonGroup>
             <Button onClick={handleScrollLeft}>
@@ -55,7 +56,7 @@ const Strengths = () => {
             </Button>
           </ButtonGroup>
         </TopWrapper>
-        <StickyWrapper ref={stickyWrapperRef}>
+        <Carousel ref={carouselRef}>
           <ListWrapper>
             {strengthData.map(({ node }) => (
               <StrengthCard
@@ -67,7 +68,7 @@ const Strengths = () => {
               />
             ))}
           </ListWrapper>
-        </StickyWrapper>
+        </Carousel>
         <Source>
           Source:{" "}
           <a
@@ -121,8 +122,12 @@ const TopWrapper = styled.div`
 `
 
 const TitleWrapper = styled.div`
+  display: grid;
+  gap: 20px;
+
   @media (max-width: 768px) {
     width: 100%;
+    text-align: center;
   }
 `
 
@@ -169,7 +174,7 @@ const Button = styled.div`
   }
 `
 
-const StickyWrapper = styled.div`
+const Carousel = styled.div`
   position: sticky;
   width: 100%;
   overflow-x: scroll;

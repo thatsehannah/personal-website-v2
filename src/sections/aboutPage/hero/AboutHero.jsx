@@ -53,6 +53,7 @@ const ContentWrapper = styled.div`
 
 const LeftSide = styled.div`
   display: grid;
+  ${fadeInAnimation}
 
   @media (max-width: 768px) {
     justify-content: center;
@@ -74,7 +75,6 @@ const Memoji = styled.img`
   height: 500px;
   position: relative;
   top: -55px;
-  ${fadeInAnimation}
 
   @media (max-width: 768px) {
     height: 350px;

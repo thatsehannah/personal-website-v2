@@ -1,22 +1,27 @@
 import React from "react"
 import styled from "styled-components"
 import { UilBatteryBolt, UilWifi } from "@iconscout/react-unicons"
-import { Caption, Caption2 } from "../../styles/TextStyles"
+import { Caption } from "../../styles/TextStyles"
 
 const MobileWrapper = props => {
+  let batteryIconSize
+
+  if (typeof window !== undefined) {
+    batteryIconSize = window.innerWidth <= 768 ? 18 : 26
+  }
   return (
     <Wrapper>
       <PhoneWrapper>
         <Toolbar>
           <LeftSide>
-            <Caption>Carrier</Caption>
+            <ToolbarText>Carrier</ToolbarText>
             <UilWifi size={12} style={{ marginTop: "-1.5px" }} />
           </LeftSide>
           <Center>
-            <Caption2>9:41</Caption2>
+            <ToolbarText>9:41</ToolbarText>
           </Center>
           <RightSide>
-            <UilBatteryBolt />
+            <UilBatteryBolt size={batteryIconSize} />
           </RightSide>
         </Toolbar>
         <ImageWrapper>
@@ -35,6 +40,11 @@ const Wrapper = styled.div`
   border-radius: 20px;
   padding: 20px;
   background-color: ${props => props.theme.mobileBackgroundColor};
+  border: ${props => props.theme.border};
+
+  @media (max-width: 768px) {
+    border: none;
+  }
 `
 
 const PhoneWrapper = styled.div`
@@ -70,6 +80,7 @@ const Toolbar = styled.div`
 
   @media (max-width: 768px) {
     height: 35px;
+    margin: 0 15px;
   }
 `
 
@@ -78,6 +89,10 @@ const LeftSide = styled.div`
   gap: 5px;
   align-items: center;
   vertical-align: top;
+
+  @media (max-width: 768px) {
+    gap: 2px;
+  }
 `
 
 const Center = styled.div`
@@ -94,4 +109,12 @@ const RightSide = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 100%;
+`
+
+const ToolbarText = styled(Caption)`
+  font-size: 0.8rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.6rem;
+  }
 `

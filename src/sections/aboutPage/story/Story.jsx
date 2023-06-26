@@ -68,6 +68,10 @@ const LeftSide = styled.div``
 const TextWrapper = styled.div`
   display: grid;
   gap: 60px;
+
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
 `
 
 const BodyWrapper = styled.div`
