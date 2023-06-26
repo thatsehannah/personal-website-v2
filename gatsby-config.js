@@ -18,6 +18,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-firestore-easy`,
       options: {
@@ -68,7 +69,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `/static/images/icons/favicon-32x32.png`, // This path is relative to the root of the site.
+        icon: `static/icons/favicon-32x32.png`, // This path is relative to the root of the site.
       },
     },
   ],

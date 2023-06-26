@@ -13,6 +13,7 @@
     "gatsby-plugin-image": "^3.3.2",
     "gatsby-plugin-manifest": "^5.3.1",
     "gatsby-plugin-sharp": "^5.3.2",
+    "gatsby-plugin-styled-components": "^6.11.0",
     "gatsby-source-filesystem": "^5.3.1",
     "gatsby-source-firestore-easy": "^1.1.0",
     "gatsby-transformer-sharp": "^5.3.1",
