@@ -8,10 +8,9 @@ import { menuOptions } from "../../data/menuOptions"
 import MenuButton from "../buttons/MenuButton"
 import { UilEnvelope, UilMobileVibrate } from "@iconscout/react-unicons"
 
-const Footer = props => {
+const Footer = () => {
   const theme = useTheme()
 
-  console.log("Theme:", theme)
   return (
     <Wrapper>
       <ContentWrapper>

@@ -8,7 +8,7 @@ const MenuButton = props => {
   return (
     <MenuItem color={color} hoverColor={hoverColor} icon={icon}>
       {icon && <span>{icon}</span>}
-      <Title>{title}</Title>
+      <MediumText>{title}</MediumText>
     </MenuItem>
   )
 }
@@ -47,8 +47,4 @@ const MenuItem = styled.div`
       transform: scale(1);
     }
   }
-`
-
-const Title = styled(MediumText)`
-  /* margin-left: ${props => (props.icon ? "8px" : "0px")}; */
 `
