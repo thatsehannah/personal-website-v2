@@ -100,6 +100,7 @@ const SecondaryTextWrapper = styled.div`
 
   @media (max-width: 768px) {
     pointer-events: none;
+    transform: none;
     display: -webkit-box;
     -webkit-line-clamp: initial;
     -webkit-box-orient: initial;

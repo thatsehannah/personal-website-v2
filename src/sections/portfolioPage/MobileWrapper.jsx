@@ -32,7 +32,6 @@ export default MobileWrapper
 const Wrapper = styled.div`
   display: grid;
   justify-content: center;
-  border: ${props => props.theme.border};
   border-radius: 20px;
   padding: 20px;
   background-color: ${props => props.theme.mobileBackgroundColor};

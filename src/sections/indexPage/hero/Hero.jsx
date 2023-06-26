@@ -1,10 +1,11 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 import AnimatedRoles from "../../../components/animations/AnimatedRoles"
 import { UilArrowDown } from "@iconscout/react-unicons"
 import Letter from "../../../components/special/Letter"
+import { fadeInAnimation } from "../../../styles/FadeInAnimation"
 
 const Hero = () => {
   return (
@@ -86,7 +87,9 @@ const TextWrapper = styled.div`
   gap: 40px;
 `
 
-const Title = styled(H2)``
+const Title = styled(H2)`
+  font-weight: 600;
+`
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -94,19 +97,6 @@ const ButtonWrapper = styled.div`
 
   @media (max-width: 768px) {
     justify-content: center;
-  }
-`
-
-const animation = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-    filter: blur(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-    filter: blur(0px);
   }
 `
 
@@ -118,7 +108,7 @@ const Memoji = styled.img`
   height: 100%;
   width: 100%;
   opacity: 0;
-  animation: ${animation} 1s forwards;
+  ${fadeInAnimation}
 
   @media (max-width: 768px) {
     height: 265px;

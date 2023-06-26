@@ -76,10 +76,8 @@ const Image = styled.img`
     props.scrolling &&
     `
     transform: translateY(calc(-100% + 300px));
-  `}
-
-  @media (max-width: 768px) {
+  `}/* @media (max-width: 768px) {
     transition: none;
     transform: none;
-  }
+  } */
 `

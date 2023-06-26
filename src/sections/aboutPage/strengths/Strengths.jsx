@@ -17,10 +17,10 @@ const Strengths = () => {
   const strengthData = useStrength()
   const stickyWrapperRef = useRef(null)
 
-  let factor = 1.5
+  let factor
 
   if (typeof window !== "undefined") {
-    factor = window.innerWidth <= 768 && 1.0575
+    factor = window.innerWidth <= 768 ? 0.9 : 1.5
   }
 
   const handleScrollLeft = () => {
@@ -157,6 +157,16 @@ const Button = styled.div`
   :active {
     transform: scale(0.8);
   }
+
+  @media (max-width: 768px) {
+    width: 50px;
+    padding: 12px;
+
+    :hover {
+      transform: none;
+      background-color: ${props => props.theme.mediumPrimaryColor};
+    }
+  }
 `
 
 const StickyWrapper = styled.div`
@@ -187,8 +197,9 @@ const ListWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
-    gap: 40px;
-    padding: 20px;
+    align-items: center;
+    /* gap: 40px; */
+    padding: 10px;
   }
 `
 

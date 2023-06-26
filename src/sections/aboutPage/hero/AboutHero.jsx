@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { H1, BodyIntro } from "../../../styles/TextStyles"
 import Letter from "../../../components/special/Letter"
 import { useAboutMeData } from "../../../utils/hooks/useAboutMeData"
+import { fadeInAnimation } from "../../../styles/FadeInAnimation"
 
 const AboutHero = () => {
   const text = useAboutMeData().find(
@@ -73,6 +74,7 @@ const Memoji = styled.img`
   height: 500px;
   position: relative;
   top: -55px;
+  ${fadeInAnimation}
 
   @media (max-width: 768px) {
     height: 350px;

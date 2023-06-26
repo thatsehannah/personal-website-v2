@@ -51,6 +51,10 @@ export default Certifications
 const Wrapper = styled.div`
   display: grid;
   gap: 120px;
+
+  @media (max-width: 768px) {
+    gap: 80px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -65,7 +69,9 @@ const ContentWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
+    width: 100%;
     flex-direction: column;
+    gap: 20px;
 
     &:nth-child(even) {
       flex-direction: column;
@@ -87,6 +93,7 @@ const CertWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
+    height: auto;
   }
 `
 
@@ -101,8 +108,8 @@ const Cert = styled.img`
   }
 
   @media (max-width: 768px) {
-    width: 98%;
-    height: 98%;
+    width: 100%;
+    height: 100%;
 
     &:hover {
       transform: none;

@@ -41,7 +41,6 @@ const ContentWrapper = styled.div`
   gap: 40px;
 
   width: 1400px;
-  margin: 0 auto;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -55,7 +54,7 @@ const Title = styled(H1)`
 const TabWrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: 50px;
 
   @media (max-width: 768px) {
     display: grid;

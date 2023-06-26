@@ -5,8 +5,8 @@ export const H1 = styled.h1`
   font-size: 3.75rem;
   line-height: 1.25;
 
-  @media (max-width: 450px) {
-    font-size: 3.25rem;
+  @media (max-width: 768px) {
+    font-size: 2.7rem;
   }
 `
 

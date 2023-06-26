@@ -119,9 +119,9 @@ const ContactForm = () => {
             <EmojiSpan>➕</EmojiSpan>
             <EmojiSpan>🫵</EmojiSpan>
           </TopWrapper>
-          <Title>
+          <H1>
             Let's chop it up. Send m<Letter /> a message...
-          </Title>
+          </H1>
         </TitleWrapper>
 
         <Form>
@@ -247,6 +247,7 @@ const Memoji = styled.img`
 
   @media (max-width: 768px) {
     height: 180px;
+    left: 0;
   }
 `
 
@@ -257,14 +258,7 @@ const EmojiSpan = styled.span`
 
   @media (max-width: 768px) {
     font-size: 4rem;
-  }
-`
-
-const Title = styled(H1)`
-  font-size: 3.5rem;
-
-  @media (max-width: 768px) {
-    font-size: 3rem;
+    left: -38px;
   }
 `
 

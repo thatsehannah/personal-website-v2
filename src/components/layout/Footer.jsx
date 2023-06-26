@@ -2,7 +2,7 @@ import React from "react"
 import styled, { useTheme } from "styled-components"
 import Logo from "../special/Logo"
 import { Link } from "gatsby"
-import { BodyMain, H3 } from "../../styles/TextStyles"
+import { Caption, H3 } from "../../styles/TextStyles"
 import SocialMediaBanner from "../socials/SocialMediaBanner"
 import { menuOptions } from "../../data/menuOptions"
 import MenuButton from "../buttons/MenuButton"
@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <Main>
+        <Column>
           <LogoWrapper>
             <Link to="/">
               <Logo />
@@ -27,7 +27,7 @@ const Footer = () => {
             -Nipsey Hussle
           </Text>
           <SocialMediaBanner size={30} color1="rgb(0,0,0)" />
-        </Main>
+        </Column>
         <PagesWrapper>
           <Title>Pages</Title>
           <MenuWrapper count={menuOptions.length} id="menuwrapper">
@@ -83,10 +83,8 @@ const ContentWrapper = styled.div`
   grid-template-columns: repeat(3, 350px);
   justify-content: space-between;
   width: 1400px;
-  /* padding: 100px 0; */
 
   @media (max-width: 768px) {
-    padding: 50px 0;
     width: 100%;
     grid-template-columns: auto;
     gap: 60px;
@@ -102,14 +100,12 @@ const Column = styled.div`
   }
 `
 
-const Main = styled(Column)``
-
 const LogoWrapper = styled.div`
   display: grid;
   justify-items: left;
 `
 
-const Text = styled(BodyMain)`
+const Text = styled(Caption)`
   color: ${props => props.theme.secondaryTextColor};
 `
 

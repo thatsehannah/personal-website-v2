@@ -4,6 +4,7 @@ import {
   UilGithub,
   UilLinkedin,
   UilInstagram,
+  UilTwitter,
   UilFacebook,
 } from "@iconscout/react-unicons"
 
@@ -32,6 +33,13 @@ const SocialMediaBanner = props => {
         rel="noopener noreferrer"
       >
         <UilInstagram size={size} />
+      </a>
+      <a
+        href="https://twitter.com/thatsehannah"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <UilTwitter size={size} />
       </a>
       <a
         href="https://www.facebook.com/ehannahiii/"

@@ -60,7 +60,7 @@ const EmojiWrapper = styled.div`
 `
 
 const Text = styled(BodyMain)`
-  ${props =>
+  /* ${props =>
     props.length > 100 &&
     `
       text-indent: -94px;
@@ -70,7 +70,7 @@ const Text = styled(BodyMain)`
         text-indent: -83px;
         padding-left: 83px;
       }
-    `};
+    `}; */
 `
 
 const Strong = styled.strong`

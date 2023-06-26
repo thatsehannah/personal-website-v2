@@ -53,6 +53,10 @@ export default Projects
 const Wrapper = styled.div`
   display: grid;
   gap: 120px;
+
+  @media (max-width: 768px) {
+    gap: 80px;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -64,6 +68,7 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 `
 
@@ -76,6 +81,10 @@ const TopWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
 `
 
 const TitleWrapper = styled.div`

@@ -130,5 +130,5 @@ const SkillsWrapper = styled.div`
 `
 
 const SkillText = styled(BodyMain)`
-  color: ${props => props.theme.secondaryTextColor};
+  color: ${props => props.theme.secondaryColor};
 `
