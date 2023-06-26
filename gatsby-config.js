@@ -1,5 +1,5 @@
 require("dotenv").config()
-const keyUrl = `${__dirname}/${process.env.FIREBASE_KEY_URL}`
+const firebaseKey = JSON.parse(process.env.FIREBASE_KEY)
 
 module.exports = {
   siteMetadata: {
@@ -22,7 +22,7 @@ module.exports = {
       resolve: `gatsby-source-firestore-easy`,
       options: {
         adminCredential: {
-          credential: require(keyUrl),
+          credential: firebaseKey,
           databaseURL: process.env.FIREBASE_DATABASE_URL,
         },
         collections: [
