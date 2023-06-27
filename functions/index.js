@@ -80,3 +80,28 @@ exports.sendMail = functions.https.onRequest((req, res) => {
       })
   })
 })
+
+const collections = [
+  "aboutMe",
+  "certificates",
+  "education",
+  "projects",
+  "skills",
+  "stats",
+  "strengths",
+  "work",
+]
+
+collections.forEach(collection => {
+  exports[`${collection}Trigger`] = functions.firestore
+    .document(`${collection}/{docId}`)
+    .onWrite(async (_, __) => {
+      const res = await fetch(process.env.VERCEL_BUILD_HOOK, { method: "POST" })
+
+      if (res.ok) {
+        console.log("Build triggered successfully.")
+      } else {
+        console.log("Failed to trigger build:", res.statusText)
+      }
+    })
+})
