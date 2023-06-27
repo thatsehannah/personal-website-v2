@@ -21,8 +21,8 @@ const Footer = () => {
             </Link>
           </LogoWrapper>
           <Text>
-            "Success is being able to do what you love to do and support
-            yourself off of it."
+            "Success to me is just being able to do what you love to do and
+            support yourself all through."
             <br />
             -Nipsey Hussle
           </Text>
