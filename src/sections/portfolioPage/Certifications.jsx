@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { useCertficates } from "../../utils/hooks/useCertificates"
-import { BodyIntro, BodyMain, MediumText } from "../../styles/TextStyles"
+import { BodyMain, H3, MediumText } from "../../styles/TextStyles"
 import MainButton from "../../components/buttons/MainButton"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
 
@@ -122,11 +122,10 @@ const TextWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
   flex: 1;
+  margin-top: 30px;
 `
 
-const Title = styled(BodyIntro)`
-  font-weight: 500;
-`
+const Title = styled(H3)``
 
 const Date = styled(MediumText)`
   color: ${props => props.theme.secondaryTextColor};

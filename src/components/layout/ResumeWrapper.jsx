@@ -28,7 +28,7 @@ const WorkWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   gap: 40px;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   ${props =>
     props.count % 2 !== 0 &&

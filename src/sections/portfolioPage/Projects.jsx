@@ -90,7 +90,6 @@ const TopWrapper = styled.div`
 const TitleWrapper = styled.div`
   display: flex;
   gap: 12px;
-  justify-content: center;
   align-items: center;
 `
 
@@ -116,8 +115,8 @@ const TechStackWrapper = styled.div`
   gap: 20px;
 
   @media (max-width: 768px) {
-    width: 100%;
     justify-content: center;
+    width: 100%;
   }
 `
 
