@@ -1,6 +1,8 @@
+require("dotenv").config()
 const functions = require("firebase-functions")
 const nodemailer = require("nodemailer")
 const cors = require("cors")({ origin: true })
+const axios = require("axios")
 
 const gmailEmail = functions.config().gmail.email
 const gmailPassword = functions.config().gmail.password
@@ -95,13 +97,16 @@ const collections = [
 collections.forEach(collection => {
   exports[`${collection}Trigger`] = functions.firestore
     .document(`${collection}/{docId}`)
-    .onWrite(async (_, __) => {
-      const res = await fetch(process.env.VERCEL_BUILD_HOOK, { method: "POST" })
-
-      if (res.ok) {
+    .onWrite(async (change, context) => {
+      console.log("Firing ")
+      try {
+        console.log("VERCEL_BUILD_HOOK: ", process.env.VERCEL_BUILD_HOOK)
+        await axios.post(process.env.VERCEL_BUILD_HOOK, {})
         console.log("Build triggered successfully.")
-      } else {
-        console.log("Failed to trigger build:", res.statusText)
+        return null
+      } catch (error) {
+        console.log("Failed to trigger build: ", error)
+        return null
       }
     })
 })
