@@ -98,9 +98,8 @@ collections.forEach(collection => {
   exports[`${collection}Trigger`] = functions.firestore
     .document(`${collection}/{docId}`)
     .onWrite(async (change, context) => {
-      console.log("Firing ")
+      console.log(`Firing ${collection}Trigger`)
       try {
-        console.log("VERCEL_BUILD_HOOK: ", process.env.VERCEL_BUILD_HOOK)
         await axios.post(process.env.VERCEL_BUILD_HOOK, {})
         console.log("Build triggered successfully.")
         return null
