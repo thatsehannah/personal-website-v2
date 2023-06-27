@@ -8,6 +8,7 @@ export const useSkills = () => {
           node {
             name
             category
+            isFavorite
           }
         }
       }

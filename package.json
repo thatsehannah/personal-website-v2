@@ -6,6 +6,7 @@
   "author": "Elliot Hannah <elliotchannah@outlook.com>",
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
+    "@iconscout/react-unicons-solid": "github:iconscout/react-unicons-solid",
     "axios": "^1.4.0",
     "dotenv": "^16.1.2",
     "firebase-tools": "^12.4.0",

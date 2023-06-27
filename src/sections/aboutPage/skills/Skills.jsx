@@ -2,9 +2,10 @@ import React, { useRef } from "react"
 import styled from "styled-components"
 import Letter from "../../../components/special/Letter"
 import { useSkills } from "../../../utils/hooks/useSkills"
-import { BodyMain, H2, H3 } from "../../../styles/TextStyles"
+import { H2, H3 } from "../../../styles/TextStyles"
 import { useIntersection } from "../../../utils/hooks/useIntersection"
 import { fadeInAnimation } from "../../../styles/FadeInAnimation"
+import SkillsWrapper from "./SkillsWrapper"
 
 const Skills = () => {
   const ref = useRef(null)
@@ -28,27 +29,15 @@ const Skills = () => {
         <TableWrapper>
           <Column>
             <ColumnTitle>Software</ColumnTitle>
-            <SkillsWrapper>
-              {software.map(({ node }, index) => (
-                <SkillText key={index}>{node.name}</SkillText>
-              ))}
-            </SkillsWrapper>
+            <SkillsWrapper skill={software} />
           </Column>
           <CenterColumn>
             <ColumnTitle>Languages</ColumnTitle>
-            <SkillsWrapper>
-              {languages.map(({ node }, index) => (
-                <SkillText key={index}>{node.name}</SkillText>
-              ))}
-            </SkillsWrapper>
+            <SkillsWrapper skill={languages} />
           </CenterColumn>
           <Column>
             <ColumnTitle>Frameworks</ColumnTitle>
-            <SkillsWrapper>
-              {frameworks.map(({ node }, index) => (
-                <SkillText key={index}>{node.name}</SkillText>
-              ))}
-            </SkillsWrapper>
+            <SkillsWrapper skill={frameworks} />
           </Column>
         </TableWrapper>
       </ContentWrapper>
@@ -117,18 +106,27 @@ const ColumnTitle = styled(H3)`
   font-weight: 500;
 `
 
-const SkillsWrapper = styled.div`
-  display: grid;
-  grid-template-rows: repeat(5, 0.5fr);
-  gap: 15px;
-  grid-auto-flow: column;
-  text-align: center;
+// const SkillsWrapper = styled.div`
+//   display: grid;
+//   grid-template-rows: repeat(5, 0.5fr);
+//   gap: 15px;
+//   grid-auto-flow: column;
+//   align-items: center;
+//   text-align: center;
 
-  @media (max-width: 768px) {
-    gap: 20px;
-  }
-`
+//   @media (max-width: 768px) {
+//     gap: 20px;
+//   }
+// `
 
-const SkillText = styled(BodyMain)`
-  color: ${props => props.theme.secondaryColor};
-`
+// const SkillText = styled(BodyMain)`
+//   color: ${props => props.theme.secondaryColor};
+// `
+
+// const HeartSpan = styled.span`
+//   align-items: center;
+
+//   svg: {
+//     fill: gold;
+//   }
+// `

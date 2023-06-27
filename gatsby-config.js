@@ -67,7 +67,7 @@ module.exports = {
       options: {
         name: `ehannah-personal-site`,
         short_name: `starter`,
-        start_url: `/about`,
+        start_url: `/`,
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
