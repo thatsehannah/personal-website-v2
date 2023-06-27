@@ -81,13 +81,12 @@ const ContentWrapper = styled.div`
 
 const CertWrapper = styled.div`
   display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
   background-color: ${props => props.theme.lightSecondaryColor};
   border: 0.5px solid rgba(0, 0, 0, 0.3);
   border-radius: 24px;
-  width: 550px;
+  width: 680px;
   height: 440px;
   padding: 20px;
 

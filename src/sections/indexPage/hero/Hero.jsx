@@ -52,7 +52,7 @@ const Wrapper = styled.section`
 `
 
 const ContentWrapper = styled.div`
-  width: 1400px;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;

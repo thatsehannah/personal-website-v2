@@ -199,7 +199,7 @@ const Wrapper = styled.section`
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1400px;
+  width: 90%;
   /* margin: 0 auto; */
   gap: 60px;
 

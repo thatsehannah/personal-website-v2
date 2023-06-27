@@ -45,7 +45,11 @@ module.exports = {
             type: "StrengthData",
             orderBy: [["rank", "asc"]],
           },
-          { collection: "work", type: "WorkData", orderBy: [["end", "desc"]] },
+          {
+            collection: "work",
+            type: "WorkData",
+            orderBy: [["end", "desc"]],
+          },
           {
             collection: "certificates",
             type: "CertificateData",

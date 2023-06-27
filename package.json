@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "ehannah-personal-site",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My revamped website ",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Elliot Hannah <elliotchannah@outlook.com>",
   "dependencies": {
     "@iconscout/react-unicons": "^2.0.2",
     "axios": "^1.4.0",
@@ -40,8 +40,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

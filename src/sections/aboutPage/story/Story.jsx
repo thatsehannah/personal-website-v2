@@ -54,7 +54,7 @@ const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: 1.5fr 2fr;
   justify-content: space-between;
-  width: 1400px;
+  width: 90%;
   margin: 0 auto;
 
   @media (max-width: 768px) {

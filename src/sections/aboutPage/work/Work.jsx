@@ -54,7 +54,7 @@ const BackgroundSquare = styled.div`
 const ContentWrapper = styled.div`
   display: grid;
   gap: 50px;
-  width: 1400px;
+  width: 90%;
   margin: 0 auto;
 
   @media (max-width: 768px) {

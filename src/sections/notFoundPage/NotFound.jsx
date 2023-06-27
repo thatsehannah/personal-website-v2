@@ -30,7 +30,7 @@ const Wrapper = styled.section`
 `
 
 const ContentWrapper = styled.div`
-  width: 1400px;
+  width: 90%;
   height: auto;
   margin: 0 auto;
   justify-content: center;
