@@ -104,9 +104,6 @@ const Memoji = styled.img`
   opacity: 0;
   ${fadeInAnimation}
 
-  @media (max-width: 1024px) {
-  }
-
   @media (max-width: 768px) {
     height: 350px;
   }

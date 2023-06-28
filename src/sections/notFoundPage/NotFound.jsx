@@ -42,9 +42,9 @@ const ContentWrapper = styled.div`
 `
 
 const Memoji = styled.img`
-  height: 400px;
+  height: 450px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     height: 350px;
   }
 `
