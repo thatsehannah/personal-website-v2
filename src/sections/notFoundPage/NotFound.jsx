@@ -36,7 +36,7 @@ const ContentWrapper = styled.div`
   justify-content: center;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
   }
 `
@@ -44,7 +44,7 @@ const ContentWrapper = styled.div`
 const Memoji = styled.img`
   height: 400px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     height: 350px;
   }
 `

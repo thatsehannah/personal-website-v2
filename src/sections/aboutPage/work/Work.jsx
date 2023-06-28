@@ -15,10 +15,13 @@ const Work = () => {
     <Wrapper id="about-work" ref={ref} inView={inView}>
       <BackgroundSquare />
       <ContentWrapper>
-        <Title>
-          Professional <Letter />
-          xperience 👨🏾‍💻
-        </Title>
+        <TitleWrapper>
+          <H2>
+            Professional <Letter />
+            xperience 👨🏾‍💻
+          </H2>
+        </TitleWrapper>
+
         <ResumeWrapper workData={workData} />
       </ContentWrapper>
     </Wrapper>
@@ -32,10 +35,14 @@ const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 60px 20px;
+  padding: 60px 20px 160px;
   opacity: 0;
   transition: opacity 1s ease-in;
   ${props => props.inView && fadeInAnimation}
+
+  @media (max-width: 1024px) {
+    padding-bottom: 60px;
+  }
 `
 
 const BackgroundSquare = styled.div`
@@ -46,7 +53,7 @@ const BackgroundSquare = styled.div`
   border-radius: 20px;
   z-index: -1;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `
@@ -57,12 +64,12 @@ const ContentWrapper = styled.div`
   width: 90%;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     grid-template-columns: auto;
   }
 `
 
-const Title = styled(H2)`
-  text-align: center;
+const TitleWrapper = styled.div`
+  display: grid;
 `

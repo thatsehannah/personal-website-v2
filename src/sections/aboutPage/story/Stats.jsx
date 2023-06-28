@@ -14,9 +14,9 @@ const Stats = () => {
           <StatContentWrapper key={node.order}>
             <EmojiWrapper>{node.emoji}</EmojiWrapper>
             <StatContent>
-              <Text length={node.value.length}>
+              <BodyMain length={node.value.length}>
                 {node.key} <Strong>{node.value}</Strong>
-              </Text>
+              </BodyMain>
             </StatContent>
           </StatContentWrapper>
         ))}
@@ -57,20 +57,6 @@ const EmojiWrapper = styled.div`
   align-items: center;
   height: 36px;
   font-size: 1.4rem;
-`
-
-const Text = styled(BodyMain)`
-  /* ${props =>
-    props.length > 100 &&
-    `
-      text-indent: -94px;
-      padding-left: 94px;
-
-      @media (max-width: 768px) {
-        text-indent: -83px;
-        padding-left: 83px;
-      }
-    `}; */
 `
 
 const Strong = styled.strong`

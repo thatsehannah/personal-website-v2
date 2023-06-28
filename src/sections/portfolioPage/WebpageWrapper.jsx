@@ -11,7 +11,7 @@ const WebpageWrapper = props => {
 
   let overlayText = ""
   if (typeof window !== undefined) {
-    overlayText = window.innerWidth <= 768 ? "Tap me!" : "Hover over me!"
+    overlayText = window.innerWidth <= 1024 ? "Tap me!" : "Hover over me!"
   }
 
   return (
@@ -29,7 +29,7 @@ const WebpageWrapper = props => {
           onMouseEnter={() => setScrolling(true)}
           onMouseLeave={() => setScrolling(false)}
         >
-          <Image src={props.image} scrolling={scrolling} />
+          <Image src={props.image} scrolling={scrolling.toString()} />
         </ImageWrapper>
       </BrowserWrapper>
     </>
@@ -44,7 +44,7 @@ const BrowserWrapper = styled.div`
   overflow: hidden;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     height: 450px;
     width: 100%;
   }
@@ -64,7 +64,7 @@ const Toolbar = styled.div`
   padding-left: 20px;
   background-color: ${props => props.theme.webpageToolbarColor};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     height: 25px;
   }
 `
@@ -76,7 +76,7 @@ const ToolbarButton = styled.div`
   border: 0.5px solid rgba(0, 0, 0, 0.2);
   background-color: ${props => props.color};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     height: 12px;
     width: 12px;
   }
@@ -84,10 +84,11 @@ const ToolbarButton = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  transition: transform ${props => (props.scrolling ? "15" : "3")}s ease-in-out;
+  transition: transform ${props => (props.scrolling === "true" ? "15" : "3")}s
+    ease-in-out;
 
   ${props =>
-    props.scrolling &&
+    props.scrolling === "true" &&
     `
     transform: translateY(calc(-100% + 300px));
   `}

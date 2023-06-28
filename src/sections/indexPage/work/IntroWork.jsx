@@ -14,10 +14,13 @@ const IntroWork = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <Title>
-          Here's my recent <Letter />
-          xperience
-        </Title>
+        <TitleWrapper>
+          <H2>
+            Here's my recent <Letter />
+            xperience
+          </H2>
+        </TitleWrapper>
+
         <ResumeWrapper workData={sliced} />
         <SeeMoreWrapper>
           <ButtonWrapper>
@@ -46,17 +49,20 @@ const ContentWrapper = styled.div`
   width: 90%;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     grid-template-columns: auto;
   }
 `
 
-const Title = styled(H2)`
-  @media (max-width: 768px) {
-    text-align: center;
+const TitleWrapper = styled.div`
+  display: grid;
+  @media (max-width: 1024px) {
+    justify-content: center;
   }
 `
+
+const Title = styled(H2)``
 
 const SeeMoreWrapper = styled.div`
   display: grid;

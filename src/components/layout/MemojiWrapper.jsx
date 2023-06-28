@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   transition: opacity 1s ease-in;
   ${props => props.inView && fadeInAnimation}
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `
@@ -32,10 +32,6 @@ const Wrapper = styled.div`
 const Memoji = styled.img`
   height: 450px;
   position: relative;
-
-  @media (max-width: 768px) {
-    height: 350px;
-  }
 
   ${props =>
     props.styles &&

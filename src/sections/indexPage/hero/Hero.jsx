@@ -44,10 +44,10 @@ export default Hero
 const Wrapper = styled.section`
   position: relative;
   width: 100%;
-  padding: 80px 20px 160px;
+  padding: 40px 20px 160px;
 
-  @media (max-width: 768px) {
-    padding: 0px 20px 140px;
+  @media (max-width: 1024px) {
+    padding: 0px 20px 160px;
   }
 `
 
@@ -59,7 +59,7 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   gap: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     flex-direction: column-reverse;
     gap: 5px;
@@ -75,7 +75,7 @@ const RightWrapper = styled.div`
   align-items: center;
   justify-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     justify-content: center;
   }
 `
@@ -93,11 +93,6 @@ const Title = styled(H2)`
 
 const ButtonWrapper = styled.div`
   display: flex;
-  justify-items: left;
-
-  @media (max-width: 768px) {
-    justify-content: center;
-  }
 `
 
 const MemojiWrapper = styled.div`
@@ -108,6 +103,9 @@ const Memoji = styled.img`
   height: 450px;
   opacity: 0;
   ${fadeInAnimation}
+
+  @media (max-width: 1024px) {
+  }
 
   @media (max-width: 768px) {
     height: 350px;

@@ -54,6 +54,7 @@ const FadeInOut = styled.span`
       : css`
           animation: ${fadeOut} 1.75s;
         `}
+
   @media (max-width: 768px) {
     width: 230px;
     text-align: left;

@@ -8,7 +8,7 @@ const ResumeWrapper = ({ workData }) => {
       {workData.map(({ node }, index) => (
         <ResumeCard
           overflow={"true"}
-          key={node.index}
+          key={index}
           isOdd={index % 2 !== 0}
           logo={node.logo}
           title={node.position}
@@ -41,7 +41,7 @@ const WorkWrapper = styled.div`
   }
   `}
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     grid-template-columns: auto;
 
@@ -49,8 +49,18 @@ const WorkWrapper = styled.div`
       props.count % 2 !== 0 &&
       `
       > :last-child {
-      margin-left: initial;
-      margin-right: initial;
+      margin: 0 auto;
+      grid-column-start: initial;
+      grid-column-end: initial;
+    }
+    `}
+  }
+
+  @media (max-width: 768px) {
+    ${props =>
+      props.count % 2 !== 0 &&
+      `
+      > :last-child {
       grid-column-start: initial;
       grid-column-end: initial;
     }

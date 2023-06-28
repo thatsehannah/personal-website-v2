@@ -1,15 +1,15 @@
 import React from "react"
 import styled from "styled-components"
-import { BodyIntro, MediumText } from "../../styles/TextStyles"
+import { BodyMain, H3 } from "../../styles/TextStyles"
 
 const StrengthCard = props => {
   return (
     <Wrapper rank={props.rank}>
       <ImageWrapper img={props.image} />
       <TextWrapper>
-        <BodyIntro>
+        <H3>
           {props.rank}. {props.title}
-        </BodyIntro>
+        </H3>
         <DescriptionWrapper>
           <DescriptionText>{props.description}</DescriptionText>
         </DescriptionWrapper>
@@ -29,6 +29,10 @@ const Wrapper = styled.div`
   border-radius: 24px;
   border: ${props => props.theme.border};
 
+  @media (max-width: 1024px) {
+    width: 400px;
+  }
+
   @media (max-width: 768px) {
     width: 330px;
     height: auto;
@@ -43,7 +47,7 @@ const ImageWrapper = styled.div`
   border-radius: 24px;
   border: ${props => props.theme.border};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     height: 270px;
   }
 `
@@ -57,9 +61,8 @@ const DescriptionWrapper = styled.div`
   height: 185px;
 `
 
-const DescriptionText = styled(MediumText)`
-  @media (max-width: 768px) {
-    font-size: 1rem;
+const DescriptionText = styled(BodyMain)`
+  @media (max-width: 1024px) {
     line-height: 1.5;
   }
 `

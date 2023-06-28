@@ -43,7 +43,7 @@ const MenuItem = styled.div`
           : props.theme.menuButton.hoverColor};
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       transform: scale(1);
     }
   }

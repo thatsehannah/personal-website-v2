@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { H1, H3 } from "../../styles/TextStyles"
+import { BodyIntro, H1, H2, H3, MediumText } from "../../styles/TextStyles"
 import Certifications from "./Certifications"
 import Projects from "./Projects"
 
@@ -9,13 +9,15 @@ const Content = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <Title>Portfolio</Title>
+        <TitleWrapper>
+          <H1>Portfolio</H1>
+        </TitleWrapper>
         <TabWrapper>
           <Tab active={active === "cert"} onClick={() => setActive("cert")}>
-            <TabTitle>Certifications</TabTitle>
+            <BodyIntro>Certifications</BodyIntro>
           </Tab>
           <Tab active={active === "proj"} onClick={() => setActive("proj")}>
-            <TabTitle>Projects</TabTitle>
+            <BodyIntro>Projects</BodyIntro>
           </Tab>
         </TabWrapper>
         <TabContent>
@@ -41,13 +43,14 @@ const ContentWrapper = styled.div`
   gap: 40px;
   width: 90%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
   }
 `
 
-const Title = styled(H1)`
-  text-align: center;
+const TitleWrapper = styled.div`
+  display: grid;
+  justify-content: center;
 `
 
 const TabWrapper = styled.div`
@@ -55,7 +58,7 @@ const TabWrapper = styled.div`
   justify-content: center;
   gap: 50px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-evenly;
@@ -68,7 +71,7 @@ const Tab = styled.div`
   cursor: pointer;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 0;
   }
 

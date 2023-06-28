@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useProjects } from "../../utils/hooks/useProjects"
 import WebpageWrapper from "./WebpageWrapper"
-import { BodyMain, H3 } from "../../styles/TextStyles"
+import { BodyMain, H2 } from "../../styles/TextStyles"
 import MobileWrapper from "./MobileWrapper"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
 import MainButton from "../../components/buttons/MainButton"
@@ -10,6 +10,12 @@ import { UilExternalLinkAlt as ExternalLink } from "@iconscout/react-unicons"
 
 const Projects = () => {
   const projectData = useProjects()
+
+  let externalIconSize
+
+  if (typeof window !== undefined) {
+    externalIconSize = window.innerWidth <= 768 ? 22 : 28
+  }
 
   return (
     <Wrapper>
@@ -20,15 +26,17 @@ const Projects = () => {
           <TextWrapper>
             <TopWrapper>
               <TitleWrapper>
-                <Name>{node.name}</Name>
-                {node.live && (
-                  <a href={node.live} target="_blank" rel="noreferrer">
-                    {" "}
-                    <IconSpan>
-                      <ExternalLink />{" "}
-                    </IconSpan>
-                  </a>
-                )}
+                <H2>
+                  {node.name}{" "}
+                  {node.live && (
+                    <a href={node.live} target="_blank" rel="noreferrer">
+                      {" "}
+                      <IconSpan>
+                        <ExternalLink size={externalIconSize} />{" "}
+                      </IconSpan>
+                    </a>
+                  )}
+                </H2>
               </TitleWrapper>
               <TechStackWrapper>
                 <SmallCard platform={node.platform}>{node.platform}</SmallCard>
@@ -54,7 +62,7 @@ const Wrapper = styled.div`
   display: grid;
   gap: 120px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     gap: 80px;
   }
 `
@@ -66,7 +74,7 @@ const ContentWrapper = styled.div`
   opacity: 0;
   ${fadeInAnimation}
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     gap: 10px;
   }
@@ -82,7 +90,7 @@ const TopWrapper = styled.div`
   flex-direction: column;
   gap: 40px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     gap: 24px;
   }
 `
@@ -94,6 +102,7 @@ const TitleWrapper = styled.div`
 
   @media (max-width: 768px) {
     justify-content: center;
+    gap: 8px;
   }
 `
 
@@ -108,19 +117,14 @@ const IconSpan = styled.span`
   }
 `
 
-const Name = styled(H3)`
-  @media (max-width: 768px) {
-    text-align: center;
-  }
-`
-
 const TechStackWrapper = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 50px;
 
   @media (max-width: 768px) {
     justify-content: center;
     width: 100%;
+    gap: 20px;
   }
 `
 

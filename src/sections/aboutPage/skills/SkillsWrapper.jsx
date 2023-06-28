@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   align-items: center;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     gap: 20px;
   }
 `
@@ -43,6 +43,5 @@ const SkillText = styled(BodyMain)`
 
 const HeartSpan = styled.span`
   align-items: center;
-
   color: gold;
 `

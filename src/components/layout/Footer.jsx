@@ -28,40 +28,42 @@ const Footer = () => {
           </Text>
           <SocialMediaBanner size={30} color1="rgb(0,0,0)" />
         </Column>
-        <PagesWrapper>
-          <Title>Pages</Title>
-          <MenuWrapper count={menuOptions.length} id="menuwrapper">
-            {menuOptions.map((item, i) => (
-              <Link to={item.link} key={i}>
-                <MenuButton title={item.title} />
-              </Link>
-            ))}
-          </MenuWrapper>
-        </PagesWrapper>
-        <ContactWrapper>
-          <Title>Contact Me</Title>
-          <LinksWrapper>
-            <a href="mailto:elliotchannah@outlook.com">
-              <MenuButton
-                title="elliotchannah@outlook.com"
-                icon={
-                  <UilEnvelope color={theme.menuButton.textColor} size="20" />
-                }
-              />
-            </a>
-            <a href="tel:(706)631-7005">
-              <MenuButton
-                title="(706) 631 - 7005"
-                icon={
-                  <UilMobileVibrate
-                    color={theme.menuButton.textColor}
-                    size="20"
-                  />
-                }
-              />
-            </a>
-          </LinksWrapper>
-        </ContactWrapper>
+        <AllLinksWrapper>
+          <PagesWrapper>
+            <Title>Pages</Title>
+            <MenuWrapper count={menuOptions.length}>
+              {menuOptions.map((item, i) => (
+                <Link to={item.link} key={i}>
+                  <MenuButton title={item.title} />
+                </Link>
+              ))}
+            </MenuWrapper>
+          </PagesWrapper>
+          <ContactWrapper>
+            <Title>Contact Me</Title>
+            <LinksWrapper>
+              <a href="mailto:elliotchannah@outlook.com">
+                <MenuButton
+                  title="elliotchannah@outlook.com"
+                  icon={
+                    <UilEnvelope color={theme.menuButton.textColor} size="20" />
+                  }
+                />
+              </a>
+              <a href="tel:(706)631-7005">
+                <MenuButton
+                  title="(706) 631 - 7005"
+                  icon={
+                    <UilMobileVibrate
+                      color={theme.menuButton.textColor}
+                      size="20"
+                    />
+                  }
+                />
+              </a>
+            </LinksWrapper>
+          </ContactWrapper>
+        </AllLinksWrapper>
       </ContentWrapper>
     </Wrapper>
   )
@@ -74,20 +76,24 @@ const Wrapper = styled.div`
   justify-items: center;
   align-items: center;
   width: 100%;
-  padding: 30px;
+  padding: 20px;
   border-top: 1px solid ${props => props.theme.ruleColor};
 `
 
 const ContentWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 350px);
+  grid-template-columns: 0.5fr 1fr;
   justify-content: space-between;
   width: 90%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     grid-template-columns: auto;
-    gap: 60px;
+    gap: 50px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 40px;
   }
 `
 
@@ -95,7 +101,7 @@ const Column = styled.div`
   display: grid;
   gap: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-template-columns: auto;
   }
 `
@@ -109,11 +115,35 @@ const Text = styled(Caption)`
   color: ${props => props.theme.secondaryTextColor};
 `
 
-const PagesWrapper = styled(Column)`
+const AllLinksWrapper = styled.div`
   display: grid;
-  grid-template-rows: 40px auto;
+  width: 100%;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
 
   @media (max-width: 768px) {
+    grid-template-columns: auto;
+    gap: 40px;
+  }
+`
+
+const PagesWrapper = styled(Column)`
+  display: grid;
+  grid-template-rows: 20px auto;
+  margin-left: 120px;
+
+  @media (max-width: 1024px) {
+    margin-left: 0;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-rows: 30px auto;
     gap: 6px;
   }
 `
@@ -130,13 +160,21 @@ const MenuWrapper = styled.div`
   grid-template-rows: auto;
   align-content: start;
   gap: 20px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: auto;
+    gap: 30px;
+    grid-auto-flow: column;
+    grid-template-rows: auto;
+  }
 `
 
 const ContactWrapper = styled(Column)`
   display: grid;
-  grid-template-rows: 40px auto;
+  grid-template-rows: 20px auto;
 
   @media (max-width: 768px) {
+    grid-template-rows: 30px auto;
     gap: 6px;
   }
 `
@@ -145,6 +183,5 @@ const LinksWrapper = styled.div`
   display: grid;
   align-items: start;
   justify-items: start;
-  align-content: start;
-  gap: 20px;
+  gap: 10px;
 `

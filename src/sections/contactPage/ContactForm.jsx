@@ -191,7 +191,7 @@ const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 0px 20px 100px;
   }
 `
@@ -203,7 +203,7 @@ const ContentWrapper = styled.div`
   /* margin: 0 auto; */
   gap: 60px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     flex-direction: column;
   }
@@ -229,7 +229,7 @@ const TopWrapper = styled.div`
   gap: 48px;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     justify-content: center;
   }
 `

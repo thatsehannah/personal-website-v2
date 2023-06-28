@@ -57,7 +57,7 @@ const ContentWrapper = styled.div`
   width: 90%;
   margin: 0 auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     grid-template-columns: auto;
   }
@@ -69,7 +69,7 @@ const TextWrapper = styled.div`
   display: grid;
   gap: 60px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     gap: 30px;
   }
 `

@@ -9,7 +9,7 @@ import { fadeInAnimation } from "../../../styles/FadeInAnimation"
 
 const IntroAbout = () => {
   const ref = useRef(null)
-  const inView = useIntersection(ref, { threshold: 0.4 })
+  const inView = useIntersection(ref, { threshold: 0.5 })
 
   const text = useAboutMeData().find(edge => edge.node.for === "homePage").node
     .text
@@ -17,12 +17,9 @@ const IntroAbout = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <LeftSide ref={ref}>
+        <LeftSide inView={inView} ref={ref}>
           <Background />
-          <Memoji
-            src="/images/memojis/about-memoji.png"
-            inView={inView}
-          ></Memoji>
+          <Memoji src="/images/memojis/about-memoji.png"></Memoji>
         </LeftSide>
         <RightSide>
           <TextWrapper id="textwrapper">
@@ -48,7 +45,7 @@ const Wrapper = styled.section`
   align-items: center;
   padding: 60px 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 0px 20px 100px;
   }
 `
@@ -59,7 +56,7 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   gap: 60px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     flex-direction: column;
   }
@@ -69,7 +66,19 @@ const LeftSide = styled.div`
   position: relative;
   display: flex;
 
-  @media (max-width: 768px) {
+  > * {
+    opacity: 0;
+    ${props => props.inView && fadeInAnimation}
+
+    :nth-child(1) {
+      animation-delay: 0.5s;
+    }
+    :nth-child(2) {
+      animation-delay: 0s;
+    }
+  }
+
+  @media (max-width: 1024px) {
     justify-content: center;
   }
 `
@@ -83,17 +92,24 @@ const Background = styled.div`
   border-radius: 20px;
   background-color: ${props => props.theme.lightPrimaryColor};
 
+  @media (max-width: 1024px) {
+    right: initial;
+    /* margin: 0 auto; */
+    height: 90%;
+    width: 90%;
+  }
+
   @media (max-width: 768px) {
-    display: none;
+    height: 95%;
+    width: 95%;
   }
 `
 
 const Memoji = styled.img`
   display: inline-block;
-  height: 500px;
+  height: 450px;
   opacity: 0;
   transition: opacity 1s ease-in;
-  ${props => props.inView && fadeInAnimation}
 
   @media (max-width: 768px) {
     height: 350px;

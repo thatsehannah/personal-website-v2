@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import styled from "styled-components"
-import { Caption, H2 } from "../../../styles/TextStyles"
+import { Caption, H2, MediumText, SmallText } from "../../../styles/TextStyles"
 import { useStrength } from "../../../utils/hooks/useStrengths"
 import StrengthCard from "../../../components/cards/StrengthCard"
 import {
@@ -40,12 +40,14 @@ const Strengths = () => {
       <ContentWrapper ref={ref} inView={inView}>
         <TopWrapper>
           <TitleWrapper>
-            <Title>
+            <H2>
               My Top 5 Str
               <Letter />
               ngths 💪🏾
-            </Title>
-            <p>Scroll left or right, or use the arrow buttons!</p>
+            </H2>
+            <MediumText>
+              Scroll left or right, or use the arrow buttons!
+            </MediumText>
           </TitleWrapper>
           <ButtonGroup>
             <Button onClick={handleScrollLeft}>
@@ -102,7 +104,7 @@ const ContentWrapper = styled.div`
   transition: opacity 1s ease-in;
   ${props => props.inView && fadeInAnimation};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     grid-template-columns: auto;
   }
@@ -129,10 +131,6 @@ const TitleWrapper = styled.div`
     width: 100%;
     text-align: center;
   }
-`
-
-const Title = styled(H2)`
-  text-align: center;
 `
 
 const ButtonGroup = styled.div`
@@ -163,7 +161,7 @@ const Button = styled.div`
     transform: scale(0.8);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 50px;
     padding: 12px;
 
@@ -201,7 +199,7 @@ const ListWrapper = styled.div`
     background-color: ${props => props.theme.lightPrimaryColor};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     align-items: center;
     /* gap: 40px; */
     padding: 10px;

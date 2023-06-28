@@ -45,7 +45,7 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     grid-template-columns: auto;
   }
@@ -55,7 +55,7 @@ const LeftSide = styled.div`
   display: grid;
   ${fadeInAnimation}
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     justify-content: center;
     width: 100%;
   }
@@ -66,7 +66,7 @@ const RightSide = styled.div`
   width: 550px;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
   }
 `

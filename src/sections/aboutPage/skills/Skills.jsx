@@ -21,11 +21,14 @@ const Skills = () => {
   return (
     <Wrapper>
       <ContentWrapper ref={ref} inView={inView}>
-        <Title>
-          Rel
-          <Letter />
-          vant Skills
-        </Title>
+        <TitleWrapper>
+          <H2>
+            Rel
+            <Letter />
+            vant Skills
+          </H2>
+        </TitleWrapper>
+
         <TableWrapper>
           <Column>
             <ColumnTitle>Software</ColumnTitle>
@@ -63,21 +66,22 @@ const ContentWrapper = styled.div`
   transition: opacity 1s ease-in;
   ${props => props.inView && fadeInAnimation}
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     grid-template-columns: auto;
   }
 `
 
-const Title = styled(H2)`
-  text-align: center;
+const TitleWrapper = styled.div`
+  display: grid;
+  justify-content: center;
 `
 
 const TableWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, auto);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-template-columns: auto;
     gap: 20px;
   }
@@ -93,7 +97,7 @@ const CenterColumn = styled(Column)`
   border-left: 0.5px solid ${props => props.theme.ruleColor};
   border-right: 0.5px solid ${props => props.theme.ruleColor};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     border-left: none;
     border-right: none;
     border-top: 0.5px solid ${props => props.theme.ruleColor};
@@ -105,28 +109,3 @@ const ColumnTitle = styled(H3)`
   text-align: center;
   font-weight: 500;
 `
-
-// const SkillsWrapper = styled.div`
-//   display: grid;
-//   grid-template-rows: repeat(5, 0.5fr);
-//   gap: 15px;
-//   grid-auto-flow: column;
-//   align-items: center;
-//   text-align: center;
-
-//   @media (max-width: 768px) {
-//     gap: 20px;
-//   }
-// `
-
-// const SkillText = styled(BodyMain)`
-//   color: ${props => props.theme.secondaryColor};
-// `
-
-// const HeartSpan = styled.span`
-//   align-items: center;
-
-//   svg: {
-//     fill: gold;
-//   }
-// `

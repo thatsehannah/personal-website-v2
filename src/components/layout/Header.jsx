@@ -68,7 +68,7 @@ const Wrapper = styled.div`
   padding: 30px;
   gap: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 20px;
   }
 `
@@ -81,7 +81,7 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     grid-template-columns: repeat(2, auto);
     width: 100%;
   }
@@ -100,7 +100,7 @@ const MenuWrapper = styled.div`
   align-items: center;
   justify-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `
@@ -111,7 +111,7 @@ const EmailWrapper = styled.div`
   align-items: center;
   text-align: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `
@@ -119,7 +119,7 @@ const EmailWrapper = styled.div`
 const HamburgerWrapper = styled.div`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: inline-block;
   }
 `
@@ -128,7 +128,7 @@ const MobileMenuWrapper = styled.div`
   position: relative;
   visibility: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     visibility: visible;
   }
 `
@@ -136,7 +136,7 @@ const MobileMenuWrapper = styled.div`
 const MobileMenu = styled.div`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     display: grid;
     border-bottom: ${props =>
       props.isOpen ? `${props.theme.border};` : "none"};

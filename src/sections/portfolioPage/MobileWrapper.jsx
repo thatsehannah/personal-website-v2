@@ -9,6 +9,7 @@ const MobileWrapper = props => {
   if (typeof window !== undefined) {
     batteryIconSize = window.innerWidth <= 768 ? 18 : 26
   }
+
   return (
     <Wrapper>
       <PhoneWrapper>
@@ -42,7 +43,7 @@ const Wrapper = styled.div`
   background-color: ${props => props.theme.mobileBackgroundColor};
   border: ${props => props.theme.border};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     border: none;
   }
 `
@@ -78,7 +79,7 @@ const Toolbar = styled.div`
   height: 45px;
   margin: 0px 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     height: 35px;
     margin: 0 15px;
   }
@@ -90,7 +91,7 @@ const LeftSide = styled.div`
   align-items: center;
   vertical-align: top;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     gap: 2px;
   }
 `

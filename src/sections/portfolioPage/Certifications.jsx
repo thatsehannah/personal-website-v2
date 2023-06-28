@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { useCertficates } from "../../utils/hooks/useCertificates"
-import { BodyMain, H3, MediumText } from "../../styles/TextStyles"
+import { BodyMain, H2, H3, MediumText } from "../../styles/TextStyles"
 import MainButton from "../../components/buttons/MainButton"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
 
@@ -27,9 +27,9 @@ const Certifications = () => {
             <Cert src={node.url} onClick={() => openCertUrl(node.url)} />
           </CertWrapper>
           <TextWrapper>
-            <Title>
+            <H2>
               {node.title} from {node.from}
-            </Title>
+            </H2>
             <Date>Issued on {node.issueDate}</Date>
             <BodyMain>{node.description}</BodyMain>
           </TextWrapper>
@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   display: grid;
   gap: 120px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     gap: 80px;
   }
 `
@@ -68,7 +68,7 @@ const ContentWrapper = styled.div`
     flex-direction: row-reverse;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     flex-direction: column;
     gap: 20px;
@@ -90,7 +90,7 @@ const CertWrapper = styled.div`
   height: 440px;
   padding: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     height: auto;
   }
@@ -106,7 +106,7 @@ const Cert = styled.img`
     transform: scale(1.1);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     width: 100%;
     height: 100%;
 

@@ -43,7 +43,7 @@ const Body = styled.div`
   main {
     padding: 30px 0px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       padding: 0px;
     }
   }
