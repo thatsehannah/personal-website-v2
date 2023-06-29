@@ -56,7 +56,7 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 20px;
 
   @media (max-width: 1024px) {

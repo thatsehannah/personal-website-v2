@@ -35,12 +35,17 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
+  padding: 40px 20px 160px;
+
+  @media (max-width: 1024px) {
+    padding: 0px 20px 160px;
+  }
 `
 
 const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
+  justify-content: space-evenly;
   width: 90%;
   margin: 0 auto;
   overflow: hidden;
@@ -54,6 +59,7 @@ const ContentWrapper = styled.div`
 const LeftSide = styled.div`
   display: grid;
   ${fadeInAnimation}
+  justify-content: center;
 
   @media (max-width: 1024px) {
     justify-content: center;
@@ -65,6 +71,7 @@ const RightSide = styled.div`
   display: flex;
   width: 550px;
   align-items: center;
+  justify-content: center;
 
   @media (max-width: 1024px) {
     width: 100%;
