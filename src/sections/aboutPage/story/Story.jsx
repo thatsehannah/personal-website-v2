@@ -20,7 +20,7 @@ const Story = () => {
   return (
     <Wrapper id="story">
       <ContentWrapper>
-        <LeftSide>
+        <div>
           <TextWrapper>
             <H2>
               A Little About M<Letter />
@@ -32,7 +32,7 @@ const Story = () => {
               <Stats />
             </BodyWrapper>
           </TextWrapper>
-        </LeftSide>
+        </div>
         <RightSide>
           <Memojis />
         </RightSide>
@@ -63,15 +63,9 @@ const ContentWrapper = styled.div`
   }
 `
 
-const LeftSide = styled.div``
-
 const TextWrapper = styled.div`
   display: grid;
-  gap: 60px;
-
-  @media (max-width: 1024px) {
-    gap: 30px;
-  }
+  gap: 30px;
 `
 
 const BodyWrapper = styled.div`

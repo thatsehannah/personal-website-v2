@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import styled from "styled-components"
-import { Caption, H2, MediumText, SmallText } from "../../../styles/TextStyles"
+import { Caption, H2, MediumText } from "../../../styles/TextStyles"
 import { useStrength } from "../../../utils/hooks/useStrengths"
 import StrengthCard from "../../../components/cards/StrengthCard"
 import {
@@ -99,7 +99,7 @@ const ContentWrapper = styled.div`
   display: grid;
   width: 90%;
   margin: 0 auto;
-  gap: 35px;
+  gap: 30px;
   opacity: 0;
   transition: opacity 1s ease-in;
   ${props => props.inView && fadeInAnimation};
@@ -129,7 +129,6 @@ const TitleWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    text-align: center;
   }
 `
 

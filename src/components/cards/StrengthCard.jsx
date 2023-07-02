@@ -50,6 +50,10 @@ const ImageWrapper = styled.div`
   @media (max-width: 1024px) {
     height: 270px;
   }
+
+  @media (max-width: 768px) {
+    height: 220px;
+  }
 `
 
 const TextWrapper = styled.div`
@@ -59,10 +63,18 @@ const TextWrapper = styled.div`
 
 const DescriptionWrapper = styled.div`
   height: 185px;
+
+  @media (max-width: 1024px) {
+    height: 220px;
+  }
 `
 
 const DescriptionText = styled(BodyMain)`
   @media (max-width: 1024px) {
-    line-height: 1.5;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
   }
 `

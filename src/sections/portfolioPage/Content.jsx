@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { BodyIntro, H1, H2, H3, MediumText } from "../../styles/TextStyles"
+import { BodyIntro, H1 } from "../../styles/TextStyles"
 import Certifications from "./Certifications"
 import Projects from "./Projects"
 
@@ -20,10 +20,10 @@ const Content = () => {
             <BodyIntro>Projects</BodyIntro>
           </Tab>
         </TabWrapper>
-        <TabContent>
+        <div>
           {active === "cert" && <Certifications />}
           {active === "proj" && <Projects />}
-        </TabContent>
+        </div>
       </ContentWrapper>
     </Wrapper>
   )
@@ -94,9 +94,3 @@ const Tab = styled.div`
     }
   `}
 `
-
-const TabTitle = styled(H3)`
-  font-weight: 400;
-`
-
-const TabContent = styled.div``

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { H3, Caption, MediumText } from "../../styles/TextStyles"
+import { H3, Caption, BodyMain } from "../../styles/TextStyles"
 
 const ResumeCard = props => {
   return (
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 575px;
-  height: 275px;
+  height: 290px;
   gap: 16px;
   background-color: ${props => props.theme.resumeCard.backgroundColor};
   border-radius: 20px;
@@ -121,12 +121,11 @@ const SecondaryTextWrapper = styled.div`
   }
 `
 
-const SecondaryText = styled(MediumText)`
-  font-size: 1.2rem;
+const SecondaryText = styled(BodyMain)`
   line-height: 1.4;
   color: ${props => props.theme.resumeCard.secondaryTextColor};
 
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 `

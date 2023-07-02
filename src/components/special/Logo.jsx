@@ -22,6 +22,12 @@ const Wrapper = styled.div`
   :hover {
     transform: scale(1.2) translateY(-10px);
   }
+
+  @media (max-width: 1024px) {
+    :hover {
+      transform: none;
+    }
+  }
 `
 
 const Monogram = styled(H2)`

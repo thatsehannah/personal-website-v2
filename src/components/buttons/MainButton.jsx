@@ -7,7 +7,7 @@ const MainButton = props => {
     <Button onClick={props.onClick} disabled={props.disabled}>
       <TextWrapper>
         <Title>{props.text}</Title>
-        {props.icon && <IconWrapper>{props.icon}</IconWrapper>}
+        {props.icon && <div>{props.icon}</div>}
       </TextWrapper>
     </Button>
   )
@@ -63,5 +63,3 @@ const Title = styled(Caption2)`
   text-align: center;
   justify-items: center;
 `
-
-const IconWrapper = styled.div``

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { H1, MediumText } from "../../styles/TextStyles"
+import { BodyMain, H1 } from "../../styles/TextStyles"
 import { Link } from "gatsby"
 
 const NotFound = () => {
@@ -9,11 +9,9 @@ const NotFound = () => {
       <ContentWrapper>
         <Memoji src="/images/memojis/notfound.png" />
         <H1>404: Route Not Found</H1>
-        <MediumText>
-          You tried to visit a route that doesn't exist...
-        </MediumText>
+        <BodyMain>You tried to visit a route that doesn't exist...</BodyMain>
         <Link to="/">
-          <MediumText>{"<< Go home"}</MediumText>
+          <BodyMain>{"<< Go home"}</BodyMain>
         </Link>
       </ContentWrapper>
     </Wrapper>

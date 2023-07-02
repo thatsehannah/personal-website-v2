@@ -15,13 +15,12 @@ const Work = () => {
     <Wrapper id="about-work" ref={ref} inView={inView}>
       <BackgroundSquare />
       <ContentWrapper>
-        <TitleWrapper>
+        <div>
           <H2>
             Professional <Letter />
             xperience 👨🏾‍💻
           </H2>
-        </TitleWrapper>
-
+        </div>
         <ResumeWrapper workData={workData} />
       </ContentWrapper>
     </Wrapper>
@@ -60,7 +59,7 @@ const BackgroundSquare = styled.div`
 
 const ContentWrapper = styled.div`
   display: grid;
-  gap: 50px;
+  gap: 30px;
   width: 90%;
   margin: 0 auto;
 
@@ -68,8 +67,4 @@ const ContentWrapper = styled.div`
     width: 100%;
     grid-template-columns: auto;
   }
-`
-
-const TitleWrapper = styled.div`
-  display: grid;
 `

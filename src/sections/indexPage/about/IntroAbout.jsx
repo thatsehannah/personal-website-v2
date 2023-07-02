@@ -125,7 +125,7 @@ const RightSide = styled.div`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 `
 
 const ButtonWrapper = styled.div`

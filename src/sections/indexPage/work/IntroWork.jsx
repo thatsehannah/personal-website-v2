@@ -62,8 +62,6 @@ const TitleWrapper = styled.div`
   }
 `
 
-const Title = styled(H2)``
-
 const SeeMoreWrapper = styled.div`
   display: grid;
   justify-content: center;

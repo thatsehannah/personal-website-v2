@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { useCertficates } from "../../utils/hooks/useCertificates"
-import { BodyMain, H2, H3, MediumText } from "../../styles/TextStyles"
+import { BodyMain, H2, MediumText } from "../../styles/TextStyles"
 import MainButton from "../../components/buttons/MainButton"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
 
@@ -124,8 +124,6 @@ const TextWrapper = styled.div`
   flex: 1;
   margin-top: 30px;
 `
-
-const Title = styled(H3)``
 
 const Date = styled(MediumText)`
   color: ${props => props.theme.secondaryTextColor};

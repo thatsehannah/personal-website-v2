@@ -44,7 +44,7 @@ const MenuItem = styled.div`
     }
 
     @media (max-width: 1024px) {
-      transform: scale(1);
+      transform: none;
     }
   }
 `

@@ -14,9 +14,9 @@ const Stats = () => {
           <StatContentWrapper key={node.order}>
             <EmojiWrapper>{node.emoji}</EmojiWrapper>
             <StatContent>
-              <BodyMain length={node.value.length}>
+              <StatText length={node.value.length}>
                 {node.key} <Strong>{node.value}</Strong>
-              </BodyMain>
+              </StatText>
             </StatContent>
           </StatContentWrapper>
         ))}
@@ -57,6 +57,12 @@ const EmojiWrapper = styled.div`
   align-items: center;
   height: 36px;
   font-size: 1.4rem;
+`
+
+const StatText = styled(BodyMain)`
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `
 
 const Strong = styled.strong`
