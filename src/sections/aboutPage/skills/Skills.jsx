@@ -79,7 +79,7 @@ const TitleWrapper = styled.div`
 
 const TableWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
 
   @media (max-width: 1024px) {
     grid-template-columns: auto;
