@@ -6,7 +6,10 @@ import { BodyMain, H2 } from "../../styles/TextStyles"
 import MobileWrapper from "./MobileWrapper"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
 import MainButton from "../../components/buttons/MainButton"
-import { UilExternalLinkAlt as ExternalLink } from "@iconscout/react-unicons"
+import {
+  UilExternalLinkAlt as ExternalLink,
+  UilGithub,
+} from "@iconscout/react-unicons"
 
 const Projects = () => {
   const projectData = useProjects()
@@ -19,39 +22,59 @@ const Projects = () => {
 
   return (
     <Wrapper>
-      {projectData.map(({ node }, index) => (
-        <ContentWrapper key={index}>
-          {node.platform === "Web" && <WebpageWrapper image={node.imageUrl} />}
-          {node.platform === "iOS" && <MobileWrapper image={node.imageUrl} />}
-          <TextWrapper>
-            <TopWrapper>
-              <TitleWrapper>
-                <H2>
-                  {node.name}{" "}
-                  {node.live && (
-                    <a href={node.live} target="_blank" rel="noreferrer">
-                      {" "}
-                      <IconSpan>
-                        <ExternalLink size={externalIconSize} />{" "}
-                      </IconSpan>
-                    </a>
-                  )}
-                </H2>
-              </TitleWrapper>
-              <TechStackWrapper>
-                <SmallCard platform={node.platform}>{node.platform}</SmallCard>
-                <PlatformCard>{node.domain}</PlatformCard>
-              </TechStackWrapper>
-              <BodyMain>{node.description}</BodyMain>
-              <ButtonWrapper>
-                <a href={node.code} target="_blank" rel="noreferrer">
-                  <MainButton text="See Code" />
-                </a>
-              </ButtonWrapper>
-            </TopWrapper>
-          </TextWrapper>
-        </ContentWrapper>
-      ))}
+      <DisclaimerWrapper>
+        <BodyMain>
+          The following are my favorite projects I've worked on over the years.
+          To see all of my work, please visit my{" "}
+          <GitHubAnchor
+            href="https://github.com/thatsehannah"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </GitHubAnchor>{" "}
+          profile.
+        </BodyMain>
+      </DisclaimerWrapper>
+      <ContentWrapper>
+        {projectData.map(({ node }, index) => (
+          <ProjectWrapper key={index}>
+            {node.platform === "Web" && (
+              <WebpageWrapper image={node.imageUrl} />
+            )}
+            {node.platform === "iOS" && <MobileWrapper image={node.imageUrl} />}
+            <TextWrapper>
+              <TopWrapper>
+                <TitleWrapper>
+                  <H2>
+                    {node.name}{" "}
+                    {node.live && (
+                      <a href={node.live} target="_blank" rel="noreferrer">
+                        {" "}
+                        <IconSpan>
+                          <ExternalLink size={externalIconSize} />{" "}
+                        </IconSpan>
+                      </a>
+                    )}
+                  </H2>
+                </TitleWrapper>
+                <TechStackWrapper>
+                  <SmallCard platform={node.platform}>
+                    {node.platform}
+                  </SmallCard>
+                  <PlatformCard>{node.domain}</PlatformCard>
+                </TechStackWrapper>
+                <BodyMain>{node.description}</BodyMain>
+                <ButtonWrapper>
+                  <a href={node.code} target="_blank" rel="noreferrer">
+                    <MainButton text="See Code" />
+                  </a>
+                </ButtonWrapper>
+              </TopWrapper>
+            </TextWrapper>
+          </ProjectWrapper>
+        ))}
+      </ContentWrapper>
     </Wrapper>
   )
 }
@@ -60,6 +83,26 @@ export default Projects
 
 const Wrapper = styled.div`
   display: grid;
+  gap: 40px;
+`
+
+const DisclaimerWrapper = styled.div`
+  display: grid;
+  justify-content: center;
+  align-items: center;
+`
+
+const GitHubAnchor = styled.a`
+  color: ${props => props.theme.secondaryColor};
+  transition: 0.3s ease-out;
+
+  :hover {
+    color: ${props => props.theme.primaryColor};
+  }
+`
+
+const ContentWrapper = styled.div`
+  display: grid;
   gap: 120px;
 
   @media (max-width: 1024px) {
@@ -67,7 +110,7 @@ const Wrapper = styled.div`
   }
 `
 
-const ContentWrapper = styled.div`
+const ProjectWrapper = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 50px;
