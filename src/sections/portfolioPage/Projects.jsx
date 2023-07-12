@@ -6,10 +6,7 @@ import { BodyMain, H2 } from "../../styles/TextStyles"
 import MobileWrapper from "./MobileWrapper"
 import { fadeInAnimation } from "../../styles/FadeInAnimation"
 import MainButton from "../../components/buttons/MainButton"
-import {
-  UilExternalLinkAlt as ExternalLink,
-  UilGithub,
-} from "@iconscout/react-unicons"
+import { UilExternalLinkAlt as ExternalLink } from "@iconscout/react-unicons"
 
 const Projects = () => {
   const projectData = useProjects()
