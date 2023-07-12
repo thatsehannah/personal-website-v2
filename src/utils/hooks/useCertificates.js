@@ -12,6 +12,7 @@ export const useCertficates = () => {
             description
             issueDate(formatString: "MM-DD-YYYY")
             url
+            imageUrl
           }
         }
       }

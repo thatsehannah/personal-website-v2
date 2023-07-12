@@ -24,7 +24,7 @@ const Certifications = () => {
       {certData.slice(0, itemsToShow).map(({ node }, index) => (
         <ContentWrapper key={index}>
           <CertWrapper>
-            <Cert src={node.url} onClick={() => openCertUrl(node.url)} />
+            <Cert src={node.imageUrl} onClick={() => openCertUrl(node.url)} />
           </CertWrapper>
           <TextWrapper>
             <H2>
