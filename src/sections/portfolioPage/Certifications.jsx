@@ -59,6 +59,8 @@ const Wrapper = styled.div`
 
 const ContentWrapper = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   gap: 40px;
   opacity: 0;
@@ -122,7 +124,6 @@ const TextWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
   flex: 1;
-  margin-top: 30px;
 `
 
 const Date = styled(MediumText)`
