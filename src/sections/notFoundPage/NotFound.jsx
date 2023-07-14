@@ -7,11 +7,10 @@ const NotFound = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <Memoji src="/images/memojis/notfound.png" />
         <H1>404: Route Not Found</H1>
-        <BodyMain>You tried to visit a route that doesn't exist...</BodyMain>
+        <BodyMain>You tried to visit a route that doesn't exist.</BodyMain>
         <Link to="/">
-          <BodyMain>{"<< Go home"}</BodyMain>
+          <BodyMain>{"<< Back to Home page"}</BodyMain>
         </Link>
       </ContentWrapper>
     </Wrapper>
@@ -25,12 +24,16 @@ const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
+  gap: 20px;
 `
 
 const ContentWrapper = styled.div`
-  width: 90%;
+  width: auto;
+  display: grid;
+  gap: 20px;
   height: auto;
   margin: 0 auto;
+  overflow: hidden;
   justify-content: center;
   text-align: center;
 
@@ -39,10 +42,13 @@ const ContentWrapper = styled.div`
   }
 `
 
-const Memoji = styled.img`
-  height: 450px;
+//keeping just in case I want to use it later
+// const Memoji = styled.img`
+//   position: relative;
+//   top: -30px;
+//   height: auto;
 
-  @media (max-width: 768px) {
-    height: 350px;
-  }
-`
+//   @media (max-width: 768px) {
+//     height: 350px;
+//   }
+// `
