@@ -115,9 +115,12 @@ const ContactForm = () => {
         </Toast>
         <TitleWrapper>
           <TopWrapper>
-            <Memoji src="/images/memojis/hero-memoji.png" />
-            <EmojiSpan>➕</EmojiSpan>
-            <EmojiSpan>🫵</EmojiSpan>
+            <Memoji
+              src="/images/memojis/hero-memoji.png"
+              alt="smiling memoji"
+            />
+            <EmojiSpan aria-label="plus sign emoji">➕</EmojiSpan>
+            <EmojiSpan aria-label="finger pointing at you emoji">🫵</EmojiSpan>
           </TopWrapper>
           <H1>
             Let's chop it up. Send m<Letter /> a message...

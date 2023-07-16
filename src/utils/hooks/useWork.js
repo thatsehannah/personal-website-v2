@@ -13,6 +13,7 @@ export const useWork = () => {
             logo
             duties
             url
+            company
           }
         }
       }

@@ -37,9 +37,11 @@ const Projects = () => {
         {projectData.map(({ node }, index) => (
           <ProjectWrapper key={index}>
             {node.platform === "Web" && (
-              <WebpageWrapper image={node.imageUrl} />
+              <WebpageWrapper image={node.imageUrl} altText={node.name} />
             )}
-            {node.platform === "iOS" && <MobileWrapper image={node.imageUrl} />}
+            {node.platform === "iOS" && (
+              <MobileWrapper image={node.imageUrl} altText={node.name} />
+            )}
             <TextWrapper>
               <TopWrapper>
                 <TitleWrapper>

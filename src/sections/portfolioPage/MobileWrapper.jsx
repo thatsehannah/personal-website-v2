@@ -26,7 +26,7 @@ const MobileWrapper = props => {
           </RightSide>
         </Toolbar>
         <ImageWrapper>
-          <Image src={props.image} />
+          <Image src={props.image} alt={props.altText} />
         </ImageWrapper>
       </PhoneWrapper>
     </Wrapper>

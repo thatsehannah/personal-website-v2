@@ -67,6 +67,7 @@ const Strengths = () => {
                 image={node.image}
                 title={node.title}
                 description={node.description}
+                altText={node.altText}
               />
             ))}
           </ListWrapper>

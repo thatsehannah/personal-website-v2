@@ -4,7 +4,7 @@ import { H2 } from "../../styles/TextStyles"
 
 const Logo = () => {
   return (
-    <Wrapper>
+    <Wrapper aria-label="elliot hannah logo">
       <Monogram>
         EH<Superscript>3</Superscript>
       </Monogram>

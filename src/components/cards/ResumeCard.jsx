@@ -3,11 +3,12 @@ import styled from "styled-components"
 import { H3, Caption, BodyMain } from "../../styles/TextStyles"
 
 const ResumeCard = props => {
+  const altText = `${props.company} logo`
   return (
     <Wrapper>
       <LogoWrapper>
         <a href={props.url} target="_blank" rel="noreferrer">
-          <WorkLogo src={props.logo} />
+          <WorkLogo src={props.logo} alt={altText} />
         </a>
       </LogoWrapper>
       <EmphasisWrapper>

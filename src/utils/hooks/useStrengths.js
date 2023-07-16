@@ -10,6 +10,7 @@ export const useStrength = () => {
             rank
             image
             title
+            altText
           }
         }
       }

@@ -29,7 +29,11 @@ const WebpageWrapper = props => {
           onMouseEnter={() => setScrolling(true)}
           onMouseLeave={() => setScrolling(false)}
         >
-          <Image src={props.image} scrolling={scrolling.toString()} />
+          <Image
+            src={props.image}
+            scrolling={scrolling.toString()}
+            alt={props.altText}
+          />
         </ImageWrapper>
       </BrowserWrapper>
     </>

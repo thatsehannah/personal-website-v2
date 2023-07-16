@@ -19,7 +19,10 @@ const IntroAbout = () => {
       <ContentWrapper>
         <LeftSide inView={inView} ref={ref}>
           <Background />
-          <Memoji src="/images/memojis/about-memoji.png"></Memoji>
+          <Memoji
+            src="/images/memojis/about-memoji.png"
+            alt="waving memoji"
+          ></Memoji>
         </LeftSide>
         <RightSide>
           <TextWrapper id="textwrapper">

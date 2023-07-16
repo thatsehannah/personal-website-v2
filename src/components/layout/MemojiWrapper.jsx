@@ -9,7 +9,11 @@ const MemojiWrapper = props => {
 
   return (
     <Wrapper ref={ref} inView={inView}>
-      <Memoji src={props.memoji.src} styles={props.memoji.styles} />
+      <Memoji
+        src={props.memoji.src}
+        styles={props.memoji.styles}
+        alt={props.memoji.alt}
+      />
     </Wrapper>
   )
 }

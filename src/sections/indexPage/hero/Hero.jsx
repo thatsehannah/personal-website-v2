@@ -31,7 +31,10 @@ const Hero = () => {
         </LeftWrapper>
         <RightWrapper>
           <MemojiWrapper>
-            <Memoji src="/images/memojis/hero-memoji.png" />
+            <Memoji
+              src="/images/memojis/hero-memoji.png"
+              alt="smiling memoji"
+            />
           </MemojiWrapper>
         </RightWrapper>
       </ContentWrapper>

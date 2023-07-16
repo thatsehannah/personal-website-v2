@@ -5,13 +5,16 @@ const Memojis = () => {
   const memojis = [
     {
       src: "/images/memojis/story-1.png",
+      alt: "peace sign memoji",
     },
     {
       src: "/images/memojis/story-2.png",
       styles: [["top", "-45px"]],
+      alt: "memoji and computer",
     },
     {
       src: "/images/memojis/story-3.png",
+      alt: "winking memoji",
     },
   ]
 

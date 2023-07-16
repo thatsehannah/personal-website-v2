@@ -14,7 +14,7 @@ const AboutHero = () => {
     <Wrapper>
       <ContentWrapper>
         <LeftSide>
-          <Memoji src="/images/memojis/about-me.png" />
+          <Memoji src="/images/memojis/about-me.png" alt="hand sign memoji" />
         </LeftSide>
         <RightSide>
           <TextWrapper>

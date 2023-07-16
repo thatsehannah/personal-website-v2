@@ -5,7 +5,7 @@ import { BodyMain, H3 } from "../../styles/TextStyles"
 const StrengthCard = props => {
   return (
     <Wrapper rank={props.rank}>
-      <ImageWrapper img={props.image} />
+      <ImageWrapper role="img" img={props.image} aria-label={props.altText} />
       <TextWrapper>
         <H3>
           {props.rank}. {props.title}
