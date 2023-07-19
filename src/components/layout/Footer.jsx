@@ -2,11 +2,11 @@ import React from "react"
 import styled, { useTheme } from "styled-components"
 import Logo from "../special/Logo"
 import { Link } from "gatsby"
-import { Caption, H3 } from "../../styles/TextStyles"
+import { Caption, H3, SmallText } from "../../styles/TextStyles"
 import SocialMediaBanner from "../socials/SocialMediaBanner"
 import { menuOptions } from "../../data/menuOptions"
 import MenuButton from "../buttons/MenuButton"
-import { UilEnvelope, UilMobileVibrate } from "@iconscout/react-unicons"
+import { UilEnvelope } from "@iconscout/react-unicons"
 
 const Footer = () => {
   const theme = useTheme()
@@ -50,18 +50,15 @@ const Footer = () => {
                   }
                 />
               </a>
-              <a href="tel:(706)631-7005">
-                <MenuButton
-                  title="(706) 631 - 7005"
-                  icon={
-                    <UilMobileVibrate
-                      color={theme.menuButton.textColor}
-                      size="20"
-                    />
-                  }
-                />
-              </a>
             </LinksWrapper>
+            <CopyrightInfo>
+              <CopyrightText>
+                Site made with React, Gatsby, Google Firebase, and Vercel.
+              </CopyrightText>
+              <CopyrightText>
+                &copy; Copyright {new Date().getFullYear()}, Elliot C. Hannah
+              </CopyrightText>
+            </CopyrightInfo>
           </ContactWrapper>
         </AllLinksWrapper>
       </ContentWrapper>
@@ -88,7 +85,7 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 1024px) {
     width: 100%;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     gap: 50px;
   }
 
@@ -112,6 +109,10 @@ const LogoWrapper = styled.div`
 `
 
 const Text = styled(Caption)`
+  color: ${props => props.theme.secondaryTextColor};
+`
+
+const CopyrightText = styled(SmallText)`
   color: ${props => props.theme.secondaryTextColor};
 `
 
@@ -184,4 +185,12 @@ const LinksWrapper = styled.div`
   align-items: start;
   justify-items: start;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
+`
+
+const CopyrightInfo = styled.div`
+  display: grid;
 `
