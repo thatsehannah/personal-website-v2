@@ -26,7 +26,7 @@ const Footer = () => {
             <br />
             -Nipsey Hussle
           </Text>
-          <SocialMediaBanner size={30} color1="rgb(0,0,0)" />
+          <SocialMediaBanner size={30} />
         </Column>
         <AllLinksWrapper>
           <PagesWrapper>

@@ -12,7 +12,7 @@ const SocialMediaBanner = props => {
   const { size } = props
 
   return (
-    <Wrapper color1={props.color1} color2={props.color2}>
+    <Wrapper>
       <a
         href="https://github.com/thatsehannah"
         target="_blank"
@@ -61,21 +61,12 @@ const Wrapper = styled.div`
 
   a {
     color: ${props => props.theme.secondaryColor};
-    ${props =>
-      props.color1 &&
-      props.color2 &&
-      `
-      background: linear-gradient(180deg, ${props.color1} 0%, ${props.color2} 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-    `}
     transition: 0.5s ease-out;
     margin-right: 24px;
   }
 
   a:hover {
     transform: scale(1.2);
+    color: ${props => props.theme.primaryColor};
   }
 `

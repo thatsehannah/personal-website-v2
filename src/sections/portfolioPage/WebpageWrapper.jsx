@@ -4,6 +4,7 @@ import { useIntersection } from "../../utils/hooks/useIntersection"
 import { H3 } from "../../styles/TextStyles"
 
 const WebpageWrapper = props => {
+  const { image, altText } = props
   const [scrolling, setScrolling] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
   const ref = useRef(null)
@@ -29,11 +30,7 @@ const WebpageWrapper = props => {
           onMouseEnter={() => setScrolling(true)}
           onMouseLeave={() => setScrolling(false)}
         >
-          <Image
-            src={props.image}
-            scrolling={scrolling.toString()}
-            alt={props.altText}
-          />
+          <Image src={image} scrolling={scrolling.toString()} alt={altText} />
         </ImageWrapper>
       </BrowserWrapper>
     </>

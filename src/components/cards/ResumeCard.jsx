@@ -3,28 +3,40 @@ import styled from "styled-components"
 import { H3, Caption, BodyMain } from "../../styles/TextStyles"
 
 const ResumeCard = props => {
-  const altText = `${props.company} logo`
+  const {
+    company,
+    url,
+    logo,
+    title,
+    start,
+    end,
+    overflow,
+    isOdd,
+    secondaryText,
+  } = props
+
+  const altText = `${company} logo`
   return (
     <Wrapper>
       <LogoWrapper>
-        <a href={props.url} target="_blank" rel="noreferrer">
-          <WorkLogo src={props.logo} alt={altText} />
+        <a href={url} target="_blank" rel="noreferrer">
+          <WorkLogo src={logo} alt={altText} />
         </a>
       </LogoWrapper>
       <EmphasisWrapper>
         <TitleWrapper>
-          <Title>{props.title}</Title>
+          <Title>{title}</Title>
         </TitleWrapper>
         <Duration>
-          {props.start} - {props.end}
+          {start} - {end}
         </Duration>
       </EmphasisWrapper>
       <SecondaryTextWrapper
-        titleLength={props.title.length}
-        overflow={props.overflow}
-        isOdd={props.isOdd}
+        titleLength={title.length}
+        overflow={overflow}
+        isOdd={isOdd}
       >
-        <SecondaryText>{props.secondaryText}</SecondaryText>
+        <SecondaryText>{secondaryText}</SecondaryText>
       </SecondaryTextWrapper>
     </Wrapper>
   )

@@ -4,8 +4,9 @@ import { UilBatteryBolt, UilWifi } from "@iconscout/react-unicons"
 import { Caption } from "../../styles/TextStyles"
 
 const MobileWrapper = props => {
-  let batteryIconSize
+  const { image, altText } = props
 
+  let batteryIconSize
   if (typeof window !== undefined) {
     batteryIconSize = window.innerWidth <= 768 ? 18 : 26
   }
@@ -26,7 +27,7 @@ const MobileWrapper = props => {
           </RightSide>
         </Toolbar>
         <ImageWrapper>
-          <Image src={props.image} alt={props.altText} />
+          <Image src={image} alt={altText} />
         </ImageWrapper>
       </PhoneWrapper>
     </Wrapper>

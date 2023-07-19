@@ -4,16 +4,13 @@ import { fadeInAnimation } from "../../styles/FadeInAnimation"
 import { useIntersection } from "../../utils/hooks/useIntersection"
 
 const MemojiWrapper = props => {
+  const { memoji, threshold } = props
   const ref = useRef(null)
-  const inView = useIntersection(ref, { threshold: props.threshold })
+  const inView = useIntersection(ref, { threshold: threshold })
 
   return (
     <Wrapper ref={ref} inView={inView}>
-      <Memoji
-        src={props.memoji.src}
-        styles={props.memoji.styles}
-        alt={props.memoji.alt}
-      />
+      <Memoji src={memoji.src} styles={memoji.styles} alt={memoji.alt} />
     </Wrapper>
   )
 }

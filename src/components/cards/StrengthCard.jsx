@@ -3,15 +3,16 @@ import styled from "styled-components"
 import { BodyMain, H3 } from "../../styles/TextStyles"
 
 const StrengthCard = props => {
+  const { rank, image, altText, title, description } = props
   return (
-    <Wrapper rank={props.rank}>
-      <ImageWrapper role="img" img={props.image} aria-label={props.altText} />
+    <Wrapper>
+      <ImageWrapper role="img" img={image} aria-label={altText} />
       <TextWrapper>
         <H3>
-          {props.rank}. {props.title}
+          {rank}. {title}
         </H3>
         <DescriptionWrapper>
-          <DescriptionText>{props.description}</DescriptionText>
+          <DescriptionText>{description}</DescriptionText>
         </DescriptionWrapper>
       </TextWrapper>
     </Wrapper>

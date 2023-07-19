@@ -3,11 +3,13 @@ import styled from "styled-components"
 import { Caption2 } from "../../styles/TextStyles"
 
 const MainButton = props => {
+  const { onClick, disabled, text, icon } = props
+
   return (
-    <Button onClick={props.onClick} disabled={props.disabled}>
+    <Button onClick={onClick} disabled={disabled}>
       <TextWrapper>
-        <Title>{props.text}</Title>
-        {props.icon && <div>{props.icon}</div>}
+        <Title>{text}</Title>
+        {icon && <div>{icon}</div>}
       </TextWrapper>
     </Button>
   )
