@@ -61,7 +61,6 @@ exports.sendMail = functions.https.onRequest((req, res) => {
              <p style="font-size: 16px;">Elliot C. Hannah III</p>
              <p style="font-size: 12px; margin-top: -10px;">Full Stack Engineer</p>
              <hr />
-             <p style="font-size: 12px;"><strong>Phone: </strong><a href="tel:7066317005">(706) 631-7005</a></p>
              <p style="font-size: 12px; margin-top: -5px;"><strong>Email: </strong><a href="mailto:elliotchannah@outlook.com">elliotchannah@outlook.com</a></p>
              <p style="font-size: 12px; margin-top: -5px;"><strong>Website: </strong><a href="https://thatsehannah.com">thatsehannah.com</a></p>
             `,
