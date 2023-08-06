@@ -17,7 +17,6 @@ export const themes = {
     },
     resumeCard: {
       backgroundColor: "rgb(239, 239, 240)",
-      secondaryTextColor: "rgba(0, 0, 0, 0.6)",
       hoverBackgroundColor: "#fff",
     },
     inputBackgroundColor: "#fff",
@@ -45,8 +44,7 @@ export const themes = {
       hoverColor: "#fff",
     },
     resumeCard: {
-      backgroundColor: "rgb(113, 121, 126)",
-      secondaryTextColor: "rgba(255, 255, 255, 0.8)",
+      backgroundColor: "#4d4d51",
       hoverBackgroundColor: "rgb(9, 11, 16)",
     },
     strengthCardBackgroundColor: "",

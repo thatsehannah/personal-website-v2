@@ -11,7 +11,7 @@ const ResumeWrapper = ({ workData }) => {
           key={index}
           isOdd={index % 2 !== 0}
           logo={node.logo}
-          company={node.company.toLowerCase()}
+          company={node.company}
           title={node.position}
           secondaryText={node.duties}
           start={node.start}
