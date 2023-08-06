@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { H3, Caption, BodyMain } from "../../styles/TextStyles"
+import { H3, Caption, BodyMain, H2 } from "../../styles/TextStyles"
 
 const ResumeCard = props => {
   const {
@@ -15,21 +15,23 @@ const ResumeCard = props => {
     secondaryText,
   } = props
 
-  const altText = `${company} logo`
+  const altText = `${company.toLowerCase()} logo`
   return (
     <Wrapper>
       <LogoWrapper>
         <a href={url} target="_blank" rel="noreferrer">
           <WorkLogo src={logo} alt={altText} />
         </a>
+
+        <CompanyText>{company}</CompanyText>
       </LogoWrapper>
       <EmphasisWrapper>
         <TitleWrapper>
           <Title>{title}</Title>
         </TitleWrapper>
-        <Duration>
+        <Caption>
           {start} - {end}
-        </Duration>
+        </Caption>
       </EmphasisWrapper>
       <SecondaryTextWrapper
         titleLength={title.length}
@@ -68,19 +70,37 @@ const Wrapper = styled.div`
 `
 
 const LogoWrapper = styled.div`
-  width: 300px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 16px;
 `
 
 const WorkLogo = styled.img`
   max-width: 100%;
   height: 70px;
   object-fit: contain;
+  border-radius: 8px;
+
+  @media (max-width: 1024px) {
+    height: 60px;
+  }
+`
+
+const CompanyText = styled(H2)`
+  font-size: 2.2rem;
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
 `
 
 const EmphasisWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
+  align-items: center;
 
   @media (max-width: 450px) {
     grid-template-columns: auto;
@@ -100,9 +120,6 @@ const Title = styled(H3)`
   }
 `
 
-const Duration = styled(Caption)`
-  color: ${props => props.theme.resumeCard.secondaryTextColor};
-`
 //for future reference: https://css-tricks.com/line-clampin/
 const SecondaryTextWrapper = styled.div`
   overflow: ${props => props.overflow && `hidden`};
@@ -136,7 +153,6 @@ const SecondaryTextWrapper = styled.div`
 
 const SecondaryText = styled(BodyMain)`
   line-height: 1.4;
-  color: ${props => props.theme.resumeCard.secondaryTextColor};
 
   @media (max-width: 768px) {
     font-size: 1.1rem;
