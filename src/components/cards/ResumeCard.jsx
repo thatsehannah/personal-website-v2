@@ -88,7 +88,7 @@ const WorkLogo = styled.img`
 `
 
 const CompanyText = styled(H2)`
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   font-weight: 700;
 
   @media (max-width: 768px) {
@@ -113,7 +113,7 @@ const TitleWrapper = styled.div`
 `
 
 const Title = styled(H3)`
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 
   @media (max-width: 768px) {
     font-size: 1.4rem;
