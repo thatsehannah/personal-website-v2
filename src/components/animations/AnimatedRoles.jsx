@@ -5,7 +5,7 @@ import { H1 } from "../../styles/TextStyles"
 const AnimatedRoles = () => {
   const [fade, setFade] = useState("fade-in")
   const [wordOrder, setWordOrder] = useState(0)
-  const roles = ["Full Stack", "Front End", "Mobile/iOS"]
+  const roles = ["Software", "Full Stack", "Front End", "Mobile/iOS"]
   const fadeInterval = 1750
   const wordChangeInterval = fadeInterval * 2
 
