@@ -12,6 +12,8 @@ const ProjectWrapper = ({ node, displayCodeButton = true }) => {
 
   if (typeof window !== undefined) {
     externalIconSize = window.innerWidth <= 768 ? 22 : 28
+  } else {
+    externalIconSize = 28
   }
 
   return (
