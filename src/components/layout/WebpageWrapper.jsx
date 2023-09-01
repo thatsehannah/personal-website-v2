@@ -11,7 +11,7 @@ const WebpageWrapper = props => {
   const inView = useIntersection(ref, { threshold: 0.5 })
 
   let overlayText = ""
-  if (typeof window !== undefined) {
+  if (typeof window !== "undefined") {
     overlayText = window.innerWidth <= 1024 ? "Tap me!" : "Hover over me!"
   }
 

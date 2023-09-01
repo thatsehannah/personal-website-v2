@@ -5,7 +5,7 @@ import Certifications from "./Certifications"
 import Projects from "./Projects"
 
 const Content = () => {
-  const [active, setActive] = useState("cert")
+  const [active, setActive] = useState("proj")
   return (
     <Wrapper>
       <ContentWrapper>
@@ -13,16 +13,16 @@ const Content = () => {
           <H1>Portfolio</H1>
         </TitleWrapper>
         <TabWrapper>
-          <Tab active={active === "cert"} onClick={() => setActive("cert")}>
-            <BodyIntro>Certifications</BodyIntro>
-          </Tab>
           <Tab active={active === "proj"} onClick={() => setActive("proj")}>
             <BodyIntro>Projects</BodyIntro>
           </Tab>
+          <Tab active={active === "cert"} onClick={() => setActive("cert")}>
+            <BodyIntro>Certifications</BodyIntro>
+          </Tab>
         </TabWrapper>
         <div>
-          {active === "cert" && <Certifications />}
           {active === "proj" && <Projects />}
+          {active === "cert" && <Certifications />}
         </div>
       </ContentWrapper>
     </Wrapper>

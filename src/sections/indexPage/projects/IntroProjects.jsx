@@ -1,31 +1,30 @@
 import React from "react"
-import { useWork } from "../../../utils/hooks/useWork"
 import styled from "styled-components"
 import { H2 } from "../../../styles/TextStyles"
 import MainButton from "../../../components/buttons/MainButton"
 import { Link } from "gatsby"
-import ResumeWrapper from "../../../components/layout/ResumeWrapper"
 import Letter from "../../../components/special/Letter"
+import { useProjects } from "../../../utils/hooks/useProjects"
+import ProjectWrapper from "../../../components/layout/ProjectWrapper"
 
-const IntroWork = () => {
-  const workData = useWork()
-  const sliced = workData.slice(0, 2)
+const IntroProjects = () => {
+  const projectData = useProjects()
 
   return (
     <Wrapper>
       <ContentWrapper>
         <TitleWrapper>
           <H2>
-            Here's my recent <Letter />
-            xperience
+            Check out my Lat
+            <Letter />
+            st Project
           </H2>
         </TitleWrapper>
-
-        <ResumeWrapper workData={sliced} />
+        <ProjectWrapper node={projectData[0].node} displayCodeButton={false} />
         <SeeMoreWrapper>
           <div>
-            <Link to="/about#about-work">
-              <MainButton text="View All Work History" />
+            <Link to="/portfolio">
+              <MainButton text="View All Projects" />
             </Link>
           </div>
         </SeeMoreWrapper>
@@ -34,7 +33,7 @@ const IntroWork = () => {
   )
 }
 
-export default IntroWork
+export default IntroProjects
 
 const Wrapper = styled.section`
   display: flex;
