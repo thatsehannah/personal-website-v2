@@ -10,10 +10,8 @@ import { UilExternalLinkAlt as ExternalLink } from "@iconscout/react-unicons"
 const ProjectWrapper = ({ node, displayCodeButton = true }) => {
   let externalIconSize
 
-  if (typeof window !== undefined) {
+  if (typeof window !== "undefined") {
     externalIconSize = window.innerWidth <= 768 ? 22 : 28
-  } else {
-    externalIconSize = 28
   }
 
   return (

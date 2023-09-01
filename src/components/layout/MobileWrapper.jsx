@@ -7,7 +7,7 @@ const MobileWrapper = props => {
   const { image, altText } = props
 
   let batteryIconSize
-  if (typeof window !== undefined) {
+  if (typeof window !== "undefined") {
     batteryIconSize = window.innerWidth <= 768 ? 18 : 26
   }
 
