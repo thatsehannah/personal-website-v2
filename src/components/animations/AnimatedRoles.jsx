@@ -44,6 +44,7 @@ const fadeOut = keyframes`
 
 const FadeInOut = styled.span`
   display: inline-block;
+  text-align: center;
   width: 300px;
   font-weight: 300;
   ${({ fade }) =>

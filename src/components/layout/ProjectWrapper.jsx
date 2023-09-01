@@ -7,7 +7,7 @@ import WebpageWrapper from "./WebpageWrapper"
 import MobileWrapper from "./MobileWrapper"
 import { UilExternalLinkAlt as ExternalLink } from "@iconscout/react-unicons"
 
-const ProjectWrapper = ({ node }) => {
+const ProjectWrapper = ({ node, displayCodeButton = true }) => {
   let externalIconSize
 
   if (typeof window !== undefined) {
@@ -42,11 +42,13 @@ const ProjectWrapper = ({ node }) => {
             <PlatformCard>{node.domain}</PlatformCard>
           </TechStackWrapper>
           <BodyMain>{node.description}</BodyMain>
-          <ButtonWrapper>
-            <a href={node.code} target="_blank" rel="noreferrer">
-              <MainButton text="See Code" />
-            </a>
-          </ButtonWrapper>
+          {displayCodeButton && (
+            <ButtonWrapper>
+              <a href={node.code} target="_blank" rel="noreferrer">
+                <MainButton text="See Code" />
+              </a>
+            </ButtonWrapper>
+          )}
         </TopWrapper>
       </TextWrapper>
     </ContentWrapper>

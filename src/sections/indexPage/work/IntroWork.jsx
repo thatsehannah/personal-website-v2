@@ -23,11 +23,11 @@ const IntroWork = () => {
 
         <ResumeWrapper workData={sliced} />
         <SeeMoreWrapper>
-          <ButtonWrapper>
+          <div>
             <Link to="/about#about-work">
-              <MainButton text="See More" />
+              <MainButton text="View All Work History" />
             </Link>
-          </ButtonWrapper>
+          </div>
         </SeeMoreWrapper>
       </ContentWrapper>
     </Wrapper>
@@ -65,8 +65,4 @@ const TitleWrapper = styled.div`
 const SeeMoreWrapper = styled.div`
   display: grid;
   justify-content: center;
-`
-
-const ButtonWrapper = styled.div`
-  width: 150px;
 `

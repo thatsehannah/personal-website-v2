@@ -4,6 +4,7 @@ import Seo from "../components/layout/seo"
 import Hero from "../sections/indexPage/hero/Hero"
 import IntroAbout from "../sections/indexPage/about/IntroAbout"
 import IntroWork from "../sections/indexPage/work/IntroWork"
+import IntroProjects from "../sections/indexPage/projects/IntroProjects"
 
 function IndexPage() {
   return (
@@ -12,6 +13,7 @@ function IndexPage() {
       <Hero />
       <IntroAbout />
       <IntroWork />
+      <IntroProjects />
     </Layout>
   )
 }
