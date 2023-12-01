@@ -19,7 +19,7 @@ const ProjectWrapper = ({ node, displayCodeButton = true }) => {
       {node.platform === "Web" && (
         <WebpageWrapper image={node.imageUrl} altText={node.name} />
       )}
-      {node.platform === "iOS" && (
+      {(node.platform === "iOS" || node.platform === "React Native") && (
         <MobileWrapper image={node.imageUrl} altText={node.name} />
       )}
       <TextWrapper>
