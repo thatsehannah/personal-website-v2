@@ -9,10 +9,11 @@ const ResumeCard = props => {
     logo,
     title,
     start,
-    end,
+    end = "Current",
     overflow,
     isOdd,
     secondaryText,
+    isCurrent,
   } = props
 
   const altText = `${company.toLowerCase()} logo`
@@ -30,7 +31,7 @@ const ResumeCard = props => {
           <Title>{title}</Title>
         </TitleWrapper>
         <Caption>
-          {start} - {end}
+          {start} - {isCurrent ? "present" : end}
         </Caption>
       </EmphasisWrapper>
       <SecondaryTextWrapper

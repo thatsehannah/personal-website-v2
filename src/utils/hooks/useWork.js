@@ -14,6 +14,7 @@ export const useWork = () => {
             duties
             url
             company
+            isCurrent
           }
         }
       }

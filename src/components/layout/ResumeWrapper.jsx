@@ -17,6 +17,7 @@ const ResumeWrapper = ({ workData }) => {
           start={node.start}
           end={node.end}
           url={node.url}
+          isCurrent={node.isCurrent}
         />
       ))}
     </WorkWrapper>
