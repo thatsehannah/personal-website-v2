@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import { BodyIntro, H1 } from "../../styles/TextStyles"
-import Certifications from "./Certifications"
+import { H1 } from "../../styles/TextStyles"
 import Projects from "./Projects"
 
 const Content = () => {
