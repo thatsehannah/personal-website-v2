@@ -22,10 +22,8 @@ export const useProjects = () => {
     `
   )
 
-  return allProjectData.edges.sort((proj1, proj2) => {
-    var d1 = new Date(proj1.node.finishedDate)
-    var d2 = new Date(proj2.node.finishedDate)
-
-    return new Date(proj2.node.finishedDate) - new Date(proj1.node.finishedDate)
-  })
+  return allProjectData.edges.sort(
+    (proj1, proj2) =>
+      new Date(proj2.node.finishedDate) - new Date(proj1.node.finishedDate)
+  )
 }
