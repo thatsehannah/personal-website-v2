@@ -7,7 +7,7 @@ import WebpageWrapper from "./WebpageWrapper"
 import MobileWrapper from "./MobileWrapper"
 import { UilExternalLinkAlt as ExternalLink } from "@iconscout/react-unicons"
 
-const ProjectWrapper = ({ node, displayCodeButton = true }) => {
+const ProjectWrapper = ({ node }) => {
   let externalIconSize
 
   if (typeof window !== "undefined") {
@@ -42,11 +42,15 @@ const ProjectWrapper = ({ node, displayCodeButton = true }) => {
             <PlatformCard>{node.domain}</PlatformCard>
           </TechStackWrapper>
           <BodyMain>{node.description}</BodyMain>
-          {displayCodeButton && (
+          {node.isRepoPublic ? (
             <ButtonWrapper>
               <a href={node.code} target="_blank" rel="noreferrer">
                 <MainButton text="See Code" />
               </a>
+            </ButtonWrapper>
+          ) : (
+            <ButtonWrapper>
+              <MainButton text="Repo is Private" disabled={true} />
             </ButtonWrapper>
           )}
         </TopWrapper>
