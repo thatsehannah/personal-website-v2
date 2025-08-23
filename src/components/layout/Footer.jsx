@@ -56,7 +56,7 @@ const Footer = () => {
                 Site made with React, Gatsby, Google Firebase, and Vercel.
               </CopyrightText>
               <CopyrightText>
-                &copy; Copyright {new Date().getFullYear()}, TECH3
+                &copy; {new Date().getFullYear()} TECH3
               </CopyrightText>
             </CopyrightInfo>
           </ContactWrapper>
