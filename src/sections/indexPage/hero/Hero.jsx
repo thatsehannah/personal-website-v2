@@ -20,7 +20,7 @@ const Hero = () => {
             <AnimatedRoles />
             <ButtonWrapper>
               <a
-                href="https://drive.google.com/file/d/1DuWfX38E44ZJvLNhpw2ieaUW6o16_QNa/view"
+                href="https://drive.google.com/file/d/1ozTLAunBoDnYnPe6_q6BbloebSQP9oC0/view"
                 target="_blank"
                 rel="noreferrer"
               >
