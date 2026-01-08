@@ -21,7 +21,7 @@ const SocialMediaBanner = props => {
         <UilGithub size={size} />
       </a>
       <a
-        href="https://linkedin.com/in/elliotchannah"
+        href="https://linkedin.com/in/elliotchannahiii"
         target="_blank"
         rel="noopener noreferrer"
       >
