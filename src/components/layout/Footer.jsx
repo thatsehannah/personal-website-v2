@@ -42,9 +42,9 @@ const Footer = () => {
           <ContactWrapper>
             <Title>Contact Me</Title>
             <LinksWrapper>
-              <a href="mailto:elliotchannah@outlook.com">
+              <a href="mailto:elliotchannahiii@gmail.com">
                 <MenuButton
-                  title="elliotchannah@outlook.com"
+                  title="elliotchannahiii@gmail.com"
                   icon={
                     <UilEnvelope color={theme.menuButton.textColor} size="20" />
                   }

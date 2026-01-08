@@ -19,9 +19,9 @@ const MobileMenuItems = () => {
           />
         </Link>
       ))}
-      <a href="mailto:elliotchannah@outlook.com">
+      <a href="mailto:elliotchannahiii@gmail.com">
         <MenuButton
-          title="elliotchannah@outlook.com"
+          title="elliotchannahiii@gmail.com"
           icon={<UilEnvelope color={theme.secondaryColor} size="22" />}
           color={theme.secondaryColor}
           hoverColor={theme.primaryColor}
